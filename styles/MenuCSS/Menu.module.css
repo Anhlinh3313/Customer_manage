@@ -1,7 +1,11 @@
 .menu-container {
     width: 100%;
-    background: #FFDB20;
-    height: 45px;
+    background: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
 }
 
 .logo {
@@ -17,6 +21,7 @@
     color: #fff;
     gap: 0 50px;
     align-items: center;
+    padding: 16px 0px;
 }
 
 .menu-warpper {
@@ -71,15 +76,17 @@
 .menu_bottom_item {
     display: block;
     padding: 19px 5px 12px 5px;
-    font-size: 14px;
-    line-height: 100%;
-    color: #000000;
-    font-weight: 700;
+    color: #fff;
     position: relative;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
 }
 
 .menu_bottom_item_active {
-    background-color: #fff;
+    color: #DE2027;
 }
 
 .menu-toggle {
@@ -104,6 +111,45 @@
 
 .menu-toggle-hide {
     display: none;
+}
+
+.button{
+    display: flex;
+}
+
+.div-check-in{
+    padding-right: 15px;
+}
+
+.button-check-in{
+    border-radius: 100px;
+    border: 1px solid var(--light-primary-50, #4671F6);
+    color: var(--light-primary-50, #4671F6);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0.24px;
+    text-align: center;
+    font-family: Inter;
+    height: 44px;
+    width: 171px;
+    padding-right:  15px;
+}
+
+.bottom-login{
+    border-radius: 100px;
+    background: var(--light-primary-50, #4671F6);
+    color: var(--light-primary-50, #fff);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0.24px;
+    text-align: center;
+    font-family: Inter;
+    height: 44px;
+    width: 119px;
 }
 
 @media screen and (max-width: 600px) {

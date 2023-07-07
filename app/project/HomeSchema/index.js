@@ -18,14 +18,6 @@ const HomeSchema = (props) => {
       });
   }, []);
 
-  // useEffect(() => {
-  //   getAllGroup().then((res) => {
-  //     if ((res.status === "success")) {
-  //       dispatch(setDataApp({ groups: res.data }))
-  //     }
-  //   })
-  // }, [dispatch]);
-
   return (
     <>
       <div>

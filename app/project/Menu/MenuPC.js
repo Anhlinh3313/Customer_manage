@@ -12,9 +12,24 @@ import { useRouter } from 'next/router';
 
 const MenuPC = () => {
   const [menuScroll, setMenuScroll] = useState(false);
-  const [menuBottom, setMenuBottom] = useState([]);
+  const [menuButtom, setMenuButtom] = useState([]);
   const router = useRouter();
   const [showMenu, setShowMenu] = useState(false);
+
+  const data = [
+    {
+      menuSlug: "home",
+      menuName: "Trang chủ"
+    },
+    {
+      menuSlug: "new-building",
+      menuName: "Tin tức tòa nhà"
+    },
+    {
+      menuSlug: "archirectural-drawing",
+      menuName: "Sơ đồ mặt bằng"
+    },
+  ]
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -32,27 +47,21 @@ const MenuPC = () => {
       return router.pathname.includes(path);
     };
 
-    fetch(`${API_URL}/api/menu/getAll`)
-      .then((res) => res.json())
-      .then((data) => {
-        const menuList = data?.map((item, i) => {
-          const active = isActive(item.menuSlug) ? stylesCss["menu_bottom_item_active"] : "";
-          return {
-            element: (
-              <a onClick={() => router.push(`/${item.menuSlug}`)}>
-                <div className={`${stylesCss["menu_bottom_item"]} ${active}`}>{item.menuName}</div>
-              </a >
-            ),
-            event: () => { },
-            status: true,
-            path: `${item.menuSlug}`,
-          }
-        });
-        setMenuBottom(menuList);
-      });
+    const menuList = data?.map((item, i) => {
+      const active = isActive(item.menuSlug) ? stylesCss["menu_bottom_item_active"] : "";
+      return {
+        element: (
+          <a onClick={() => router.push(`/${item.menuSlug}`)}>
+            <div className={`${stylesCss["menu_bottom_item"]} ${active}`}>{item.menuName}</div>
+          </a >
+        ),
+        event: () => { },
+        status: true,
+        path: `${item.menuSlug}`,
+      }
+    });
+    setMenuButtom(menuList);
   }, [router.pathname]);
-
-  console.log(menuBottom)
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
@@ -67,9 +76,17 @@ const MenuPC = () => {
           </a>
 
           <div className={stylesCss["menu-warpper"]}>
-            {menuBottom?.map((val, key) => {
+            {menuButtom?.map((val, key) => {
               return <Fragment key={key}>{val.element}</Fragment>;
             })}
+          </div>
+          <div className={stylesCss["button"]}>
+            <div className={stylesCss["div-check-in"]}>
+              <button className={stylesCss["button-check-in"]}>Đăng ký check in</button>
+            </div>
+            <div className={stylesCss["div-login"]}>
+              <button className={stylesCss["bottom-login"]}>Đăng nhập</button>
+            </div>
           </div>
           <div className={stylesCss["menu-toggle"]}>
             <svg
@@ -92,7 +109,7 @@ const MenuPC = () => {
             </svg>
             <div className={showMenu ? stylesCss["menu-toggle-show"] : stylesCss["menu-toggle-hide"]}>
               <span>
-                {menuBottom?.map((val, key) => {
+                {menuButtom?.map((val, key) => {
                   return val.element;
                 })}
               </span>

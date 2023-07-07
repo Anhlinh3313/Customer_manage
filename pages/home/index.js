@@ -1,35 +1,6 @@
-import { useEffect, useState } from "react";
 import styles from "../../styles/Home.module.css"
-import BannerSlider from "./BannerSlide"
-import Slide from "./Slide"
-import { API_URL } from "../../app/@function/wsCode"
-import axios from "axios";
 
 function Home() {
-    const [listNewEvents, setListNewEvents] = useState([]);
-    const [listBannerSlider, setListBannerSlider] = useState([]);
-    const [title, setTitle] = useState("");
-    const [description, setDescription] = useState("");
-
-    useEffect(() => {
-        const getDataSlide = async () => {
-            const dataaNewsEvents = await axios.get(`${API_URL}/api/post/getByMenuSlug/tin-tuc-su-kien`);
-            if (dataaNewsEvents && dataaNewsEvents.data) {
-                setListNewEvents(dataaNewsEvents.data?.data);
-                setTitle(dataaNewsEvents.data?.data[0]?.menu?.menuName)
-                setDescription(dataaNewsEvents.data?.data[0]?.menu?.description)
-            }
-        }
-        const getDataBannerSlider = async () => {
-            const dataBannerSlider = await axios.get(`${API_URL}/api/slide/getAll`);
-            if (dataBannerSlider && dataBannerSlider.data) {
-                setListBannerSlider(dataBannerSlider.data);
-            }
-        }
-        getDataSlide();
-        getDataBannerSlider();
-    }, []);
-
     return (
         <>
             <div className={styles["banner"]}>
@@ -37,21 +8,414 @@ function Home() {
             </div>
             <div className={styles["banner_sider"]}>
                 <div className={styles["banner_sider_connent"]}>
-                    <BannerSlider listBannerSlider={listBannerSlider} />
+                    <h2>Đăng ký check in mặt bằng</h2>
+                    <h4>Đăng ký check-in mặt bằng là quá trình cho phép khách hàng đăng ký sự hiện diện của họ tại một địa điểm cụ thể. Điều này có thể được thực hiện thông qua các trang web hoặc ứng dụng di động, và thông tin đăng ký của khách hàng được lưu trữ trong một cơ sở dữ liệu để có thể sử dụng sau này.</h4>
+                    <div className={styles["register-banner_sider"]}>
+                        <butom>
+                            <span className={styles["register-text"]}>Đăng ký check in</span>
+                        </butom>
+                    </div>
+                </div>
+                <div className={styles["banner_sider_img"]}>
+                    <img src="./img-register-content.png" alt="Banner" />
                 </div>
             </div>
-            <section className={styles["event"]} id="section-event">
-                <div className={styles["event_text"]}>
-                    <h1 className={styles["event_text-title"]}>{title}</h1>
-                    <div className={styles["event_text-detail"]}>{description}</div>
-                    <div className={styles["event_line"]}></div>
+            <div className={styles["archirectural-drawing"]}>
+                <div className={styles["title-archirectural-drawing"]}>
+                    <div className={styles["header"]}>
+                        <p>Sơ đồ mặt bằng</p>
+                    </div>
+                    <div className={styles["view-total"]}>
+                        <span>Xem tất cả</span>
+                        <img src="./icon_next.png" alt="Banner" ></img>
+                    </div>
                 </div>
-
-                <div className={styles["event_slide"]}>
-                    <Slide listSlide={listNewEvents} />
+                <div className={styles["table"]}>
+                    <table>
+                        <tr className={styles["table-header"]}>
+                            <th className={styles["header-item"]}>Tầng 01</th>
+                            <th className={styles["header-item"]}>Tầng 02</th>
+                            <th className={styles["header-item"]}>Tầng 03</th>
+                            <th className={styles["header-item"]}>Tầng 04</th>
+                            <th className={styles["header-item"]}>Tầng 05</th>
+                            <th className={styles["header-item"]}>Tầng 06</th>
+                            <th className={styles["header-item"]}>Tầng 07</th>
+                            <th className={styles["header-item"]}>Tầng 08</th>
+                            <th className={styles["header-item"]}>Tầng 09</th>
+                            <th className={styles["header-item"]}>Tầng 10</th>
+                            <th className={styles["header-item"]}>Tầng 11</th>
+                            <th className={styles["header-item"]}>Tầng 12</th>
+                        </tr>
+                        <tr>
+                            <td className={styles["item-green"]}>A-01-01 </td>
+                            <td className={styles["item-green"]}>A-01-01 </td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                        </tr>
+                        <tr>
+                            <td className={styles["item-green"]}>A-01-01 </td>
+                            <td className={styles["item-green"]}>A-01-01 </td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                        </tr>
+                        <tr>
+                            <td className={styles["item-green"]}>A-01-01 </td>
+                            <td className={styles["item-green"]}>A-01-01 </td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                        </tr>
+                        <tr>
+                            <td className={styles["item-none"]}>A-01-01 </td>
+                            <td className={styles["item-none"]}>A-01-01 </td>
+                            <td className={styles["item-none"]}>A-01-01</td>
+                            <td className={styles["item-none"]}>A-01-01</td>
+                            <td className={styles["item-red"]}>A-01-01</td>
+                            <td className={styles["item-none"]}>A-01-01</td>
+                            <td className={styles["item-none"]}>A-01-01</td>
+                            <td className={styles["item-none"]}>A-01-01</td>
+                            <td className={styles["item-yallow"]}>A-01-01</td>
+                            <td className={styles["item-none"]}>A-01-01</td>
+                            <td className={styles["item-none"]}>A-01-01</td>
+                            <td className={styles["item-red"]}>A-01-01</td>
+                        </tr>
+                        <tr>
+                            <td className={styles["item-green"]}>A-01-01 </td>
+                            <td className={styles["item-green"]}>A-01-01 </td>
+                            <td className={styles["item-yallow"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                        </tr>
+                        <tr>
+                            <td className={styles["item-none"]}>A-01-01 </td>
+                            <td className={styles["item-none"]}>A-01-01 </td>
+                            <td className={styles["item-none"]}>A-01-01</td>
+                            <td className={styles["item-none"]}>A-01-01</td>
+                            <td className={styles["item-red"]}>A-01-01</td>
+                            <td className={styles["item-none"]}>A-01-01</td>
+                            <td className={styles["item-none"]}>A-01-01</td>
+                            <td className={styles["item-none"]}>A-01-01</td>
+                            <td className={styles["item-yallow"]}>A-01-01</td>
+                            <td className={styles["item-none"]}>A-01-01</td>
+                            <td className={styles["item-none"]}>A-01-01</td>
+                            <td className={styles["item-red"]}>A-01-01</td>
+                        </tr>
+                        <tr>
+                            <td className={styles["item-green"]}>A-01-01 </td>
+                            <td className={styles["item-green"]}>A-01-01 </td>
+                            <td className={styles["item-yallow"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-red"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                        </tr>
+                        <tr>
+                            <td className={styles["item-green"]}>A-01-01 </td>
+                            <td className={styles["item-green"]}>A-01-01 </td>
+                            <td className={styles["item-yallow"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-red"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                        </tr>
+                        <tr>
+                            <td className={styles["item-green"]}>A-01-01 </td>
+                            <td className={styles["item-green"]}>A-01-01 </td>
+                            <td className={styles["item-yallow"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-red"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                        </tr>
+                        <tr>
+                            <td className={styles["item-green"]}>A-01-01 </td>
+                            <td className={styles["item-green"]}>A-01-01 </td>
+                            <td className={styles["item-yallow"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-red"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                        </tr>
+                        <tr>
+                            <td className={styles["item-green"]}>A-01-01 </td>
+                            <td className={styles["item-green"]}>A-01-01 </td>
+                            <td className={styles["item-yallow"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-red"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                        </tr>
+                        <tr>
+                            <td className={styles["item-green"]}>A-01-01 </td>
+                            <td className={styles["item-green"]}>A-01-01 </td>
+                            <td className={styles["item-yallow"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-red"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                        </tr>
+                        <tr>
+                            <td className={styles["item-green"]}>A-01-01 </td>
+                            <td className={styles["item-green"]}>A-01-01 </td>
+                            <td className={styles["item-yallow"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-red"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                        </tr>
+                        <tr>
+                            <td className={styles["item-green"]}>A-01-01 </td>
+                            <td className={styles["item-green"]}>A-01-01 </td>
+                            <td className={styles["item-yallow"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-red"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                            <td className={styles["item-green"]}>A-01-01</td>
+                        </tr>
+                    </table>
                 </div>
-
-            </section>
+            </div>
+            <div className={styles["new"]}>
+                <div className={styles["title-archirectural-drawing"]}>
+                    <div className={styles["header"]}>
+                        <p>Tin tức</p>
+                    </div>
+                    <div className={styles["view-total"]}>
+                        <span>Xem tất cả</span>
+                        <img src="./icon_next.png" alt="next" ></img>
+                    </div>
+                </div>
+                <div className={styles["new-item"]}>
+                    <div className={styles["new-left"]}>
+                        <div className={styles["content"]}>
+                            <p className={styles["new-left-title"]}>Đông Dương Land nâng  cấp quản lý kinh doanh dự án Golden City nhờ App</p>
+                            <p className={styles["new-left-time"]}>
+                                <img className={styles["new-clock"]} src="./clock.png" alt="Banner" ></img>
+                                <span>11: 20 - 25/11/2022</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div className={styles["new-right"]}>
+                        <div className={styles["new-right-item"]}>
+                            <div className={styles["new-right-item-one"]}>
+                                <div className={styles["new-right-item-one-content"]}>
+                                    <div className={styles["content-right"]}>
+                                        <p className={styles["new-left-title-item"]}>Đông Dương Land nâng  cấp quản lý kinh doanh dự án Golde...</p>
+                                        <p className={styles["new-left-time"]}>
+                                            <img className={styles["new-clock"]} src="./clock.png" alt="Banner" ></img>
+                                            <span>11: 20 - 25/11/2022</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className={styles["new-right-item-two"]}>
+                                <div className={styles["new-right-item-two-content"]}>
+                                    <div className={styles["content-right"]}>
+                                        <p className={styles["new-left-title-item"]}>Đông Dương Land nâng  cấp quản lý kinh doanh dự án Golde...</p>
+                                        <p className={styles["new-left-time"]}>
+                                            <img className={styles["new-clock"]} src="./clock.png" alt="Banner" ></img>
+                                            <span>11: 20 - 25/11/2022</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className={styles["new-right-item-page-two"]}>
+                            <div className={styles["new-right-item-one"]}>
+                                <div className={styles["new-right-item-three-content"]}>
+                                    <div className={styles["content-right"]}>
+                                        <p className={styles["new-left-title-item"]}>Đông Dương Land nâng  cấp quản lý kinh doanh dự án Golde...</p>
+                                        <p className={styles["new-left-time"]}>
+                                            <img className={styles["new-clock"]} src="./clock.png" alt="Banner" ></img>
+                                            <span>11: 20 - 25/11/2022</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className={styles["new-right-item-two"]}>
+                                <div className={styles["new-right-item-four-content"]}>
+                                    <div className={styles["content-right"]}>
+                                        <p className={styles["new-left-title-item"]}>Đông Dương Land nâng  cấp quản lý kinh doanh dự án Golde...</p>
+                                        <p className={styles["new-left-time"]}>
+                                            <img className={styles["new-clock"]} src="./clock.png" alt="Banner" ></img>
+                                            <span>11: 20 - 25/11/2022</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className={styles["contact"]}>
+                <div className={styles["contact-bg"]}>
+                    <div className={styles["branch"]}>
+                        <div className={styles["form-branch"]}>
+                            <p className={styles["provice"]}>Hà Nội</p>
+                            <p className={styles["form-branch-item"]}>
+                                <span>
+                                    <img className={styles["icon-branch"]} src="./icon_address.png" alt="address" />
+                                </span>
+                                <span className={styles["icon-text"]}>Tầng 1, Tháp The Manor, đường Mễ Trì, phường Mỹ Đình 1, quận Nam Từ Liêm, Tp. Hà Nội.</span>
+                            </p>
+                            <p className={styles["form-branch-item"]}>
+                                <span>
+                                    <img className={styles["icon-branch"]} src="./icon_phone.png" alt="phone" />
+                                    </span>
+                                <span className={styles["icon-text"]}>+84 24 3785 5588</span>
+                            </p>
+                            <p className={styles["form-branch-item"]}>
+                                <span>
+                                    <img className={styles["icon-branch"]} src="./icon_mail.png" alt="mail" />
+                                </span>
+                                <span className={styles["icon-text"]}>info@bitexco.com.vn</span>
+                            </p>
+                        </div>
+                        <div className={styles["line"]}>
+                        </div>
+                        <div className={styles["form-branch"]}>
+                            <p className={styles["provice"]}>Hồ Chí Minh</p>
+                            <p className={styles["form-branch-item"]}>
+                                <span>
+                                    <img className={styles["icon-branch"]} src="./icon_address.png" alt="address" />
+                                </span>
+                                <span className={styles["icon-text"]}>Tầng 48, Tòa nhà Bitexco Financial Tower, số 2 Hải Triều, phường Bến Nghé, quận 1, TP.Hồ Chí Minh.</span>
+                            </p>
+                            <p className={styles["form-branch-item"]}>
+                                <span>
+                                    <img className={styles["icon-branch"]} src="./icon_phone.png" alt="phone" />
+                                    </span>
+                                <span className={styles["icon-text"]}>+84 24 3785 5588</span>
+                            </p>
+                            <p className={styles["form-branch-item"]}>
+                                <span>
+                                    <img className={styles["icon-branch"]} src="./icon_mail.png" alt="mail" />
+                                </span>
+                                <span className={styles["icon-text"]}>info@bitexco.com.vn</span>
+                            </p>
+                        </div>
+                        <div className={styles["line"]}>
+                        </div>
+                        <div className={styles["form-branch"]}>
+                            <p className={styles["provice"]}>Thái Bình</p>
+                            <p className={styles["form-branch-item"]}>
+                                <span>
+                                    <img className={styles["icon-branch"]} src="./icon_address.png" alt="address" />
+                                </span>
+                                <span className={styles["icon-text"]}>Số 102A, phố Quang Trung, phường Trần Hưng Đạo, thành phố Thái Bình, Tỉnh Thái Bình</span>
+                            </p>
+                            <p className={styles["form-branch-item"]}>
+                                <span>
+                                    <img className={styles["icon-branch"]} src="./icon_phone.png" alt="phone" />
+                                    </span>
+                                <span className={styles["icon-text"]}>+84 24 3785 5588</span>
+                            </p>
+                            <p className={styles["form-branch-item"]}>
+                                <span>
+                                    <img className={styles["icon-branch"]} src="./icon_mail.png" alt="mail" />
+                                </span>
+                                <span className={styles["icon-text"]}>info@bitexco.com.vn</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div className={styles["form-contact"]}>
+                        <div className={styles["form-contact-header"]}>
+                            <p className={styles["header-title"]}>liên hệ</p>
+                            <p className={styles["header-content"]}>Xin mời bạn nhập thông tin liên hệ</p>
+                            <p className={styles["contact-input"]}>
+                                <input className={styles["form-input"]} placeholder="Họ và tên..."></input>
+                            </p>
+                            <p className={styles["contact-input"]}>
+                                <input className={styles["form-input"]} placeholder="Số điện thoại..."></input>
+                            </p>
+                            <p className={styles["contact-input"]}>
+                                <div className={styles["form-select"]}>
+                                    <span>Chọn yêu cầu liên hệ</span>
+                                    <span>            
+                                        <img className={styles["icon-branch"]} src="./icon_select.png" alt="mail" />
+                                    </span>
+                                </div>  
+                            </p>
+                            <p className={styles["contact-input"]}>
+                                <input className={styles["form-input-description"]} placeholder="Nhập thông tin mô tả nếu có"></input>
+                            </p>
+                            <p>
+                                <button className={styles["send-information"]}>Gửi thông tin</button>
+                            </p>
+                        </div>
+                    </div>  
+                </div>
+            </div>
         </>
     );
 }
