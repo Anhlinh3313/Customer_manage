@@ -82,10 +82,10 @@ const MenuPC = () => {
           </div>
           <div className={stylesCss["button"]}>
             <div className={stylesCss["div-check-in"]}>
-              <button className={stylesCss["button-check-in"]}>Đăng ký check in</button>
+              <button className={stylesCss["button-check-in"]} onClick={() => router.push(`/Register-check-in`)}>Đăng ký check in</button>
             </div>
             <div className={stylesCss["div-login"]}>
-              <button className={stylesCss["bottom-login"]}>Đăng nhập</button>
+              <button className={stylesCss["bottom-login"]} onClick={() => router.push(`/login`)}>Đăng nhập</button>
             </div>
           </div>
           <div className={stylesCss["menu-toggle"]}>

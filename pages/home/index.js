@@ -20,7 +20,7 @@ function Home() {
                     <img src="./img-register-content.png" alt="Banner" />
                 </div>
             </div>
-            <div className={styles["archirectural-drawing"]}>
+           <div className={styles["archirectural-drawing"]}>
                 <div className={styles["title-archirectural-drawing"]}>
                     <div className={styles["header"]}>
                         <p>Sơ đồ mặt bằng</p>
@@ -31,217 +31,603 @@ function Home() {
                     </div>
                 </div>
                 <div className={styles["table"]}>
-                    <table>
-                        <tr className={styles["table-header"]}>
-                            <th className={styles["header-item"]}>Tầng 01</th>
-                            <th className={styles["header-item"]}>Tầng 02</th>
-                            <th className={styles["header-item"]}>Tầng 03</th>
-                            <th className={styles["header-item"]}>Tầng 04</th>
-                            <th className={styles["header-item"]}>Tầng 05</th>
-                            <th className={styles["header-item"]}>Tầng 06</th>
-                            <th className={styles["header-item"]}>Tầng 07</th>
-                            <th className={styles["header-item"]}>Tầng 08</th>
-                            <th className={styles["header-item"]}>Tầng 09</th>
-                            <th className={styles["header-item"]}>Tầng 10</th>
-                            <th className={styles["header-item"]}>Tầng 11</th>
-                            <th className={styles["header-item"]}>Tầng 12</th>
-                        </tr>
-                        <tr>
-                            <td className={styles["item-green"]}>A-01-01 </td>
-                            <td className={styles["item-green"]}>A-01-01 </td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                        </tr>
-                        <tr>
-                            <td className={styles["item-green"]}>A-01-01 </td>
-                            <td className={styles["item-green"]}>A-01-01 </td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                        </tr>
-                        <tr>
-                            <td className={styles["item-green"]}>A-01-01 </td>
-                            <td className={styles["item-green"]}>A-01-01 </td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                        </tr>
-                        <tr>
-                            <td className={styles["item-none"]}>A-01-01 </td>
-                            <td className={styles["item-none"]}>A-01-01 </td>
-                            <td className={styles["item-none"]}>A-01-01</td>
-                            <td className={styles["item-none"]}>A-01-01</td>
-                            <td className={styles["item-red"]}>A-01-01</td>
-                            <td className={styles["item-none"]}>A-01-01</td>
-                            <td className={styles["item-none"]}>A-01-01</td>
-                            <td className={styles["item-none"]}>A-01-01</td>
-                            <td className={styles["item-yallow"]}>A-01-01</td>
-                            <td className={styles["item-none"]}>A-01-01</td>
-                            <td className={styles["item-none"]}>A-01-01</td>
-                            <td className={styles["item-red"]}>A-01-01</td>
-                        </tr>
-                        <tr>
-                            <td className={styles["item-green"]}>A-01-01 </td>
-                            <td className={styles["item-green"]}>A-01-01 </td>
-                            <td className={styles["item-yallow"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                        </tr>
-                        <tr>
-                            <td className={styles["item-none"]}>A-01-01 </td>
-                            <td className={styles["item-none"]}>A-01-01 </td>
-                            <td className={styles["item-none"]}>A-01-01</td>
-                            <td className={styles["item-none"]}>A-01-01</td>
-                            <td className={styles["item-red"]}>A-01-01</td>
-                            <td className={styles["item-none"]}>A-01-01</td>
-                            <td className={styles["item-none"]}>A-01-01</td>
-                            <td className={styles["item-none"]}>A-01-01</td>
-                            <td className={styles["item-yallow"]}>A-01-01</td>
-                            <td className={styles["item-none"]}>A-01-01</td>
-                            <td className={styles["item-none"]}>A-01-01</td>
-                            <td className={styles["item-red"]}>A-01-01</td>
-                        </tr>
-                        <tr>
-                            <td className={styles["item-green"]}>A-01-01 </td>
-                            <td className={styles["item-green"]}>A-01-01 </td>
-                            <td className={styles["item-yallow"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-red"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                        </tr>
-                        <tr>
-                            <td className={styles["item-green"]}>A-01-01 </td>
-                            <td className={styles["item-green"]}>A-01-01 </td>
-                            <td className={styles["item-yallow"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-red"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                        </tr>
-                        <tr>
-                            <td className={styles["item-green"]}>A-01-01 </td>
-                            <td className={styles["item-green"]}>A-01-01 </td>
-                            <td className={styles["item-yallow"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-red"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                        </tr>
-                        <tr>
-                            <td className={styles["item-green"]}>A-01-01 </td>
-                            <td className={styles["item-green"]}>A-01-01 </td>
-                            <td className={styles["item-yallow"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-red"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                        </tr>
-                        <tr>
-                            <td className={styles["item-green"]}>A-01-01 </td>
-                            <td className={styles["item-green"]}>A-01-01 </td>
-                            <td className={styles["item-yallow"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-red"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                        </tr>
-                        <tr>
-                            <td className={styles["item-green"]}>A-01-01 </td>
-                            <td className={styles["item-green"]}>A-01-01 </td>
-                            <td className={styles["item-yallow"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-red"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                        </tr>
-                        <tr>
-                            <td className={styles["item-green"]}>A-01-01 </td>
-                            <td className={styles["item-green"]}>A-01-01 </td>
-                            <td className={styles["item-yallow"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-red"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                        </tr>
-                        <tr>
-                            <td className={styles["item-green"]}>A-01-01 </td>
-                            <td className={styles["item-green"]}>A-01-01 </td>
-                            <td className={styles["item-yallow"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-red"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                            <td className={styles["item-green"]}>A-01-01</td>
-                        </tr>
+                    <table id="rooms">
+                        <tbody>
+                            <tr className={styles["table-header"]}>
+                                <th className={styles["header-item"]}>Tầng 01</th>
+                                <th className={styles["header-item"]}>Tầng 02</th>
+                                <th className={styles["header-item"]}>Tầng 03</th>
+                                <th className={styles["header-item"]}>Tầng 04</th>
+                                <th className={styles["header-item"]}>Tầng 05</th>
+                                <th className={styles["header-item"]}>Tầng 06</th>
+                                <th className={styles["header-item"]}>Tầng 07</th>
+                                <th className={styles["header-item"]}>Tầng 08</th>
+                                <th className={styles["header-item"]}>Tầng 09</th>
+                                <th className={styles["header-item"]}>Tầng 10</th>
+                                <th className={styles["header-item"]}>Tầng 11</th>
+                                <th className={styles["header-item"]}>Tầng 12</th>
+                            </tr>
+                            <tr>
+                                <td className={styles["item-green"]}>A-01-01 
+                                    <div className={styles["popup-detail"]}>
+                                        <div className={styles["title-status"]}>
+                                            <p className={styles["status"]}>Đã bàn giao thành công!</p>
+                                        </div>
+                                        <div className={styles["header-content"]}>
+                                            <div>
+                                                <span className={styles["header"]}>Mã số:</span>
+                                                <span className={styles["content"]}>A-10-08</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Số nhà:</span>
+                                                <span className={styles["content"]}>A-10-08</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Tổng:</span>
+                                                <span className={styles["content"]}>Tầng 10</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Diện tích:</span>
+                                                <span className={styles["content"]}>238 m2</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Đơn giá:</span>
+                                                <span className={styles["content"]}>/m2</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Giá bán/ Cho thuê:</span>
+                                                <span className={styles["content"]}>...</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td className={styles["item-green"]}>A-01-01 
+                                    <div className={styles["popup-detail"]}>
+                                        <div className={styles["title-status"]}>
+                                            <p className={styles["status"]}>Đã bàn giao thành công!</p>
+                                        </div>
+                                        <div className={styles["header-content"]}>
+                                            <div>
+                                                <span className={styles["header"]}>Mã số:</span>
+                                                <span className={styles["content"]}>A-10-08</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Số nhà:</span>
+                                                <span className={styles["content"]}>A-10-08</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Tổng:</span>
+                                                <span className={styles["content"]}>Tầng 10</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Diện tích:</span>
+                                                <span className={styles["content"]}>238 m2</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Đơn giá:</span>
+                                                <span className={styles["content"]}>/m2</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Giá bán/ Cho thuê:</span>
+                                                <span className={styles["content"]}>...</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td className={styles["item-green"]}>A-01-01
+                                    <div className={styles["popup-detail"]}>
+                                        <div className={styles["title-status"]}>
+                                            <p className={styles["status"]}>Đã bàn giao thành công!</p>
+                                        </div>
+                                        <div className={styles["header-content"]}>
+                                            <div>
+                                                <span className={styles["header"]}>Mã số:</span>
+                                                <span className={styles["content"]}>A-10-08</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Số nhà:</span>
+                                                <span className={styles["content"]}>A-10-08</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Tổng:</span>
+                                                <span className={styles["content"]}>Tầng 10</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Diện tích:</span>
+                                                <span className={styles["content"]}>238 m2</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Đơn giá:</span>
+                                                <span className={styles["content"]}>/m2</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Giá bán/ Cho thuê:</span>
+                                                <span className={styles["content"]}>...</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td className={styles["item-green"]}>A-01-01
+                                    <div className={styles["popup-detail"]}>
+                                        <div className={styles["title-status"]}>
+                                            <p className={styles["status"]}>Đã bàn giao thành công!</p>
+                                        </div>
+                                        <div className={styles["header-content"]}>
+                                            <div>
+                                                <span className={styles["header"]}>Mã số:</span>
+                                                <span className={styles["content"]}>A-10-08</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Số nhà:</span>
+                                                <span className={styles["content"]}>A-10-08</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Tổng:</span>
+                                                <span className={styles["content"]}>Tầng 10</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Diện tích:</span>
+                                                <span className={styles["content"]}>238 m2</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Đơn giá:</span>
+                                                <span className={styles["content"]}>/m2</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Giá bán/ Cho thuê:</span>
+                                                <span className={styles["content"]}>...</span>
+                                            </div>
+                                        </div>
+                                    </div>      
+                                </td>
+                                <td className={styles["item-green"]}>A-01-01
+                                    <div className={styles["popup-detail"]}>
+                                        <div className={styles["title-status"]}>
+                                            <p className={styles["status"]}>Đã bàn giao thành công!</p>
+                                        </div>
+                                        <div className={styles["header-content"]}>
+                                            <div>
+                                                <span className={styles["header"]}>Mã số:</span>
+                                                <span className={styles["content"]}>A-10-08</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Số nhà:</span>
+                                                <span className={styles["content"]}>A-10-08</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Tổng:</span>
+                                                <span className={styles["content"]}>Tầng 10</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Diện tích:</span>
+                                                <span className={styles["content"]}>238 m2</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Đơn giá:</span>
+                                                <span className={styles["content"]}>/m2</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Giá bán/ Cho thuê:</span>
+                                                <span className={styles["content"]}>...</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td className={styles["item-green"]}>A-01-01
+                                    <div className={styles["popup-detail"]}>
+                                        <div className={styles["title-status"]}>
+                                            <p className={styles["status"]}>Đã bàn giao thành công!</p>
+                                        </div>
+                                        <div className={styles["header-content"]}>
+                                            <div>
+                                                <span className={styles["header"]}>Mã số:</span>
+                                                <span className={styles["content"]}>A-10-08</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Số nhà:</span>
+                                                <span className={styles["content"]}>A-10-08</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Tổng:</span>
+                                                <span className={styles["content"]}>Tầng 10</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Diện tích:</span>
+                                                <span className={styles["content"]}>238 m2</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Đơn giá:</span>
+                                                <span className={styles["content"]}>/m2</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Giá bán/ Cho thuê:</span>
+                                                <span className={styles["content"]}>...</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td className={styles["item-green"]}>A-01-01
+                                    <div className={styles["popup-detail"]}>
+                                        <div className={styles["title-status"]}>
+                                            <p className={styles["status"]}>Đã bàn giao thành công!</p>
+                                        </div>
+                                        <div className={styles["header-content"]}>
+                                            <div>
+                                                <span className={styles["header"]}>Mã số:</span>
+                                                <span className={styles["content"]}>A-10-08</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Số nhà:</span>
+                                                <span className={styles["content"]}>A-10-08</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Tổng:</span>
+                                                <span className={styles["content"]}>Tầng 10</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Diện tích:</span>
+                                                <span className={styles["content"]}>238 m2</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Đơn giá:</span>
+                                                <span className={styles["content"]}>/m2</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Giá bán/ Cho thuê:</span>
+                                                <span className={styles["content"]}>...</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td className={styles["item-green"]}>A-01-01
+                                    <div className={styles["popup-detail"]}>
+                                        <div className={styles["title-status"]}>
+                                            <p className={styles["status"]}>Đã bàn giao thành công!</p>
+                                        </div>
+                                        <div className={styles["header-content"]}>
+                                            <div>
+                                                <span className={styles["header"]}>Mã số:</span>
+                                                <span className={styles["content"]}>A-10-08</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Số nhà:</span>
+                                                <span className={styles["content"]}>A-10-08</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Tổng:</span>
+                                                <span className={styles["content"]}>Tầng 10</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Diện tích:</span>
+                                                <span className={styles["content"]}>238 m2</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Đơn giá:</span>
+                                                <span className={styles["content"]}>/m2</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Giá bán/ Cho thuê:</span>
+                                                <span className={styles["content"]}>...</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td className={styles["item-green"]}>A-01-01
+                                    <div className={styles["popup-detail"]}>
+                                        <div className={styles["title-status"]}>
+                                            <p className={styles["status"]}>Đã bàn giao thành công!</p>
+                                        </div>
+                                        <div className={styles["header-content"]}>
+                                            <div>
+                                                <span className={styles["header"]}>Mã số:</span>
+                                                <span className={styles["content"]}>A-10-08</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Số nhà:</span>
+                                                <span className={styles["content"]}>A-10-08</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Tổng:</span>
+                                                <span className={styles["content"]}>Tầng 10</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Diện tích:</span>
+                                                <span className={styles["content"]}>238 m2</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Đơn giá:</span>
+                                                <span className={styles["content"]}>/m2</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Giá bán/ Cho thuê:</span>
+                                                <span className={styles["content"]}>...</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td className={styles["item-green"]}>A-01-01
+                                    <div className={styles["popup-detail"]}>
+                                        <div className={styles["title-status"]}>
+                                            <p className={styles["status"]}>Đã bàn giao thành công!</p>
+                                        </div>
+                                        <div className={styles["header-content"]}>
+                                            <div>
+                                                <span className={styles["header"]}>Mã số:</span>
+                                                <span className={styles["content"]}>A-10-08</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Số nhà:</span>
+                                                <span className={styles["content"]}>A-10-08</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Tổng:</span>
+                                                <span className={styles["content"]}>Tầng 10</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Diện tích:</span>
+                                                <span className={styles["content"]}>238 m2</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Đơn giá:</span>
+                                                <span className={styles["content"]}>/m2</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Giá bán/ Cho thuê:</span>
+                                                <span className={styles["content"]}>...</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td className={styles["item-green"]}>A-01-01
+                                    <div className={styles["popup-detail"]}>
+                                        <div className={styles["title-status"]}>
+                                            <p className={styles["status"]}>Đã bàn giao thành công!</p>
+                                        </div>
+                                        <div className={styles["header-content"]}>
+                                            <div>
+                                                <span className={styles["header"]}>Mã số:</span>
+                                                <span className={styles["content"]}>A-10-08</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Số nhà:</span>
+                                                <span className={styles["content"]}>A-10-08</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Tổng:</span>
+                                                <span className={styles["content"]}>Tầng 10</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Diện tích:</span>
+                                                <span className={styles["content"]}>238 m2</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Đơn giá:</span>
+                                                <span className={styles["content"]}>/m2</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Giá bán/ Cho thuê:</span>
+                                                <span className={styles["content"]}>...</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td className={styles["item-green"]}>A-01-01
+                                    <div className={styles["popup-detail"]}>
+                                        <div className={styles["title-status"]}>
+                                            <p className={styles["status"]}>Đã bàn giao thành công!</p>
+                                        </div>
+                                        <div className={styles["header-content"]}>
+                                            <div>
+                                                <span className={styles["header"]}>Mã số:</span>
+                                                <span className={styles["content"]}>A-10-08</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Số nhà:</span>
+                                                <span className={styles["content"]}>A-10-08</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Tổng:</span>
+                                                <span className={styles["content"]}>Tầng 10</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Diện tích:</span>
+                                                <span className={styles["content"]}>238 m2</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Đơn giá:</span>
+                                                <span className={styles["content"]}>/m2</span>
+                                            </div>
+                                            <div>
+                                                <span className={styles["header"]}>Giá bán/ Cho thuê:</span>
+                                                <span className={styles["content"]}>...</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td className={styles["item-green"]}>A-01-01 </td>
+                                <td className={styles["item-green"]}>A-01-01 </td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                            </tr>
+                            <tr>
+                                <td className={styles["item-green"]}>A-01-01 </td>
+                                <td className={styles["item-green"]}>A-01-01 </td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                            </tr>
+                            <tr>
+                                <td className={styles["item-none"]}>A-01-01 </td>
+                                <td className={styles["item-none"]}>A-01-01 </td>
+                                <td className={styles["item-none"]}>A-01-01</td>
+                                <td className={styles["item-none"]}>A-01-01</td>
+                                <td className={styles["item-red"]}>A-01-01</td>
+                                <td className={styles["item-none"]}>A-01-01</td>
+                                <td className={styles["item-none"]}>A-01-01</td>
+                                <td className={styles["item-none"]}>A-01-01</td>
+                                <td className={styles["item-yallow"]}>A-01-01</td>
+                                <td className={styles["item-none"]}>A-01-01</td>
+                                <td className={styles["item-none"]}>A-01-01</td>
+                                <td className={styles["item-red"]}>A-01-01</td>
+                            </tr>
+                            <tr>
+                                <td className={styles["item-green"]}>A-01-01 </td>
+                                <td className={styles["item-green"]}>A-01-01 </td>
+                                <td className={styles["item-yallow"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                            </tr>
+                            <tr>
+                                <td className={styles["item-none"]}>A-01-01 </td>
+                                <td className={styles["item-none"]}>A-01-01 </td>
+                                <td className={styles["item-none"]}>A-01-01</td>
+                                <td className={styles["item-none"]}>A-01-01</td>
+                                <td className={styles["item-red"]}>A-01-01</td>
+                                <td className={styles["item-none"]}>A-01-01</td>
+                                <td className={styles["item-none"]}>A-01-01</td>
+                                <td className={styles["item-none"]}>A-01-01</td>
+                                <td className={styles["item-yallow"]}>A-01-01</td>
+                                <td className={styles["item-none"]}>A-01-01</td>
+                                <td className={styles["item-none"]}>A-01-01</td>
+                                <td className={styles["item-red"]}>A-01-01</td>
+                            </tr>
+                            <tr>
+                                <td className={styles["item-green"]}>A-01-01 </td>
+                                <td className={styles["item-green"]}>A-01-01 </td>
+                                <td className={styles["item-yallow"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-red"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                            </tr>
+                            <tr>
+                                <td className={styles["item-green"]}>A-01-01 </td>
+                                <td className={styles["item-green"]}>A-01-01 </td>
+                                <td className={styles["item-yallow"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-red"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                            </tr>
+                            <tr>
+                                <td className={styles["item-green"]}>A-01-01 </td>
+                                <td className={styles["item-green"]}>A-01-01 </td>
+                                <td className={styles["item-yallow"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-red"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                            </tr>
+                            <tr>
+                                <td className={styles["item-green"]}>A-01-01 </td>
+                                <td className={styles["item-green"]}>A-01-01 </td>
+                                <td className={styles["item-yallow"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-red"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                            </tr>
+                            <tr>
+                                <td className={styles["item-green"]}>A-01-01 </td>
+                                <td className={styles["item-green"]}>A-01-01 </td>
+                                <td className={styles["item-yallow"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-red"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                            </tr>
+                            <tr>
+                                <td className={styles["item-green"]}>A-01-01 </td>
+                                <td className={styles["item-green"]}>A-01-01 </td>
+                                <td className={styles["item-yallow"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-red"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                            </tr>
+                            <tr>
+                                <td className={styles["item-green"]}>A-01-01 </td>
+                                <td className={styles["item-green"]}>A-01-01 </td>
+                                <td className={styles["item-yallow"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-red"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                            </tr>
+                            <tr>
+                                <td className={styles["item-green"]}>A-01-01 </td>
+                                <td className={styles["item-green"]}>A-01-01 </td>
+                                <td className={styles["item-yallow"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-red"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                                <td className={styles["item-green"]}>A-01-01</td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
             </div>

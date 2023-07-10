@@ -313,7 +313,7 @@
   background-color: #fff;
 }
 .header-item{
-  height: 40px;
+  /* height: 40px; */
   width: 112px;
 }
 .item-green{
@@ -565,7 +565,6 @@
   font-style: normal;
   font-weight: 400;
   line-height: 20px;
-
 }
 .form-input-description{
   display: flex;
@@ -588,6 +587,14 @@
   gap: 4px;
   align-self: stretch;
   width: 504px;
+}
+.form-select span{
+  color: var(--dark-invert-color-text-on-top, #FFF);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
 }
 
 
@@ -753,6 +760,50 @@
 .new-card-item {
   width: calc(100% - 12px);
 }
+
+.popup-detail{
+  display: none;
+  position: absolute;
+  z-index: 1111;
+  background-color: #fff;
+  border-radius: 5px;
+}
+.item-green:hover .popup-detail{
+  display: block !important;
+}
+.title-status{
+  padding: 10px 16px;
+}
+.status{
+  padding: 10px 16px;
+  background-color: #23EF5C;
+  border-radius: 10px;
+}
+.header-content{
+  text-align: left;
+  padding-bottom: 15px;
+}
+.header{
+  color: var(--light-invert-color-text-on-top, #121212);
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.24px;
+  padding-right: 10px;
+  padding-left: 15px;
+}
+.content{
+  color: var(--light-invert-color-text-on-top, #121212);
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0.24px;
+}
+
 
 @media only screen and (max-width: 600px) {
   .event_text-title {

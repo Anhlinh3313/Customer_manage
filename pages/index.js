@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import HomePage from "./home"
-
 function Home({}) {
   const [showChild, setShowChild] = useState(false);
 
