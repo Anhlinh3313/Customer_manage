@@ -17,6 +17,8 @@
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@mui/material": "^5.10.6",
+    "@nestjs/platform-socket.io": "^10.0.5",
+    "@nestjs/websockets": "^10.0.5",
     "@react-oauth/google": "^0.7.1",
     "@reduxjs/toolkit": "^1.9.3",
     "antd": "^4.24.8",

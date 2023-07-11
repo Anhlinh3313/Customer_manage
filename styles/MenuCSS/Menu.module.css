@@ -115,15 +115,15 @@
     display: none;
 }
 
-.button{
+.button {
     display: flex;
 }
 
-.div-check-in{
+.div-check-in {
     padding-right: 15px;
 }
 
-.button-check-in{
+.button-check-in {
     border-radius: 100px;
     border: 1px solid var(--light-primary-50, #4671F6);
     color: var(--light-primary-50, #4671F6);
@@ -136,10 +136,10 @@
     font-family: Inter;
     height: 44px;
     width: 171px;
-    padding-right:  15px;
+    padding-right: 15px;
 }
 
-.bottom-login{
+.bottom-login {
     border-radius: 100px;
     background: var(--light-primary-50, #4671F6);
     color: var(--light-primary-50, #fff);
@@ -153,6 +153,55 @@
     height: 44px;
     width: 119px;
 }
+
+.avatar img {
+    width: 40px;
+    height: 40px;
+}
+
+.list-menu {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 12px;
+    top: 65px;
+}
+
+.list-menu ul {
+    padding: 16px 16px 0px 16px;
+}
+
+.list-menu ul li {
+    padding-bottom: 10px;
+}
+
+.list-menu-text-name {
+    padding-left: 10px;
+    color: #000;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.list-menu-text {
+    padding-left: 10px;
+    color: var(--light-invert-color-body-text, #333);
+    text-align: center;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.icon-menu{
+    width: 24px !important;
+    height: 24px !important;
+}
+
+
+
 
 @media screen and (max-width: 600px) {
     .menu-toggle {

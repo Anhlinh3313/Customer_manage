@@ -1,8 +1,26 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import styles from "../../styles/Login.module.css"
+import { useRouter } from "next/router";
+import { UserContext } from "../../app/context/userContext";
 
 function Login() {
     const[isShowEye, setIsShowEye] = useState(true);
+    const { user, setUser } = useContext(UserContext)
+    const router = useRouter();
+
+    const data = [
+       {
+            token: "test_token",
+            fullName: "Văn Phạm Trung Tuyến",
+       }
+    ]
+
+    const login =()=>{
+        localStorage.setItem('user', JSON.stringify(data))
+        setUser(data)
+        router.push(`/home`)
+    }
+
     return (
         <>
             <div className={styles["login"]}>
@@ -29,7 +47,7 @@ function Login() {
                             <p className={styles["changepassword"]}>
                                 <span>Quên mật khẩu?</span>
                             </p>
-                            <p className={styles["buttom-login"]}>
+                            <p className={styles["buttom-login"]} onClick={()=>login()} >
                                 <button>Đăng nhập</button>
                             </p>
                         </div>

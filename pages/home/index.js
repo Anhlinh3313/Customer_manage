@@ -784,14 +784,14 @@ function Home() {
                             <p className={styles["contact-input"]}>
                                 <input className={styles["form-input"]} placeholder="Số điện thoại..."></input>
                             </p>
-                            <p className={styles["contact-input"]}>
+                            <div className={styles["contact-input"]}>
                                 <div className={styles["form-select"]}>
                                     <span>Chọn yêu cầu liên hệ</span>
                                     <span>            
                                         <img className={styles["icon-branch"]} src="./icon_select.png" alt="mail" />
                                     </span>
                                 </div>  
-                            </p>
+                            </div>
                             <p className={styles["contact-input"]}>
                                 <input className={styles["form-input-description"]} placeholder="Nhập thông tin mô tả nếu có"></input>
                             </p>
