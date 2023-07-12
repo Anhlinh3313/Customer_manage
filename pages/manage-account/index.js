@@ -2,6 +2,9 @@ import { useState } from "react";
 import styles from "../../styles/ManageAccount.module.css"
 import Profile from "../../app/project/ManageAccount/Profile";
 import Bill from "../../app/project/ManageAccount/Bill";
+import CarService from "../../app/project/ManageAccount/CarService";
+import DeliveryService from "../../app/project/ManageAccount/DeliveryService";
+import OvertimeService from "../../app/project/ManageAccount/OvertimeService";
 
 function ManageAccount() {
     const [slugMenu, setSlugMenu] = useState("info-account");
@@ -130,16 +133,30 @@ function ManageAccount() {
                 </div>
                 <div className={styles["content"]}>
                     {slugMenu == "info-account" ?
-                        <Profile/>
-                    :
-                        <></>                        
+                            <Profile/>
+                        :
+                            <></>                        
                     }
                     {slugMenu == "bill" ?
-                        <Bill/>
-                    :
-                        <></>                        
+                            <Bill/>
+                        :
+                            <></>                        
                     }
-                  
+                    {slugMenu == "register-service" &&  slugMenuService == "service-car"?
+                            <CarService/>
+                        :
+                            <></>                        
+                    }
+                    {slugMenu == "register-service" &&  slugMenuService == "service-delyverr"?
+                            <DeliveryService/>
+                        :
+                            <></>                        
+                    }
+                     {slugMenu == "register-service" &&  slugMenuService == "service-overtime"?
+                            <OvertimeService/>
+                        :
+                            <></>                        
+                    }
                 </div>
            </div>
         </>
