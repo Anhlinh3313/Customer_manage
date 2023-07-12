@@ -5,6 +5,9 @@ import Bill from "../../app/project/ManageAccount/Bill";
 import CarService from "../../app/project/ManageAccount/CarService";
 import DeliveryService from "../../app/project/ManageAccount/DeliveryService";
 import OvertimeService from "../../app/project/ManageAccount/OvertimeService";
+import RequestSend from "../../app/project/ManageAccount/RequestSend";
+import Chart from "../../app/project/ManageAccount/Chart";
+import MeetingManage from "../../app/project/ManageAccount/Meeting/index";
 
 function ManageAccount() {
     const [slugMenu, setSlugMenu] = useState("info-account");
@@ -65,25 +68,25 @@ function ManageAccount() {
                                 </div>
                                 <div className={styles["manage-info-item"]}>
                                     <div className={slugMenu == "register-service" && isMenuService ? styles["item-menu-check"] : styles["item-menu-un-check"] }>
-                                        <p onClick={()=>onClickMenu("register-service")}>
-                                            <span>
+                                        <div className={styles["register-service-menu"]}  onClick={()=>onClickMenu("register-service")}>
+                                            <div className={styles["icon-menu"]}>
                                                 {
                                                     slugMenu == "register-service" && isMenuService ?
                                                         <img src="/icon_bill_check.png" alt=""/>
                                                     : 
                                                         <img src="/icon_bill_un_check.png" alt=""/>
                                                 }
-                                            </span>
-                                            <span className={styles["item-menu-title"]}>Đăng ký dịch vụ</span>
-                                            <span className={styles["icon-down"]}>
+                                            </div>
+                                            <div className={styles["item-menu-title"]}>Đăng ký dịch vụ</div>
+                                            <div className={styles["icon-down"]}>
                                                 {
                                                     slugMenu == "register-service" && isMenuService ?
                                                         <img src="/arrow_drop_down_check.png" alt=""/>
                                                     : 
                                                         <img src="/arrow_drop_down_un_check.png" alt=""/>
                                                 }
-                                            </span>
-                                        </p>
+                                            </div>
+                                        </div>
                                         {
                                             slugMenu == "register-service" && isMenuService? 
                                             <p className={styles["servive"]}>
@@ -152,8 +155,23 @@ function ManageAccount() {
                         :
                             <></>                        
                     }
-                     {slugMenu == "register-service" &&  slugMenuService == "service-overtime"?
+                    {slugMenu == "register-service" &&  slugMenuService == "service-overtime"?
                             <OvertimeService/>
+                        :
+                            <></>                        
+                    }
+                    {slugMenu == "request-send"?
+                            <RequestSend/>
+                        :
+                            <></>                        
+                    }
+                    {slugMenu == "chart"?
+                            <Chart/>
+                        :
+                            <></>                        
+                    }
+                    {slugMenu == "register-service" &&  slugMenuService == "service-meeting"?
+                            <MeetingManage/>
                         :
                             <></>                        
                     }

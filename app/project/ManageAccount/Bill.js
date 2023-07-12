@@ -14,9 +14,11 @@ const Bill = () => {
                     </button>
                 </div>                       
             </div>
+
             <div className={styles["content-table"]}>
                 <table>
                     <tbody>
+
                         <tr className={styles["table-header"]}>
                             <th className={styles["header-item"]}>Mã hóa đơn</th>
                             <th className={styles["header-item"]}>Kỳ</th>
@@ -26,6 +28,7 @@ const Bill = () => {
                             <th className={styles["header-item"]}>Trạng thái</th>
                             <th className={styles["header-item"]}>Tùy chọn</th>
                         </tr>
+
                         <tr className={styles["table-content"]}>
                             <td className={styles["content-item-code"]}>HD 8665</td>
                             <td className={styles["content-item-period"]}>5</td>
@@ -40,6 +43,7 @@ const Bill = () => {
                                 <span className={styles["detail"]}>Chi tiết</span>
                             </td>
                         </tr>
+                        
                         <tr className={styles["table-content"]}>
                             <td className={styles["content-item-code"]}>HD 8665</td>
                             <td className={styles["content-item-period"]}>5</td>

@@ -9,7 +9,9 @@ const Profile = () => {
                     <button className={styles["button-create"]}>Chỉnh sửa</button>
                 </div>                       
             </div>
+
             <div className={styles["content-container"]}>
+                
                 <div className={styles["container-left"]}>
                     <div className={styles["container-item"]}>
                         <p className={styles["container-title"]}>Họ và tên</p>
@@ -28,6 +30,7 @@ const Profile = () => {
                         <p className={styles["container-content"]}>Vpttuyen@gmail.com</p>
                     </div>
                 </div>
+
                 <div className={styles["container-right"]}>
                     <div className={styles["container-item"]}>
                         <p className={styles["container-title"]}>Địa chỉ</p>

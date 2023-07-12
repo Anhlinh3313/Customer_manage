@@ -12,7 +12,6 @@ const DeliveryService = () => {
 
     return(
         <>
-           
             <div className={styles["content-header"]}>
                 <div className={styles["content-title"]}>Dịch vụ vận chuyển</div>
                 <div className={styles["content-button"]}>
@@ -185,6 +184,7 @@ const DeliveryService = () => {
                         </div>
                     </div>
                 </div>
+
                 <div className={styles["model-container"]}>
                     <div className={styles["item-container"]}>
                         <div className={styles["container-data"]}>
@@ -292,6 +292,7 @@ const DeliveryService = () => {
                                 </table>
                             </div>
                         </div>
+
                         <div className={styles["container-data"]}>
                             <div className={styles["item-data-full-button"]}>
                                 <button className={styles["item-save"]}>Lưu thông tin</button>

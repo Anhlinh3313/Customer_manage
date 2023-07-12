@@ -59,9 +59,11 @@ const CarService = () => {
                     <button className={styles["button-create-green"]}>Đăng ký</button>
                 </div>                       
             </div>
+
             <div className={styles["content-table"]}>
                 <table>
                     <tbody>
+
                         <tr className={styles["table-header"]}>
                             <th className={styles["header-item"]}>Ngày đăng ký</th>
                             <th className={styles["header-item"]}>Hình thức đăng ký</th>
@@ -69,6 +71,7 @@ const CarService = () => {
                             <th className={styles["header-item"]}>Trạng thái</th>
                             <th className={styles["header-item"]}>Tùy chọn</th>
                         </tr>
+
                         <tr className={styles["table-content"]}>
                             <td className={styles["content-item-code"]}>13:47 - 12/04/2023</td>
                             <td className={styles["content-item-period"]}>Đăng ký làm thẻ mới</td>
@@ -85,6 +88,7 @@ const CarService = () => {
                                 </span>
                             </td>
                         </tr>
+
                         <tr className={styles["table-content"]}>
                             <td className={styles["content-item-code"]}>13:47 - 12/04/2023</td>
                             <td className={styles["content-item-period"]}>Đăng ký làm thẻ mới</td>
@@ -104,6 +108,7 @@ const CarService = () => {
                     </tbody>
                 </table>
             </div>
+
             <Modal 
                 open={isModalOpen} 
                 width={1100}
@@ -134,6 +139,7 @@ const CarService = () => {
                         </div>
                     </div>
                 </div>
+
                 <div className={styles["model-container"]}>
                     <div className={styles["item-container"]}>
                         <div className={styles["container-data"]}>
@@ -154,6 +160,7 @@ const CarService = () => {
                                 <input className={styles["input-data"]} placeholder="Nhập tên tài xế..."></input>
                             </div>
                         </div>
+
                         <div className={styles["container-data"]}>
                             <div className={styles["item-data"]}>
                                 <p className={styles["lable-data"]}>Biển xố xe</p>
@@ -169,6 +176,7 @@ const CarService = () => {
                                 <DatePicker defaultValue={dayjs('10:16 01/01/2023', dateFormat)} format={dateFormat} className={styles["date-picker-data"]} suffixIcon={deleteIcon} showTime/>
                             </div>
                         </div>
+
                         <div className={styles["container-data"]}>
                             <div className={styles["item-data-full"]}>
                                 <p className={styles["lable-data"]}>Hình đăng ký xe <span className={styles["lable-data-note"]}>(Lưu ý: Hình phải rõ màu xe)</span></p>
@@ -216,11 +224,13 @@ const CarService = () => {
                                 </Modal>
                             </div>
                         </div>
+
                         <div className={styles["container-data"]}>
                             <div className={styles["item-data-full-button"]}>
                                 <button className={styles["item-data-button"]}>Thêm vào danh sách</button>
                             </div>
                         </div>
+
                         <div className={styles["container-data"]}>
                             <div className={styles["item-data-full"]}>
                                 <p className={styles["lable-data"]}>Danh sách xe đăng ký</p>
@@ -271,6 +281,7 @@ const CarService = () => {
                                 </table>
                             </div>
                         </div>
+                        
                         <div className={styles["container-data"]}>
                             <div className={styles["item-data-full-button"]}>
                                 <button className={styles["item-save"]}>Lưu thông tin</button>
@@ -279,7 +290,6 @@ const CarService = () => {
                     </div>
                 </div>
             </Modal>
-         
         </>
     );
 };
