@@ -1,16 +1,24 @@
+import { DatePicker } from "antd";
 import styles from "../../../styles/ManageAccount.module.css";
+import IconDatepicker from "./Icon/IconDatepicker";
 
 const Bill = () => {
+    const dateFormatCreate = 'HH:mm - DD/MM/YYYY';
+    const deleteIcon = <IconDatepicker />;
+
     return(
         <>
            <div className={styles["content-header"]}>
                 <div className={styles["content-title"]}>Hóa đơn</div>
                 <div className={styles["content-button"]}>
                     <button className={styles["content-button-calendar"]}> 
-                        <p>Chọn từ ngày</p>        
-                        <p className={styles["icon-calendar"]}>
-                            <img src="/icon_calendar.png" alt=""/>
-                        </p>
+                        <DatePicker 
+                        format={dateFormatCreate}
+                        className={styles["date-picker-data"]} 
+                        suffixIcon={deleteIcon} 
+                        placeholder="Chọn ngày"
+                        style={{border:'0px', backgroundColor: '#fff'}}
+                        showTime/>
                     </button>
                 </div>                       
             </div>

@@ -275,13 +275,7 @@
 }
 
 .content-button-calendar {
-    border-radius: 30px;
-    background: var(--dark-invert-color-text-on-top, #FFF);
-    display: flex;
-    width: 231px;
-    padding: 10px 12px 10px 16px;
-    align-items: center;
-    gap: 12px;
+
 }
 
 .content-button-calendar p {
@@ -449,14 +443,8 @@
 }
 
 .content-item-action-car {
-    color: #000;
-    font-family: Roboto;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 20px;
-    width: 20%;
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 .status-success {
