@@ -3,6 +3,7 @@ import styles from "../../styles/RegisterCheckIn.module.css"
 
 function RegisterCheckIn() {
     const[isShowEye, setIsShowEye] = useState(true);
+
     return (
         <>
         <div className={styles["login"]}>
@@ -12,14 +13,13 @@ function RegisterCheckIn() {
                     <p>Đăng ký check in</p>
                     <p>Xin mời bạn nhập thông tin checkin</p>
                     <div className={styles["form-input"]}>
-                        <p className={styles["contact-input"]}>
+                        <div className={styles["contact-input"]}>
                             <div className={styles["form-select"]}>
-                                <span>Chọn yêu cầu liên hệ</span>
-                                <span>            
-                                    <img className={styles["icon-branch"]} src="./icon_select.png" alt="mail" />
-                                </span>
+                                <select className={styles["select-data-register"]}>
+                                    <option className={styles["select-item"]} value="0">Chọn mặt bằng</option>
+                                </select>
                             </div>  
-                        </p>
+                        </div>
                         <p className={styles["title-input"]}>
                             <span>Thông tin chủ hộ</span>
                         </p>
@@ -38,17 +38,16 @@ function RegisterCheckIn() {
                         <p className={styles["input"]}>
                             <input className={styles["input-username"]} placeholder="Số điện thoại..."></input>
                         </p>
-                        <p className={styles["input-form"]}>
+                        <div className={styles["input-form"]}>
                             <div>
                                 <input className={styles["input-username"]} placeholder="Số điện thoại..."></input>
                             </div>
                             <div className={styles["form-select"]}>
-                                <span>Mối quan hệ với chủ hộ</span>
-                                <span>            
-                                    <img className={styles["icon-branch"]} src="./icon_select.png" alt="mail" />
-                                </span>
+                                <select className={styles["select-data-register"]}>
+                                    <option className={styles["select-item"]} value="0">Chọn mặt bằng</option>
+                                </select>
                             </div>
-                        </p>
+                        </div>
                         <p className={styles["input"]}>
                             <input className={styles["input-username"]} placeholder="Giấy tờ tùy thân (Căn cước, Visa, GOLX, CMT)"></input>
                         </p>

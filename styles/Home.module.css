@@ -876,3 +876,14 @@
   }
 
 }
+
+.select-data-home{
+  background: none;
+  color: var(--dark-invert-color-text-on-top, #FFF);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  width: 100%;
+}

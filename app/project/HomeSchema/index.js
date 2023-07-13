@@ -23,11 +23,11 @@ const HomeSchema = (props) => {
       <div>
         <Head>
           <title>
-            dong doi{" "}
+            khách hàng DIP{" "}
           </title>
           <meta
             name="description"
-            content="dong doi"
+            content="khách hàng DIP"
           />
           <link rel="icon" href="/logo.png" />
           <link
@@ -36,11 +36,11 @@ const HomeSchema = (props) => {
           />
           <meta
             name="keywords"
-            content="dong doi"
+            content="khách hàng DIP"
           />
           <meta
             name="description"
-            content="dong doi"
+            content="khách hàng DIP"
           ></meta>
           <meta
             name="COPYRIGHT"
@@ -51,7 +51,7 @@ const HomeSchema = (props) => {
           <meta name="robots" content="index,follow,noydir,noodp"></meta>
           <meta
             property="og:description"
-            content="dong doi"
+            content="khách hàng DIP"
           ></meta>
           <meta
             property="og:site_name"
@@ -63,7 +63,7 @@ const HomeSchema = (props) => {
           ></meta>
           <meta
             property="og:title"
-            content="dong doi"
+            content="khách hàng DIP"
           ></meta>
           <meta
             name="robots"

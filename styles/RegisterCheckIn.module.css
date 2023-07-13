@@ -38,6 +38,7 @@
 .form-input{
   padding-top: 16px;
 }
+
 .input-username{
   padding: 10px 12px 10px 16px;
   justify-content: space-between;
@@ -117,4 +118,16 @@
   border-radius: 16px;
   background: rgba(0, 0, 0, 0.05);
   width: 100%;
+}
+
+.select-data-register{
+  background: none;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+}
+.input-form{
+  padding-bottom: 10px;
 }

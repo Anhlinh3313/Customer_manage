@@ -786,10 +786,9 @@ function Home() {
                             </p>
                             <div className={styles["contact-input"]}>
                                 <div className={styles["form-select"]}>
-                                    <span>Chọn yêu cầu liên hệ</span>
-                                    <span>            
-                                        <img className={styles["icon-branch"]} src="./icon_select.png" alt="mail" />
-                                    </span>
+                                    <select className={styles["select-data-home"]}>
+                                        <option className={styles["select-item"]} value="0">Chọn dịch vụ</option>
+                                    </select>
                                 </div>  
                             </div>
                             <p className={styles["contact-input"]}>

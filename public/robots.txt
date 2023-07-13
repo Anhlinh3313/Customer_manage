@@ -1,7 +1,7 @@
 # *
 User-agent: *
 Disallow: /404
-Disallow: admin.dongdoi.com
+Disallow: customer-manage-dip.com
 Disallow: /readme.html
 
 # *
@@ -9,8 +9,8 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://dongdoi.com
+Host: https://customer-manage-dip.com
 
 # Sitemaps
-Sitemap: https://dongdoi.com/sitemap.xml
-Sitemap: https://dongdoi.com/post-sitemap.xml
+Sitemap: https://customer-manage-dip.com/sitemap.xml
+Sitemap: https://customer-manage-dip.com/post-sitemap.xml
