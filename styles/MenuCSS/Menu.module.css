@@ -173,6 +173,7 @@
 
 .list-menu ul li {
     padding-bottom: 10px;
+    display: flex;
 }
 
 .list-menu-text-name {
@@ -200,9 +201,6 @@
     width: 24px !important;
     height: 24px !important;
 }
-
-
-
 
 @media screen and (max-width: 600px) {
     /* .menu-toggle {

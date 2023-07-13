@@ -38,7 +38,7 @@ const Bill = () => {
                             <td className={styles["content-item-status"]}>
                                 <span className={styles["status-erro"]}>Chưa thanh toán</span>
                             </td>
-                            <td className={styles["content-item-action"]}>
+                            <td className={styles["content-item-action-car"]}>
                                 <span className={styles["download"]}>Tải xuống</span>
                                 <span className={styles["detail"]}>Chi tiết</span>
                             </td>
@@ -53,7 +53,7 @@ const Bill = () => {
                             <td className={styles["content-item-status"]}>
                                 <span className={styles["status-success"]}>Hoàn thành</span>
                             </td>
-                            <td className={styles["content-item-action"]}>
+                            <td className={styles["content-item-action-car"]}>
                                 <span className={styles["download"]}>Tải xuống</span>
                                 <span className={styles["detail"]}>Chi tiết</span>
                             </td>

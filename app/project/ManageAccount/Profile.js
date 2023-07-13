@@ -6,7 +6,9 @@ const Profile = () => {
             <div className={styles["content-header"]}>
                 <div className={styles["content-title"]}>Thông tin của tôi</div>
                 <div className={styles["content-button"]}>
-                    <button className={styles["button-create"]}>Chỉnh sửa</button>
+                    <button className={styles["button-create"]}>
+                        <span className={styles["button-create-edit"]}>Chỉnh sửa</span>
+                    </button>
                 </div>                       
             </div>
 

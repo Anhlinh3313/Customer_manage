@@ -25,6 +25,7 @@
 .logo img{
   width: 70%;
   height: 76px;
+  display: inline-block;
 }
 .form{
   padding: 30px;

@@ -67,7 +67,7 @@ function ManageAccount() {
                                     </div>
                                 </div>
                                 <div className={styles["manage-info-item"]}>
-                                    <div className={slugMenu == "register-service" && isMenuService ? styles["item-menu-check"] : styles["item-menu-un-check"] }>
+                                    <div className={slugMenu == "register-service" && isMenuService ? styles["item-menu-check-parent"] : styles["item-menu-un-check-parent"] }>
                                         <div className={styles["register-service-menu"]}  onClick={()=>onClickMenu("register-service")}>
                                             <div className={styles["icon-menu"]}>
                                                 {

@@ -36,7 +36,7 @@ const DeliveryService = () => {
                             <td className={styles["content-item-status"]}>
                                 <span className={styles["status-erro"]}>Chưa duyệt</span>
                             </td>
-                            <td className={styles["content-item-action"]}>
+                            <td className={styles["content-item-action-car"]}>
                                 <span className={styles["icon-detail"]} onClick={()=>setIsModalOpen(!isModalOpen)}>
                                     <img src="/Icon_eye.png" alt="eye"/>
                                 </span>
@@ -52,7 +52,7 @@ const DeliveryService = () => {
                             <td className={styles["content-item-status"]}>
                                 <span className={styles["status-success"]}>Đã duyệt</span>
                             </td>
-                            <td className={styles["content-item-action"]}>
+                            <td className={styles["content-item-action-car"]}>
                                 <span className={styles["icon-detail"]} onClick={()=>setIsModalOpen(!isModalOpen)}>
                                     <img src="/Icon_eye.png" alt="eye"/>
                                 </span>
@@ -127,7 +127,7 @@ const DeliveryService = () => {
                                             <td className={styles["content-item-period"]}>60kg</td>
                                             <td className={styles["content-item-month"]}>1</td>
                                             <td className={styles["content-item-year"]}>---</td>
-                                            <td className={styles["content-item-action"]}>
+                                            <td className={styles["content-item-action-car"]}>
                                                 <span className={styles["icon-detail"]}>
                                                     <img src="/icon_tb_edit.png" alt="eye"/>
                                                 </span>
@@ -141,7 +141,7 @@ const DeliveryService = () => {
                                             <td className={styles["content-item-period"]}>60kg</td>
                                             <td className={styles["content-item-month"]}>1</td>
                                             <td className={styles["content-item-year"]}>---</td>
-                                            <td className={styles["content-item-action"]}>
+                                            <td className={styles["content-item-action-car"]}>
                                                 <span className={styles["icon-detail"]}>
                                                     <img src="/icon_tb_edit.png" alt="eye"/>
                                                 </span>
@@ -156,7 +156,9 @@ const DeliveryService = () => {
                         </div>
                         <div className={styles["container-data"]}>
                             <div className={styles["item-data-full-button"]}>
-                                <button className={styles["item-save"]}>Chỉnh sửa</button>
+                                <button className={styles["item-save"]}>
+                                    <span className={styles["save-text"]}>Chỉnh sửa</span>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -265,7 +267,7 @@ const DeliveryService = () => {
                                             <td className={styles["content-item-period"]}>60kg</td>
                                             <td className={styles["content-item-month"]}>1</td>
                                             <td className={styles["content-item-year"]}>---</td>
-                                            <td className={styles["content-item-action"]}>
+                                            <td className={styles["content-item-action-car"]}>
                                                 <span className={styles["icon-detail"]}>
                                                     <img src="/icon_tb_edit.png" alt="eye"/>
                                                 </span>
@@ -279,7 +281,7 @@ const DeliveryService = () => {
                                             <td className={styles["content-item-period"]}>60kg</td>
                                             <td className={styles["content-item-month"]}>1</td>
                                             <td className={styles["content-item-year"]}>---</td>
-                                            <td className={styles["content-item-action"]}>
+                                            <td className={styles["content-item-action-car"]}>
                                                 <span className={styles["icon-detail"]}>
                                                     <img src="/icon_tb_edit.png" alt="eye"/>
                                                 </span>
@@ -295,7 +297,9 @@ const DeliveryService = () => {
 
                         <div className={styles["container-data"]}>
                             <div className={styles["item-data-full-button"]}>
-                                <button className={styles["item-save"]}>Lưu thông tin</button>
+                                <button className={styles["item-save"]}>
+                                    <span className={styles["save-text"]}>Lưu thông tin</span>
+                                </button>
                             </div>
                         </div>
                     </div>

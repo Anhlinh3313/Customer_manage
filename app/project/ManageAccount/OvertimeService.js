@@ -36,7 +36,7 @@ const OvertimeService = () => {
                             <td className={styles["content-item-status"]}>
                                 <span className={styles["status-erro"]}>Chưa duyệt</span>
                             </td>
-                            <td className={styles["content-item-action"]}>
+                            <td className={styles["content-item-action-car"]}>
                                 <span className={styles["icon-detail"]} onClick={()=>setIsModalOpen(!isModalOpen)}>
                                     <img src="/Icon_eye.png" alt="eye"/>
                                 </span>
@@ -53,7 +53,7 @@ const OvertimeService = () => {
                             <td className={styles["content-item-status"]}>
                                 <span className={styles["status-success"]}>Đã duyệt</span>
                             </td>
-                            <td className={styles["content-item-action"]}>
+                            <td className={styles["content-item-action-car"]}>
                                 <span className={styles["icon-detail"]} onClick={()=>setIsModalOpen(!isModalOpen)}>
                                     <img src="/Icon_eye.png" alt="eye"/>
                                 </span>
@@ -81,7 +81,7 @@ const OvertimeService = () => {
                         <div className={styles["model-title"]}>
                             <div className={styles["model-title-text"]}>Đăng ký dịch vụ làm thêm giờ</div>
                         </div>
-                        <div className={styles["model-close"]} onClick={()=>setIsModalOpenCreate(!isModalOpen)}>
+                        <div className={styles["model-close"]} onClick={()=>setIsModalOpen(!isModalOpen)}>
                             <img src="/icon_close.png" alt="icon close"/>
                             <span>Đóng</span>
                         </div>
@@ -151,7 +151,9 @@ const OvertimeService = () => {
 
                         <div className={styles["container-data"]}>
                             <div className={styles["item-data-full-button"]}>
-                                <button className={styles["item-save"]}>Lưu thông tin</button>
+                                <button className={styles["item-save"]}>
+                                    <span className={styles["save-text"]}>Lưu thông tin</span>
+                                </button>
                             </div>
                         </div>
                     </div>

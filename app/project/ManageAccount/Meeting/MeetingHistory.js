@@ -39,7 +39,7 @@ const MeetingHistory = ({onchangeBack}) => {
                             <td className={styles["content-item-status"]}>
                                 <span className={styles["status-erro"]}>Chưa duyệt</span>
                             </td>
-                            <td className={styles["content-item-action"]}>
+                            <td className={styles["content-item-action-car"]}>
                                 <span className={styles["icon-detail"]} onClick={()=>setIsModalOpen(!isModalOpen)}>
                                     <img src="/Icon_eye.png" alt="eye"/>
                                 </span>
@@ -56,7 +56,7 @@ const MeetingHistory = ({onchangeBack}) => {
                             <td className={styles["content-item-status"]}>
                                 <span className={styles["status-success"]}>Đã duyệt</span>
                             </td>
-                            <td className={styles["content-item-action"]}>
+                            <td className={styles["content-item-action-car"]}>
                                 <span className={styles["icon-detail"]} onClick={()=>setIsModalOpen(!isModalOpen)}>
                                     <img src="/Icon_eye.png" alt="eye"/>
                                 </span>

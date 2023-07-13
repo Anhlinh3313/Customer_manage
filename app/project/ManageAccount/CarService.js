@@ -74,12 +74,12 @@ const CarService = () => {
 
                         <tr className={styles["table-content"]}>
                             <td className={styles["content-item-code"]}>13:47 - 12/04/2023</td>
-                            <td className={styles["content-item-period"]}>Đăng ký làm thẻ mới</td>
+                            <td className={styles["content-item-period-car"]}>Đăng ký làm thẻ mới</td>
                             <td className={styles["content-item-month"]}>8</td>
                             <td className={styles["content-item-status"]}>
                                 <span className={styles["status-erro"]}>Chưa duyệt</span>
                             </td>
-                            <td className={styles["content-item-action"]}>
+                            <td className={styles["content-item-action-car"]}>
                                 <span className={styles["icon-detail"]} onClick={()=>setIsModalOpen(!isModalOpen)}>
                                     <img src="/Icon_eye.png" alt="eye"/>
                                 </span>
@@ -91,12 +91,12 @@ const CarService = () => {
 
                         <tr className={styles["table-content"]}>
                             <td className={styles["content-item-code"]}>13:47 - 12/04/2023</td>
-                            <td className={styles["content-item-period"]}>Đăng ký làm thẻ mới</td>
-                            <td className={styles["content-item-month"]}>8</td>
-                            <td className={styles["content-item-status"]}>
+                            <td className={styles["content-item-period-car"]}>Đăng ký làm thẻ mới</td>
+                            <td className={styles["content-item-month-car"]}>8</td>
+                            <td className={styles["content-item-status-car"]}>
                                 <span className={styles["status-success"]}>Đã duyệt</span>
                             </td>
-                            <td className={styles["content-item-action"]}>
+                            <td className={styles["content-item-action-car"]}>
                                 <span className={styles["icon-detail"]} onClick={()=>setIsModalOpen(!isModalOpen)}>
                                     <img src="/Icon_eye.png" alt="eye"/>
                                 </span>
@@ -252,7 +252,7 @@ const CarService = () => {
                                             <td className={styles["content-item-year"]}>Trung Tuyến</td>
                                             <td className={styles["content-item-debt"]}>Trung Tuyến</td>
                                             <td className={styles["content-item-debt"]}>10:00 - 12/04/2023</td>
-                                            <td className={styles["content-item-action"]}>
+                                            <td className={styles["content-item-action-car"]}>
                                                 <span className={styles["icon-detail"]}>
                                                     <img src="/icon_tb_edit.png" alt="eye"/>
                                                 </span>
@@ -268,7 +268,7 @@ const CarService = () => {
                                             <td className={styles["content-item-year"]}>Trung Tuyến</td>
                                             <td className={styles["content-item-debt"]}>Trung Tuyến</td>
                                             <td className={styles["content-item-debt"]}>10:00 - 12/04/2023</td>
-                                            <td className={styles["content-item-action"]}>
+                                            <td className={styles["content-item-action-car"]}>
                                                 <span className={styles["icon-detail"]}>
                                                     <img src="/icon_tb_edit.png" alt="eye"/>
                                                 </span>
@@ -284,7 +284,9 @@ const CarService = () => {
                         
                         <div className={styles["container-data"]}>
                             <div className={styles["item-data-full-button"]}>
-                                <button className={styles["item-save"]}>Lưu thông tin</button>
+                                <button className={styles["item-save"]}>
+                                    <span className={styles["save-text"]}>Lưu thông tin</span>
+                                </button>
                             </div>
                         </div>
                     </div>
