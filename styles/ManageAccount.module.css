@@ -201,6 +201,7 @@
     font-style: normal;
     font-weight: 600;
     line-height: 28px;
+    display: flex;
 }
 
 .button-create {
@@ -569,6 +570,7 @@
     width: 10%;
     text-align: right;
     height: 35px;
+    display: flex;
 }
 
 .model-close img {
@@ -845,6 +847,8 @@
 .room-img-item {
     padding-top: 10px;
     text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 .room-img-item span {
