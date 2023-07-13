@@ -8,8 +8,9 @@
   padding-bottom: 30px;
 }
 .footer-logo{
-  width: 151px;
+  width: 20%;
   height: 55px;
+  display: initial;
 }
 .menu{
   padding-top: 16px;
@@ -81,6 +82,10 @@
 .footer-list-icon{
   width: 20%;
   padding-top: 20px;
+  text-align: center;
+}
+.footer-list-icon span img{
+  display: inline-block;
 }
 .footer-icon-right{
   width: 40%;
