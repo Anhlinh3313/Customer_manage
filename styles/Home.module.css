@@ -392,6 +392,7 @@
 
 .new-left-time {
   padding: 0px 16px;
+  display: flex;
 }
 
 .new-left-time span {
@@ -400,7 +401,7 @@
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 28px;
   padding-left: 8px;
 }
 
