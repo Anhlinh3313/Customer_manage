@@ -34,6 +34,10 @@
   display: flex;
 }
 
+.time{
+  display: flex;
+}
+
 .time span {
   color: var(--light-invert-color-text-on-top, #121212);
   font-family: Inter;
