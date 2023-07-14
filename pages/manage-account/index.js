@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "../../styles/ManageAccount.module.css"
-import Profile from "../../app/project/ManageAccount/Profile";
+import Profile from "../../app/project/ManageAccount/Profile/Profile";
 import Bill from "../../app/project/ManageAccount/Bill";
 import CarService from "../../app/project/ManageAccount/CarService";
 import DeliveryService from "../../app/project/ManageAccount/DeliveryService";

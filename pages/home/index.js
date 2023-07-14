@@ -4,7 +4,7 @@ function Home() {
     return (
         <>
             <div className={styles["banner"]}>
-                <img src="./banner.png" alt="Banner" />
+                <img src="./img_bg_home.png" alt="Banner" />
             </div>
             <div className={styles["banner_sider"]}>
                 <div className={styles["banner_sider_connent"]}>

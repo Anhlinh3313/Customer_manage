@@ -78,17 +78,17 @@
 .menu_bottom_item {
     display: block;
     padding: 19px 5px 12px 5px;
-    color: #fff;
+    color: #000;
     position: relative;
     font-family: Inter;
-    font-size: 16px;
+    font-size: 19px;
     font-style: normal;
     font-weight: 400;
     line-height: 20px;
 }
 
 .menu_bottom_item_active {
-    color: #DE2027;
+    color: #2461D5;
 }
 
 .menu-toggle {
@@ -125,7 +125,7 @@
 
 .button-check-in {
     border-radius: 100px;
-    border: 1px solid var(--light-primary-50, #4671F6);
+    background: #F4F7FD;
     color: var(--light-primary-50, #4671F6);
     font-size: 16px;
     font-style: normal;
