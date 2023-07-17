@@ -1,4 +1,4 @@
-import { Calendar, DatePicker, Modal, Upload } from "antd";
+import { Calendar, DatePicker, Modal, Select, Upload } from "antd";
 import styles from "../../../styles/ManageAccount.module.css";
 import IconDatepicker from "./Icon/IconDatepicker";
 import dayjs from 'dayjs';
@@ -49,6 +49,10 @@ const CarService = () => {
             <span className={styles["buttom-upload-text"]}>Thêm ảnh</span>
         </div>
     );
+
+    const handleChangeCarType = (value) => {
+        console.log(`selected ${value}`);
+      };
 
     return(
         <>
@@ -145,11 +149,20 @@ const CarService = () => {
                         <div className={styles["container-data"]}>
                             <div className={styles["item-data"]}>
                                 <p className={styles["lable-data"]}>Loại xe</p>
-                                <select className={styles["select-data"]}>
-                                    <option className={styles["select-item"]} value="0">Đăng ký thẻ xe</option>
-                                    <option className={styles["select-item"]} value="1">Đăng ký gửi qua đêm</option>
-                                    <option className={styles["select-item"]} value="2">Đăng ký làm lại thẻ xe</option>
-                                </select>
+                                <div className={styles["form-select-home"]}>
+                                    <Select
+                                        defaultValue="Loại xe"
+                                        style={{ width: '100%', textAlign: 'left'}}
+                                        onChange={handleChangeCarType}
+                                        bordered={false}
+                                        options={[
+                                            { value: 'jack', label: 'Đăng ký thẻ xe' },
+                                            { value: 'lucy', label: 'Đăng ký gửi qua đêm' },
+                                            { value: 'Yiminghe', label: 'Đăng ký làm lại thẻ xe' },
+                                        ]}
+                                    />
+                                </div>
+                               
                             </div>
                             <div className={styles["item-data"]}>
                                 <p className={styles["lable-data"]}>Tên chủ xe</p>

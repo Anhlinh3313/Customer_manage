@@ -2063,3 +2063,7 @@ img {
     padding: 10px;
   }
 }
+
+.ant-select-arrow { 
+  color: #000 !important;
+}

@@ -22,7 +22,7 @@
 }
 
 .header-title {
-    width: 50%;
+    width: 90%;
     text-align: left;
 }
 
@@ -36,8 +36,7 @@
 }
 
 .header-img {
-    width: 50%;
-    text-align: right;
+    width: 10%;
 }
 
 .header-img img {
@@ -340,7 +339,6 @@
     font-style: normal;
     font-weight: 400;
     line-height: 20px;
-    width: 20%;
     text-align: center;
 }
 
@@ -351,7 +349,6 @@
     font-style: normal;
     font-weight: 400;
     line-height: 20px;
-    width: 10%;
     text-align: center;
 }
 
@@ -362,7 +359,6 @@
     font-style: normal;
     font-weight: 400;
     line-height: 20px;
-    width: 20%;
     text-align: center;
 }
 
@@ -373,7 +369,6 @@
     font-style: normal;
     font-weight: 400;
     line-height: 20px;
-    width: 10%;
     text-align: center;
 }
 
@@ -383,7 +378,6 @@
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
-    line-height: 20px;
     width: 20%;
     text-align: center;
 }
@@ -395,7 +389,6 @@
     font-style: normal;
     font-weight: 400;
     line-height: 20px;
-    width: 10%;
     text-align: center;
 }
 
@@ -406,7 +399,6 @@
     font-style: normal;
     font-weight: 400;
     line-height: 20px;
-    width: 10%;
     text-align: center;
 }
 
@@ -417,7 +409,6 @@
     font-style: normal;
     font-weight: 400;
     line-height: 20px;
-    width: 15%;
     text-align: center;
 }
 
@@ -659,7 +650,7 @@
 .date-picker-data {
     border-radius: 30px;
     background: var(--light-invert-color-devider, #F4F4F4);
-    padding: 8px 16px;
+    padding: 3px 16px;
     width: 80%;
 }
 
@@ -939,4 +930,11 @@
     line-height: 20px; /* 125% */
     letter-spacing: 0.24px;
     text-transform: capitalize;
+}
+
+.form-select-home{
+    background: var(--light-invert-color-devider, #F4F4F4);
+    border-radius: 30px;
+    padding: 3px 16px;
+    width: 80%;
 }

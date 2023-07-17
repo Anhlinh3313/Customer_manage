@@ -1,4 +1,4 @@
-import { DatePicker, Modal } from "antd";
+import { DatePicker, Modal, Select } from "antd";
 import styles from "../../../styles/ManageAccount.module.css";
 import IconDatepicker from "./Icon/IconDatepicker";
 import { useState } from "react";
@@ -8,6 +8,10 @@ const OvertimeService = () => {
     const [isModalOpenCreate, setIsModalOpenCreate] = useState(false);
     const deleteIcon = <IconDatepicker />;
     const dateFormatCreate = 'HH:mm - DD/MM/YYYY';
+
+    const handleChange = (value) => {
+        console.log(`selected ${value}`);
+      };
 
     return(
         <>
@@ -93,32 +97,68 @@ const OvertimeService = () => {
                         <div className={styles["container-data"]}>
                             <div className={styles["item-data"]}>
                                 <p className={styles["lable-data"]}>Khối nhà <span className={styles["compulsory"]}>*</span></p>
-                                <select className={styles["select-data"]}>
-                                    <option className={styles["select-item"]} value="0">Chọn khối nhà</option>
-                                </select>
+                                <div className={styles["form-select-home"]}>
+                                    <Select
+                                        defaultValue="Chọn khối nhà"
+                                        style={{ width: '100%', textAlign: 'left'}}
+                                        onChange={handleChange}
+                                        bordered={false}
+                                        options={[
+                                            { value: 'jack', label: 'Khối nhà A' },
+                                            { value: 'lucy', label: 'Khối nhà B' },
+                                        ]}
+                                    />
+                                </div> 
                             </div>
 
                             <div className={styles["item-data"]}>
                                 <p className={styles["lable-data"]}>Tầng <span className={styles["compulsory"]}>*</span></p>
-                                <select className={styles["select-data"]}>
-                                    <option className={styles["select-item"]} value="0">Chọn tầng</option>
-                                </select>
+                                <div className={styles["form-select-home"]}>
+                                    <Select
+                                        defaultValue="Chọn tầng"
+                                        style={{ width: '100%', textAlign: 'left'}}
+                                        onChange={handleChange}
+                                        bordered={false}
+                                        options={[
+                                            { value: 'jack', label: 'Tầng A' },
+                                            { value: 'lucy', label: 'Tầng B' },
+                                        ]}
+                                    />
+                                </div> 
                             </div>
 
                             <div className={styles["item-data"]}>
                                 <p className={styles["lable-data"]}>Mặt bằng <span className={styles["compulsory"]}>*</span></p>
-                                <select className={styles["select-data"]}>
-                                    <option className={styles["select-item"]} value="0">Chọn mặt bằng</option>
-                                </select>
+                                <div className={styles["form-select-home"]}>
+                                    <Select
+                                        defaultValue="Chọn mặt bằng"
+                                        style={{ width: '100%', textAlign: 'left'}}
+                                        onChange={handleChange}
+                                        bordered={false}
+                                        options={[
+                                            { value: 'jack', label: 'Mặt bằng A' },
+                                            { value: 'lucy', label: 'Mặt bằng B' },
+                                        ]}
+                                    />
+                                </div> 
                             </div>
                         </div>
 
                         <div className={styles["container-data"]}>
                             <div className={styles["item-data"]}>
                                 <p className={styles["lable-data"]}>Dịch vụ làm thêm giờ <span className={styles["compulsory"]}>*</span></p>
-                                <select className={styles["select-data"]}>
-                                    <option className={styles["select-item"]} value="0">Chọn dịch vụ</option>
-                                </select>
+                                <div className={styles["form-select-home"]}>
+                                    <Select
+                                        defaultValue="Chọn dịch vụ"
+                                        style={{ width: '100%', textAlign: 'left'}}
+                                        onChange={handleChange}
+                                        bordered={false}
+                                        options={[
+                                            { value: 'jack', label: 'Dịch vụ A' },
+                                            { value: 'lucy', label: 'Dịch vụ B' },
+                                        ]}
+                                    />
+                                </div> 
                             </div>
 
                             <div className={styles["item-data"]}>

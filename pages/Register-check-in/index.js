@@ -1,8 +1,12 @@
 import { useState } from "react";
 import styles from "../../styles/RegisterCheckIn.module.css"
+import { Select } from "antd";
 
 function RegisterCheckIn() {
     const[isShowEye, setIsShowEye] = useState(true);
+    const handleChange = (value) => {
+        console.log(`selected ${value}`);
+      };
 
     return (
         <>
@@ -15,9 +19,17 @@ function RegisterCheckIn() {
                     <div className={styles["form-input"]}>
                         <div className={styles["contact-input"]}>
                             <div className={styles["form-select"]}>
-                                <select className={styles["select-data-register"]}>
-                                    <option className={styles["select-item"]} value="0">Chọn mặt bằng</option>
-                                </select>
+                                <Select
+                                    defaultValue="Chọn mặt bằng"
+                                    style={{ width: '100%', textAlign: 'left', color: '#fff'}}
+                                    onChange={handleChange}
+                                    bordered={false}
+                                    options={[
+                                        { value: 'jack', label: 'Building1' },
+                                        { value: 'lucy', label: 'Building2' },
+                                        { value: 'Yiminghe', label: 'Building3' },
+                                    ]}
+                                />
                             </div>  
                         </div>
                         <p className={styles["title-input"]}>
@@ -43,9 +55,17 @@ function RegisterCheckIn() {
                                 <input className={styles["input-username"]} placeholder="Số điện thoại..."></input>
                             </div>
                             <div className={styles["form-select"]}>
-                                <select className={styles["select-data-register"]}>
-                                    <option className={styles["select-item"]} value="0">Chọn mặt bằng</option>
-                                </select>
+                                <Select
+                                    defaultValue="Mối quan hệ với chủ hộ"
+                                    style={{ width: '100%', textAlign: 'left', color: '#fff'}}
+                                    onChange={handleChange}
+                                    bordered={false}
+                                    options={[
+                                        { value: 'jack', label: 'Cha' },
+                                        { value: 'lucy', label: 'Mẹ' },
+                                        { value: 'Yiminghe', label: 'Anh/Chị' },
+                                    ]}
+                                />
                             </div>
                         </div>
                         <p className={styles["input"]}>

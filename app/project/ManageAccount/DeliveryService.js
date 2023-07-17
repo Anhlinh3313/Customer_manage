@@ -1,4 +1,4 @@
-import { DatePicker, Modal } from "antd";
+import { DatePicker, Modal, Select } from "antd";
 import styles from "../../../styles/ManageAccount.module.css";
 import IconDatepicker from "./Icon/IconDatepicker";
 import { useState } from "react";
@@ -9,6 +9,10 @@ const DeliveryService = () => {
     const deleteIcon = <IconDatepicker />;
     const dateFormatEdit = 'HH:mm - DD/MM/YYYY';
     const dateFormatCreate = 'HH:mm - DD/MM/YYYY';
+
+    const handleChange = (value) => {
+        console.log(`selected ${value}`);
+      };
 
     return(
         <>
@@ -100,9 +104,18 @@ const DeliveryService = () => {
 
                             <div className={styles["item-data"]}>
                                 <p className={styles["lable-data"]}>Nhu cầu vận chuyển <span className={styles["compulsory"]}>*</span></p>
-                                <select className={styles["select-data"]}>
-                                    <option className={styles["select-item"]} value="0">Vận chuyển lên phòng</option>
-                                </select>
+                                <div className={styles["form-select-home"]}>
+                                    <Select
+                                        defaultValue="Vận chuyển lên phòng"
+                                        style={{ width: '100%', textAlign: 'left'}}
+                                        onChange={handleChange}
+                                        bordered={false}
+                                        options={[
+                                            { value: 'jack', label: 'Vận chuyển lên phòng' },
+                                            { value: 'lucy', label: 'Vận chuyển xuống phòng' },
+                                        ]}
+                                    />
+                                </div> 
                             </div>
                 
                             <div className={styles["item-data"]}>
@@ -201,9 +214,18 @@ const DeliveryService = () => {
 
                             <div className={styles["item-data"]}>
                                 <p className={styles["lable-data"]}>Nhu cầu vận chuyển <span className={styles["compulsory"]}>*</span></p>
-                                <select className={styles["select-data"]}>
-                                    <option className={styles["select-item"]} value="0">Vận chuyển lên phòng</option>
-                                </select>
+                                <div className={styles["form-select-home"]}>
+                                    <Select
+                                        defaultValue="Vận chuyển lên phòng"
+                                        style={{ width: '100%', textAlign: 'left'}}
+                                        onChange={handleChange}
+                                        bordered={false}
+                                        options={[
+                                            { value: 'jack', label: 'Vận chuyển lên phòng' },
+                                            { value: 'lucy', label: 'Vận chuyển xuống phòng' },
+                                        ]}
+                                    />
+                                </div> 
                             </div>
                 
                             <div className={styles["item-data"]}>

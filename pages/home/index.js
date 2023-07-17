@@ -1,6 +1,12 @@
+import { Select } from "antd";
 import styles from "../../styles/Home.module.css"
 
 function Home() {
+
+    const handleChange = (value) => {
+        console.log(`selected ${value}`);
+      };
+
     return (
         <>
             <div className={styles["banner"]}>
@@ -785,10 +791,18 @@ function Home() {
                                 <input className={styles["form-input"]} placeholder="Số điện thoại..."></input>
                             </p>
                             <div className={styles["contact-input"]}>
-                                <div className={styles["form-select"]}>
-                                    <select className={styles["select-data-home"]}>
-                                        <option className={styles["select-item"]} value="0">Chọn dịch vụ</option>
-                                    </select>
+                                <div className={styles["form-select-home"]}>
+                                    <Select
+                                        defaultValue="Chọn yêu cầu liên hệ"
+                                        style={{ width: '100%', textAlign: 'left', color: '#fff'}}
+                                        onChange={handleChange}
+                                        bordered={false}
+                                        options={[
+                                            { value: 'jack', label: 'Liên hệ mới' },
+                                            { value: 'lucy', label: 'Xác nhận' },
+                                            { value: 'Yiminghe', label: 'Thông báo' },
+                                        ]}
+                                    />
                                 </div>  
                             </div>
                             <p className={styles["contact-input"]}>

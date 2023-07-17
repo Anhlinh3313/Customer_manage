@@ -1,4 +1,4 @@
-import { DatePicker, Modal } from "antd";
+import { DatePicker, Modal, Select } from "antd";
 import styles from "../../../styles/ManageAccount.module.css";
 import IconDatepicker from "./Icon/IconDatepicker";
 import { useState } from "react";
@@ -7,6 +7,10 @@ const RequestSend = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const deleteIcon = <IconDatepicker />;
     const dateFormatCreate = 'HH:mm - DD/MM/YYYY';
+    const handleChange = (value) => {
+        console.log(`selected ${value}`);
+      };
+
 
     return(
         <>
@@ -93,9 +97,17 @@ const RequestSend = () => {
                         <div className={styles["container-data"]}>
                             <div className={styles["item-data"]}>
                                 <p className={styles["lable-data"]}>Loại yêu cầu <span className={styles["compulsory"]}>*</span></p>
-                                <select className={styles["select-data"]}>
-                                    <option className={styles["select-item"]} value="0">Yêu cầu hỗ trợ kỹ thuật</option>
-                                </select>
+                                <div className={styles["form-select-home"]}>
+                                    <Select
+                                        defaultValue="Loại yêu cầu"
+                                        style={{ width: '100%', textAlign: 'left'}}
+                                        onChange={handleChange}
+                                        bordered={false}
+                                        options={[
+                                            { value: 'jack', label: 'Yêu cầu hỗ trợ kỹ thuật' },
+                                        ]}
+                                    />
+                                </div> 
                             </div>
 
                             <div className={styles["item-data"]}>
