@@ -240,8 +240,6 @@
   display: block;
 }
 
-
-
 .banner_sider_connent h2 {
   color: var(--light-invert-color-text-on-top, #121212);
   font-family: Inter;
@@ -609,7 +607,7 @@
   width: 100%;
 }
 
-.form-select-home{
+.form-select-home {
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.10);
   padding: 8px 16px;
@@ -909,6 +907,128 @@
   width: 100%;
 }
 
-.ant-select-arrow { 
+.ant-select-arrow {
   color: #FFF !important;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .banner_sider {
+    padding-top: 20px;
+    display: block;
+  }
+
+  .banner_sider_img {
+    width: 100%;
+  }
+
+  .banner_sider_connent h2 {
+    color: var(--light-invert-color-text-on-top, #121212);
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+  }
+
+  .banner_sider_connent h4 {
+    color: var(--light-invert-color-body-text, #333);
+    text-align: justify;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+  }
+
+  .register-banner_sider {
+    border-radius: 100px;
+    background: var(--light-invert-color-bar, #4671F6);
+    width: 100% !important;
+    height: 44px !important;
+    text-align: center;
+  }
+
+  .header p {
+    color: var(--light-invert-color-text-on-top, #121212);
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+  }
+
+  .title-archirectural-drawing {
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    display: flex;
+  }
+
+  .header {
+    width: 70%;
+    line-height: 0px;
+    letter-spacing: 0px;
+    padding-right: 0px;
+  }
+
+  .view-total {
+    width: 30%;
+    padding-top: 5px;
+  }
+
+  .table {
+    overflow: scroll;
+    padding-top: 0px;
+    padding-left: 10px;
+    text-align: center;
+    padding-right: 0px;
+  }
+
+  .item-green {
+    word-break: break-all;
+  }
+
+  .popup-detail {
+    right: 0px;
+  }
+
+  .new {
+    padding-top: 10px;
+  }
+  .new-item {
+    display: flex;
+    overflow: scroll;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .new-left {
+    width: 100%;
+    padding-right: 4px;
+    background-image: url("../public/img_new_one_mobile.png");
+    background-repeat: round;
+    background-size: cover;
+    height: 239px
+  }
+  .contact {
+    padding-top: 10px;
+  }
+  .contact-bg {
+    display: block;
+  }
+  .branch {
+    width: 100%;
+    padding: 10px 10px;
+  }
+  .form-contact {
+    width: 100%;
+  }
+  .header-title {
+    padding-top: 20px;
+  }
+  .form-contact-header {
+    padding: 20px 16px;
+    text-align: center;
+  }
 }

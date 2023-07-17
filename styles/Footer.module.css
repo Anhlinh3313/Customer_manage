@@ -1,21 +1,25 @@
-.footer{
+.footer {
   padding-top: 40px;
   align-items: center;
   text-align: center;
 }
-.footer-menu{
+
+.footer-menu {
   padding-top: 30px;
   padding-bottom: 30px;
 }
-.footer-logo{
+
+.footer-logo {
   width: 20%;
   height: 55px;
   display: initial;
 }
-.menu{
+
+.menu {
   padding-top: 16px;
 }
-.menu-item{
+
+.menu-item {
   padding-right: 40px;
   color: var(--light-invert-color-text-on-top, #121212);
   font-family: Inter;
@@ -25,19 +29,23 @@
   line-height: 20px;
   letter-spacing: 0.24px;
 }
-.footer-branch{
+
+.footer-branch {
   padding-top: 30px;
   display: flex;
-  padding:0px 100px;
+  padding: 0px 100px;
 }
-.footer-branch-item{
+
+.footer-branch-item {
   padding-top: 30px;
   padding-right: 30px;
   width: 33%;
   text-align: left !important;
-  border-top: 1px solid rgba(0, 0, 0, 0.10);;
+  border-top: 1px solid rgba(0, 0, 0, 0.10);
+  ;
 }
-.provice{
+
+.provice {
   color: var(--light-invert-color-text-on-top, #121212);
   font-family: Inter;
   font-size: 16px;
@@ -46,17 +54,21 @@
   line-height: 20px;
   letter-spacing: 0.24px;
 }
-.form-branch-item{
+
+.form-branch-item {
   display: flex;
 }
-.form-branch-item-img{
+
+.form-branch-item-img {
   width: 10%;
 }
-.icon-branch{
+
+.icon-branch {
   width: 24px;
   height: 24px;
 }
-.icon-text{
+
+.icon-text {
   padding-left: 10px;
   color: var(--light-invert-color-text-on-top, #121212);
   font-family: Inter;
@@ -65,31 +77,72 @@
   font-weight: 400;
   line-height: 20px;
 }
-.footer-line{
+
+.footer-line {
   background: #DE2027;
   height: 1px;
 }
 
-.footer-icon{
+.footer-icon {
   display: flex;
 }
-.footer-icon-left{
+
+.footer-icon-left {
   width: 40%;
   border-radius: 0px 100px 0px 0px;
   background: var(--light-invert-color-devider, #F4F4F4);
   height: 52px;
 }
-.footer-list-icon{
+
+.footer-list-icon {
   width: 20%;
   padding-top: 20px;
   text-align: center;
 }
-.footer-list-icon span img{
+
+.footer-list-icon span img {
   display: inline-block;
 }
-.footer-icon-right{
+
+.footer-icon-right {
   width: 40%;
   height: 52px;
   border-radius: 100px 0px 0px 0px;
   background: var(--light-invert-color-devider, #F4F4F4);
+}
+
+@media screen and (max-width: 600px) {
+  .footer-logo {
+    width: 60%;
+    height: 60%;
+  }
+
+  .menu {
+    display: grid;
+  }
+
+  .menu-item {
+    padding-top: 10px;
+  }
+
+  .footer-branch {
+    display: block;
+    padding: 0px 16px;
+  }
+
+  .footer-branch-item {
+    width: 100%;
+  }
+
+  .footer-list-icon {
+    width: 40%;
+  }
+
+  .footer-icon-left {
+    width: 30%;
+  }
+
+  .footer-icon-right {
+    width: 30%;
+  }
 }

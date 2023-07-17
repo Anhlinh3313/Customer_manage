@@ -69,3 +69,23 @@
   top: 198px;
   right: 45px;
 }
+
+@media screen and (max-width: 600px) {
+  .login{
+    padding-top: 230px;
+  }
+  .form-left{
+    width: 10%;
+  }
+  .form-right{
+    width: 10%;
+  }
+  .form-login{
+    width: 80%;
+  }
+  .logo img{
+    width: 95%;
+    height: 70px;
+    display: inline-block;
+  }
+}

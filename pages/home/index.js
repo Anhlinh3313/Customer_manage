@@ -1,30 +1,62 @@
 import { Select } from "antd";
 import styles from "../../styles/Home.module.css"
+import React, { useEffect, useState } from "react";
+import { reState } from "@useState/index";
 
 function Home() {
 
+    const { chromeWidth } = React.useContext(reState);
+    const [widthWindow, setWidthWindow] = useState();
+
     const handleChange = (value) => {
         console.log(`selected ${value}`);
-      };
+    };
+
+    useEffect(() => {
+      setWidthWindow(chromeWidth);
+    }, [chromeWidth]);
 
     return (
         <>
             <div className={styles["banner"]}>
-                <img src="./img_bg_home.png" alt="Banner" />
+                {widthWindow > 600 ?
+                    <img src="./img_bg_home.png" alt="Banner" />
+                 : 
+                    <img src="./banner_mobile.png" alt="Banner" />
+                }
             </div>
             <div className={styles["banner_sider"]}>
-                <div className={styles["banner_sider_connent"]}>
-                    <h2>Đăng ký check in mặt bằng</h2>
-                    <h4>Đăng ký check-in mặt bằng là quá trình cho phép khách hàng đăng ký sự hiện diện của họ tại một địa điểm cụ thể. Điều này có thể được thực hiện thông qua các trang web hoặc ứng dụng di động, và thông tin đăng ký của khách hàng được lưu trữ trong một cơ sở dữ liệu để có thể sử dụng sau này.</h4>
-                    <div className={styles["register-banner_sider"]}>
-                        <butom>
-                            <span className={styles["register-text"]}>Đăng ký check in</span>
-                        </butom>
-                    </div>
-                </div>
-                <div className={styles["banner_sider_img"]}>
-                    <img src="./img-register-content.png" alt="Banner" />
-                </div>
+                {widthWindow < 600 ?
+                    <>
+                        <div className={styles["banner_sider_img"]}>
+                            <img src="./img-register-content.png" alt="Banner" />
+                        </div>
+                        <div className={styles["banner_sider_connent"]}>
+                            <h2>Đăng ký check in mặt bằng</h2>
+                            <h4>Đăng ký check-in mặt bằng là quá trình cho phép khách hàng đăng ký sự hiện diện của họ tại một địa điểm cụ thể. Điều này có thể được thực hiện thông qua các trang web hoặc ứng dụng di động, và thông tin đăng ký của khách hàng được lưu trữ trong một cơ sở dữ liệu để có thể sử dụng sau này.</h4>
+                            <div className={styles["register-banner_sider"]}>
+                                <butom>
+                                    <span className={styles["register-text"]}>Đăng ký check in</span>
+                                </butom>
+                            </div>
+                        </div>
+                    </>
+                    : 
+                    <>
+                        <div className={styles["banner_sider_connent"]}>
+                            <h2>Đăng ký check in mặt bằng</h2>
+                            <h4>Đăng ký check-in mặt bằng là quá trình cho phép khách hàng đăng ký sự hiện diện của họ tại một địa điểm cụ thể. Điều này có thể được thực hiện thông qua các trang web hoặc ứng dụng di động, và thông tin đăng ký của khách hàng được lưu trữ trong một cơ sở dữ liệu để có thể sử dụng sau này.</h4>
+                            <div className={styles["register-banner_sider"]}>
+                                <butom>
+                                    <span className={styles["register-text"]}>Đăng ký check in</span>
+                                </butom>
+                            </div>
+                        </div>
+                        <div className={styles["banner_sider_img"]}>
+                            <img src="./img-register-content.png" alt="Banner" />
+                        </div>
+                    </>
+                }
             </div>
            <div className={styles["archirectural-drawing"]}>
                 <div className={styles["title-archirectural-drawing"]}>
@@ -647,67 +679,120 @@ function Home() {
                         <img src="./icon_next.png" alt="next" ></img>
                     </div>
                 </div>
-                <div className={styles["new-item"]}>
-                    <div className={styles["new-left"]}>
-                        <div className={styles["content"]}>
-                            <p className={styles["new-left-title"]}>Đông Dương Land nâng  cấp quản lý kinh doanh dự án Golden City nhờ App</p>
-                            <p className={styles["new-left-time"]}>
-                                <img className={styles["new-clock"]} src="./clock.png" alt="Banner" ></img>
-                                <span>11: 20 - 25/11/2022</span>
-                            </p>
+                {widthWindow > 600 ?
+                    <div className={styles["new-item"]}>
+                        <div className={styles["new-left"]}>
+                            <div className={styles["content"]}>
+                                <p className={styles["new-left-title"]}>Đông Dương Land nâng  cấp quản lý kinh doanh dự án Golden City nhờ App</p>
+                                <p className={styles["new-left-time"]}>
+                                    <img className={styles["new-clock"]} src="./clock.png" alt="Banner" ></img>
+                                    <span>11: 20 - 25/11/2022</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div className={styles["new-right"]}>
+                            <div className={styles["new-right-item"]}>
+                                <div className={styles["new-right-item-one"]}>
+                                    <div className={styles["new-right-item-one-content"]}>
+                                        <div className={styles["content-right"]}>
+                                            <p className={styles["new-left-title-item"]}>Đông Dương Land nâng  cấp quản lý kinh doanh dự án Golde...</p>
+                                            <p className={styles["new-left-time"]}>
+                                                <img className={styles["new-clock"]} src="./clock.png" alt="Banner" ></img>
+                                                <span>11: 20 - 25/11/2022</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className={styles["new-right-item-two"]}>
+                                    <div className={styles["new-right-item-two-content"]}>
+                                        <div className={styles["content-right"]}>
+                                            <p className={styles["new-left-title-item"]}>Đông Dương Land nâng  cấp quản lý kinh doanh dự án Golde...</p>
+                                            <p className={styles["new-left-time"]}>
+                                                <img className={styles["new-clock"]} src="./clock.png" alt="Banner" ></img>
+                                                <span>11: 20 - 25/11/2022</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className={styles["new-right-item-page-two"]}>
+                                <div className={styles["new-right-item-one"]}>
+                                    <div className={styles["new-right-item-three-content"]}>
+                                        <div className={styles["content-right"]}>
+                                            <p className={styles["new-left-title-item"]}>Đông Dương Land nâng  cấp quản lý kinh doanh dự án Golde...</p>
+                                            <p className={styles["new-left-time"]}>
+                                                <img className={styles["new-clock"]} src="./clock.png" alt="Banner" ></img>
+                                                <span>11: 20 - 25/11/2022</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className={styles["new-right-item-two"]}>
+                                    <div className={styles["new-right-item-four-content"]}>
+                                        <div className={styles["content-right"]}>
+                                            <p className={styles["new-left-title-item"]}>Đông Dương Land nâng  cấp quản lý kinh doanh dự án Golde...</p>
+                                            <p className={styles["new-left-time"]}>
+                                                <img className={styles["new-clock"]} src="./clock.png" alt="Banner" ></img>
+                                                <span>11: 20 - 25/11/2022</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div className={styles["new-right"]}>
-                        <div className={styles["new-right-item"]}>
-                            <div className={styles["new-right-item-one"]}>
-                                <div className={styles["new-right-item-one-content"]}>
-                                    <div className={styles["content-right"]}>
-                                        <p className={styles["new-left-title-item"]}>Đông Dương Land nâng  cấp quản lý kinh doanh dự án Golde...</p>
-                                        <p className={styles["new-left-time"]}>
-                                            <img className={styles["new-clock"]} src="./clock.png" alt="Banner" ></img>
-                                            <span>11: 20 - 25/11/2022</span>
-                                        </p>
+                 : 
+                    <div className={styles["new-item"]}>
+                        <div className={styles["new-right"]}>
+                            <div className={styles["new-right-item"]}>
+                                <div className={styles["new-right-item-one"]}>
+                                    <div className={styles["new-right-item-one-content"]}>
+                                        <div className={styles["content-right"]}>
+                                            <p className={styles["new-left-title-item"]}>Đông Dương Land nâng  cấp quản lý kinh doanh dự án Golde...</p>
+                                            <p className={styles["new-left-time"]}>
+                                                <img className={styles["new-clock"]} src="./clock.png" alt="Banner" ></img>
+                                                <span>11: 20 - 25/11/2022</span>
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className={styles["new-right-item-two"]}>
-                                <div className={styles["new-right-item-two-content"]}>
-                                    <div className={styles["content-right"]}>
-                                        <p className={styles["new-left-title-item"]}>Đông Dương Land nâng  cấp quản lý kinh doanh dự án Golde...</p>
-                                        <p className={styles["new-left-time"]}>
-                                            <img className={styles["new-clock"]} src="./clock.png" alt="Banner" ></img>
-                                            <span>11: 20 - 25/11/2022</span>
-                                        </p>
+                                <div className={styles["new-right-item-one"]}>
+                                    <div className={styles["new-right-item-one-content"]}>
+                                        <div className={styles["content-right"]}>
+                                            <p className={styles["new-left-title-item"]}>Đông Dương Land nâng  cấp quản lý kinh doanh dự án Golde...</p>
+                                            <p className={styles["new-left-time"]}>
+                                                <img className={styles["new-clock"]} src="./clock.png" alt="Banner" ></img>
+                                                <span>11: 20 - 25/11/2022</span>
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div className={styles["new-right-item-page-two"]}>
-                            <div className={styles["new-right-item-one"]}>
-                                <div className={styles["new-right-item-three-content"]}>
-                                    <div className={styles["content-right"]}>
-                                        <p className={styles["new-left-title-item"]}>Đông Dương Land nâng  cấp quản lý kinh doanh dự án Golde...</p>
-                                        <p className={styles["new-left-time"]}>
-                                            <img className={styles["new-clock"]} src="./clock.png" alt="Banner" ></img>
-                                            <span>11: 20 - 25/11/2022</span>
-                                        </p>
+                                <div className={styles["new-right-item-one"]}>
+                                    <div className={styles["new-right-item-one-content"]}>
+                                        <div className={styles["content-right"]}>
+                                            <p className={styles["new-left-title-item"]}>Đông Dương Land nâng  cấp quản lý kinh doanh dự án Golde...</p>
+                                            <p className={styles["new-left-time"]}>
+                                                <img className={styles["new-clock"]} src="./clock.png" alt="Banner" ></img>
+                                                <span>11: 20 - 25/11/2022</span>
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className={styles["new-right-item-two"]}>
-                                <div className={styles["new-right-item-four-content"]}>
-                                    <div className={styles["content-right"]}>
-                                        <p className={styles["new-left-title-item"]}>Đông Dương Land nâng  cấp quản lý kinh doanh dự án Golde...</p>
-                                        <p className={styles["new-left-time"]}>
-                                            <img className={styles["new-clock"]} src="./clock.png" alt="Banner" ></img>
-                                            <span>11: 20 - 25/11/2022</span>
-                                        </p>
+                                <div className={styles["new-right-item-two"]}>
+                                    <div className={styles["new-right-item-two-content"]}>
+                                        <div className={styles["content-right"]}>
+                                            <p className={styles["new-left-title-item"]}>Đông Dương Land nâng  cấp quản lý kinh doanh dự án Golde...</p>
+                                            <p className={styles["new-left-time"]}>
+                                                <img className={styles["new-clock"]} src="./clock.png" alt="Banner" ></img>
+                                                <span>11: 20 - 25/11/2022</span>
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                }
             </div>
             <div className={styles["contact"]}>
                 <div className={styles["contact-bg"]}>
