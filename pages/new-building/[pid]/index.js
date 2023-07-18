@@ -1,6 +1,16 @@
+import React, { useEffect, useState } from "react";
 import styles from "../../../styles/NewBuildingDetail.module.css"
+import Link from "antd/lib/typography/Link";
+import { reState } from "@useState/index";
 
 function NewBuildingDetail() {
+    const { chromeWidth } = React.useContext(reState);
+    const [widthWindow, setWidthWindow] = useState();
+
+    useEffect(() => {
+        setWidthWindow(chromeWidth);
+    }, [chromeWidth]);
+
     return (
         <>
             <div className={styles["container"]}>
@@ -47,32 +57,86 @@ function NewBuildingDetail() {
                 </div>
                 <div className={styles["container-right"]}>
                     <div className={styles["title-right"]}>Tin tức khác</div>
-                    <div className={styles["container-right-item"]}>
-                        <img src="../../new_detail3.png" alt="new detail" />
-                        <p className={styles["content-right"]}>Đông Dương Land nâng cấp quản lý kinh doanh dự án Golden City nhờ ...</p>
-                        <p className={styles["time"]}>
-                            <img src="../../icon_time_new.png" alt="icon time" />
-                            <span>11: 20 - 25/11/2022</span>
-                        </p>
-                    </div>
 
-                    <div className={styles["container-right-item"]}>
-                        <img src="../../new_detail_4.png" alt="new detail" />
-                        <p className={styles["content-right"]}>Đông Dương Land nâng cấp quản lý kinh doanh dự án Golden City nhờ ...</p>
-                        <p className={styles["time"]}>
-                            <img src="../../icon_time_new.png" alt="icon time" />
-                            <span>11: 20 - 25/11/2022</span>
-                        </p>
-                    </div>
+                    { widthWindow > 600 ?
+                            <>
+                                <div className={styles["container-right-item"]}>
+                                    <img src="../../new_detail3.png" alt="new detail" />
+                                    <p className={styles["content-right"]}>Đông Dương Land nâng cấp quản lý kinh doanh dự án Golden City nhờ ...</p>
+                                    <p className={styles["time"]}>
+                                        <img src="../../icon_time_new.png" alt="icon time" />
+                                        <span>11: 20 - 25/11/2022</span>
+                                    </p>
+                                </div>
 
-                    <div className={styles["container-right-item"]}>
-                        <img src="../../new_detail_5.png" alt="new detail" />
-                        <p className={styles["content-right"]}>Đông Dương Land nâng cấp quản lý kinh doanh dự án Golden City nhờ ...</p>
-                        <p className={styles["time"]}>
-                            <img src="../../icon_time_new.png" alt="icon time" />
-                            <span>11: 20 - 25/11/2022</span>
-                        </p>
-                    </div>
+                                <div className={styles["container-right-item"]}>
+                                    <img src="../../new_detail_4.png" alt="new detail" />
+                                    <p className={styles["content-right"]}>Đông Dương Land nâng cấp quản lý kinh doanh dự án Golden City nhờ ...</p>
+                                    <p className={styles["time"]}>
+                                        <img src="../../icon_time_new.png" alt="icon time" />
+                                        <span>11: 20 - 25/11/2022</span>
+                                    </p>
+                                </div>
+
+                                <div className={styles["container-right-item"]}>
+                                    <img src="../../new_detail_5.png" alt="new detail" />
+                                    <p className={styles["content-right"]}>Đông Dương Land nâng cấp quản lý kinh doanh dự án Golden City nhờ ...</p>
+                                    <p className={styles["time"]}>
+                                        <img src="../../icon_time_new.png" alt="icon time" />
+                                        <span>11: 20 - 25/11/2022</span>
+                                    </p>
+                                </div>
+                            </>
+                        :
+                            <div className={styles["list-new"]}>
+                                <div className={styles["container-right-item"]}>
+                                    <Link className={styles["new-item"]} href="/new-building/chi-tiet">
+                                        <div className={styles["new-right-item-one"]}>
+                                            <div className={styles["new-right-item-one-content"]}>
+                                                <div className={styles["content-right"]}>
+                                                    <p className={styles["new-left-title-item"]}>Đông Dương Land nâng  cấp quản lý kinh doanh dự án Golde...</p>
+                                                    <p className={styles["new-left-time"]}>
+                                                        <img className={styles["new-clock"]} src="./../clock.png" alt="Banner" ></img>
+                                                        <span>11: 20 - 25/11/2022</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Link>
+                                </div>
+                                <div className={styles["container-right-item"]}>
+                                    <Link className={styles["new-item"]} href="/new-building/chi-tiet">
+                                        <div className={styles["new-right-item-one"]}>
+                                            <div className={styles["new-right-item-one-content"]}>
+                                                <div className={styles["content-right"]}>
+                                                    <p className={styles["new-left-title-item"]}>Đông Dương Land nâng  cấp quản lý kinh doanh dự án Golde...</p>
+                                                    <p className={styles["new-left-time"]}>
+                                                        <img className={styles["new-clock"]} src="./../clock.png" alt="Banner" ></img>
+                                                        <span>11: 20 - 25/11/2022</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Link>
+                                </div>
+                                <div className={styles["container-right-item"]}>
+                                    <Link className={styles["new-item"]} href="/new-building/chi-tiet">
+                                        <div className={styles["new-right-item-one"]}>
+                                            <div className={styles["new-right-item-one-content"]}>
+                                                <div className={styles["content-right"]}>
+                                                    <p className={styles["new-left-title-item"]}>Đông Dương Land nâng  cấp quản lý kinh doanh dự án Golde...</p>
+                                                    <p className={styles["new-left-time"]}>
+                                                        <img className={styles["new-clock"]} src="./../clock.png" alt="Banner" ></img>
+                                                        <span>11: 20 - 25/11/2022</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Link>
+                                </div>
+                            </div>
+                            
+                    }
                 </div>
             </div>
         </>

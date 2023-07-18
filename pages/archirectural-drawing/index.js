@@ -1,55 +1,109 @@
 import styles from "../../styles/ArchirecturalDrawing.module.css"
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Checkbox } from 'antd';
+import { reState } from "@useState/index";
 
 function ArchirecturalDrawing() {
+    const { chromeWidth } = React.useContext(reState);
+    const [widthWindow, setWidthWindow] = useState();
 
     const onChange = (e) => {
         console.log(`checked = ${e.target.checked}`);
-      };
+    };
+      
+    useEffect(() => {
+        setWidthWindow(chromeWidth);
+    }, [chromeWidth]);
 
     return (
         <>
             <div className={styles["banner"]}>
-                <img src="./banner_archirectural_drawing.png" alt="Banner" />
+                {widthWindow > 600 ?
+                    <img src="./banner_archirectural_drawing.png" alt="Banner" />
+                 : 
+                    <img src="./img_baner_mobile_new.png" alt="Banner" />
+                }
             </div>
             <div className={styles["container"]}>
-                <div className={styles["container-menu"]}>
-                    <div className={styles["container-list-menu"]}>
-                        <div className={styles["menu"]}>Trạng thái: </div>
-
-                        <div className={styles["menu-item"]}>
-                            <span className={styles["menu-checkbox"]}>
-                                <img src="./check_all.png" alt="check all" />
-                            </span>
-                            <span className={styles["menu-name"]}>Tất cả</span>
-                        </div>
-                        <div className={styles["menu-item"]}>
-                            <span className={styles["menu-checkbox"]}>
-                                <img src="./check_success.png" alt="check success" />
-                            </span>
-                            <span className={styles["menu-name"]}>Thành công</span>
-                        </div>
-                        <div className={styles["menu-item"]}>
-                            <span className={styles["menu-checkbox"]}>
-                                <img src="./check_maintenance.png" alt="check maintenance" />
-                            </span>
-                            <span className={styles["menu-name"]}>Đang bảo trì</span>
-                        </div>
-                        <div className={styles["menu-item"]}>
-                            <span className={styles["menu-checkbox"]}>
-                                <img src="./check_repair.png" alt="check repair" />
-                            </span>
-                            <span className={styles["menu-name"]}>Đang sữa chữa</span>
-                        </div>
-                        <div className={styles["menu-item"]}>
-                            <span className={styles["menu-checkbox"]}>
-                                <img src="./check_all.png" alt="check all" />
-                            </span>
-                            <span className={styles["menu-name"]}>Đang xây dựng</span>
+                { widthWindow > 600 ?
+                    <div className={styles["container-menu"]}>
+                        <div className={styles["container-list-menu"]}>
+                            <div className={styles["menu status"]}>Trạng thái: </div>
+                            <div className={styles["menu-item"]}>
+                                <span className={styles["menu-checkbox"]}>
+                                    <img src="./check_all.png" alt="check all" />
+                                </span>
+                                <span className={styles["menu-name"]}>Tất cả</span>
+                            </div>
+                            <div className={styles["menu-item"]}>
+                                <span className={styles["menu-checkbox"]}>
+                                    <img src="./check_success.png" alt="check success" />
+                                </span>
+                                <span className={styles["menu-name"]}>Thành công</span>
+                            </div>
+                            <div className={styles["menu-item"]}>
+                                <span className={styles["menu-checkbox"]}>
+                                    <img src="./check_maintenance.png" alt="check maintenance" />
+                                </span>
+                                <span className={styles["menu-name"]}>Đang bảo trì</span>
+                            </div>
+                            <div className={styles["menu-item"]}>
+                                <span className={styles["menu-checkbox"]}>
+                                    <img src="./check_repair.png" alt="check repair" />
+                                </span>
+                                <span className={styles["menu-name"]}>Đang sữa chữa</span>
+                            </div>
+                            <div className={styles["menu-item"]}>
+                                <span className={styles["menu-checkbox"]}>
+                                    <img src="./check_all.png" alt="check all" />
+                                </span>
+                                <span className={styles["menu-name"]}>Đang xây dựng</span>
+                            </div>
                         </div>
                     </div>
-                </div>
+                :
+                    <div className={styles["container-menu"]}>
+                        <div className={styles["container-list-menu"]}>
+                            <div className={styles["menu status"]}>Trạng thái: </div>
+                            <div className={styles["list-menu-item"]}> 
+                                <div className={styles["menu-item"]}>
+                                    <span className={styles["menu-checkbox"]}>
+                                        <img src="./check_all.png" alt="check all" />
+                                    </span>
+                                    <span className={styles["menu-name"]}>Tất cả</span>
+                                </div>
+                                <div className={styles["menu-item"]}>
+                                    <span className={styles["menu-checkbox"]}>
+                                        <img src="./check_success.png" alt="check success" />
+                                    </span>
+                                    <span className={styles["menu-name"]}>Thành công</span>
+                                </div>
+                            </div>
+                            <div className={styles["list-menu-item"]}> 
+                                <div className={styles["menu-item"]}>
+                                    <span className={styles["menu-checkbox"]}>
+                                        <img src="./check_maintenance.png" alt="check maintenance" />
+                                    </span>
+                                    <span className={styles["menu-name"]}>Đang bảo trì</span>
+                                </div>
+                                <div className={styles["menu-item"]}>
+                                    <span className={styles["menu-checkbox"]}>
+                                        <img src="./check_repair.png" alt="check repair" />
+                                    </span>
+                                    <span className={styles["menu-name"]}>Đang sữa chữa</span>
+                                </div>
+                            </div>
+                            <div className={styles["list-menu-item"]}> 
+                                <div className={styles["menu-item"]}>
+                                    <span className={styles["menu-checkbox"]}>
+                                        <img src="./check_all.png" alt="check all" />
+                                    </span>
+                                    <span className={styles["menu-name"]}>Đang xây dựng</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
                 <div className={styles["container-table"]}>
                     <div className={styles["table"]}>
                         <table>

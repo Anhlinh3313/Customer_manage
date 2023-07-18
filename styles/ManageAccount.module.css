@@ -938,3 +938,29 @@
     padding: 3px 16px;
     width: 80%;
 }
+
+@media screen and (max-width: 600px) {
+    .manage-account {
+        padding: 0px;
+        padding-top: 106px;
+        display: flex;
+    }
+    .content {
+        width: 100%;
+        padding-left: 0px;
+    }
+    .content-header {
+        border-radius: 0px;
+    }
+    .content-container {
+        display: block;
+    }
+    .container-left {
+        width: 100%;
+        padding: 0px 16px;
+    }
+    .container-right {
+        width: 100%;
+        padding: 0px 16px;
+    }
+}

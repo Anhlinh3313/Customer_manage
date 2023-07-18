@@ -42,7 +42,7 @@
   display: flex;
 }
 
-.menu-item span{
+.menu-item span {
   line-height: 24px;
 }
 
@@ -141,4 +141,38 @@
   font-weight: 600;
   line-height: 20px;
   letter-spacing: 0.24px;
+}
+
+.container-table {
+  overflow: scroll;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  .status {
+    width: 100%;
+  }
+
+  .container-list-menu {
+    display: block;
+  }
+
+  .list-menu-item {
+    display: flex;
+    padding: 10px;
+  }
+
+  .menu-item {
+    width: 50%;
+  }
+
+  .item-green {
+    word-break: break-all;
+  }
+  .popup-detail {
+    right: 0px;
+  }
 }

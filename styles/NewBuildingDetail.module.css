@@ -1,14 +1,16 @@
-.container{
+.container {
   padding-top: 120px;
   padding-left: 80px;
   padding-right: 80px;
   display: flex;
 }
-.container-left{
+
+.container-left {
   width: 70%;
   padding-right: 8px;
 }
-.title{
+
+.title {
   color: var(--light-invert-color-text-on-top, #121212);
   font-family: Inter;
   font-size: 34px;
@@ -18,14 +20,16 @@
   padding-bottom: 24px;
 }
 
-.container-right{
+.container-right {
   width: 30%;
   padding-left: 8px;
 }
-.time{
+
+.time {
   display: flex;
 }
-.time span{
+
+.time span {
   color: var(--light-invert-color-text-on-top, #121212);
   font-family: Inter;
   font-size: 14px;
@@ -34,7 +38,8 @@
   line-height: 28px;
   padding-left: 8px;
 }
-.title-right{
+
+.title-right {
   color: #000;
   font-family: Inter;
   font-size: 18px;
@@ -43,7 +48,8 @@
   line-height: 28px;
   padding-bottom: 16px;
 }
-.content-right{
+
+.content-right {
   color: var(--light-invert-color-text-on-top, #121212);
   font-family: Inter;
   font-size: 16px;
@@ -53,6 +59,91 @@
   letter-spacing: 0.24px;
   padding-top: 8px;
 }
-.container-right-item{
+
+.container-right-item {
   padding-bottom: 15px;
+}
+
+.new-item {
+  width: 25%;
+  padding: 0px 10px;
+}
+
+.new-right-item-one-content {
+  width: 100%;
+  padding-right: 4px;
+  background-image: url("../public/ing_new1.png");
+  background-repeat: round;
+  background-size: cover;
+  height: 239px;
+}
+
+.new-left-title-item {
+  padding-left: 16px;
+  color: var(--dark-invert-color-text-on-top, #FFF);
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+  width: 300px;
+}
+
+.new-left-time {
+  padding: 0px 16px;
+  display: flex;
+}
+
+.new-clock {
+  width: 24px !important;
+  height: 24px !important;
+}
+
+.new-left-time span {
+  color: var(--dark-invert-color-text-on-top, #fff);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  padding-left: 8px;
+}
+
+.list-new {
+  overflow: scroll;
+  display: flex;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    padding-top: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: block;
+  }
+
+  .title {
+    color: var(--light-invert-color-text-on-top, #121212);
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+  }
+
+  .container-left {
+    width: 100%;
+  }
+
+  .container-right {
+    width: 100%;
+  }
+
+  .content-right {
+    padding-top: 130px;
+  }
+  .container-right-item {
+    padding-right: 10px;
+
+  }
 }

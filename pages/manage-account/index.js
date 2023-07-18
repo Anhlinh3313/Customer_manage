@@ -10,7 +10,7 @@ import Chart from "../../app/project/ManageAccount/Chart";
 import MeetingManage from "../../app/project/ManageAccount/Meeting/index";
 
 function ManageAccount() {
-    const [slugMenu, setSlugMenu] = useState("info-account");
+    const [slugMenu, setSlugMenu] = useState("request-send");
     const [slugMenuService, setSlugMenuService] = useState("");
     const [isMenuService, setisMenuService] = useState(false);
 
