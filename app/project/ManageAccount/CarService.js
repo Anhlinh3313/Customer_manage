@@ -54,9 +54,12 @@ const CarService = () => {
         console.log(`selected ${value}`);
       };
 
+
+    const handleChangeSelect = (value) => {
+        console.log(`selected ${value}`);
+    };
     return(
         <>
-           
             <div className={styles["content-header"]}>
                 <div className={styles["content-title"]}>Dịch vụ xe</div>
                 <div className={styles["content-button"]}>
@@ -113,27 +116,239 @@ const CarService = () => {
                 </table>
             </div>
 
+            <div className={styles["content-table-mobile"]}>
+               <div className={styles["table-item-mobile"]}>
+                   <div className={styles["row-item-data"]}>
+                        <p className={styles["status"]}>
+                            <span>13:47 - 12/04/2023</span>
+                        </p>
+                        <p className={styles["data-code"]}>
+                            <span>Đăng ký làm thẻ mới</span>
+                        </p>
+                   </div>
+                   <div className={styles["row-item-data"]}>
+                        <p className={styles["status"]}>
+                            <span>Số lượng</span>
+                        </p>
+                        <p className={styles["data-code"]}>
+                            <span>2</span>
+                        </p>
+                   </div>
+                   <div className={styles["row-item-data"]}>
+                        <p className={styles["status"]}>
+                            <span>Trạng thái</span>
+                        </p>
+                        <p className={styles["data-status"]}>
+                            <span>Chưa duyệt</span>
+                        </p>
+                   </div>
+                   <div className={styles["row-item-data"]}>
+                        <p className={styles["status"]}>
+                            <span> Tùy chọn</span>
+                        </p>
+                        <p className={styles["mobile-active"]}>
+                            <p className={styles["status"]} onClick={()=>setIsModalOpen(!isModalOpen)}>
+                                <img src="/Icon_eye.png" alt="eye"/>
+                            </p>
+                            <p className={styles["data-download"]}>
+                                <img src="/Icon_delete.png" alt="delete"/>
+                            </p>
+                        </p>
+                   </div>
+               </div>
+               <div className={styles["line-mobile"]}></div>
+               <div className={styles["table-item-mobile"]}>
+                   <div className={styles["row-item-data"]}>
+                        <p className={styles["status"]}>
+                            <span>13:47 - 12/04/2023</span>
+                        </p>
+                        <p className={styles["data-code"]}>
+                            <span>Đăng ký làm thẻ mới</span>
+                        </p>
+                   </div>
+                   <div className={styles["row-item-data"]}>
+                        <p className={styles["status"]}>
+                            <span>Số lượng</span>
+                        </p>
+                        <p className={styles["data-code"]}>
+                            <span>2</span>
+                        </p>
+                   </div>
+                   <div className={styles["row-item-data"]}>
+                        <p className={styles["status"]}>
+                            <span>Trạng thái</span>
+                        </p>
+                        <p className={styles["data-status"]}>
+                            <span>Chưa duyệt</span>
+                        </p>
+                   </div>
+                   <div className={styles["row-item-data"]}>
+                        <p className={styles["status"]}>
+                            <span> Tùy chọn</span>
+                        </p>
+                        <p className={styles["mobile-active"]}>
+                            <p className={styles["status"]} onClick={()=>setIsModalOpen(!isModalOpen)}>
+                                <img src="/Icon_eye.png" alt="eye"/>
+                            </p>
+                            <p className={styles["data-download"]}>
+                                <img src="/Icon_delete.png" alt="delete"/>
+                            </p>
+                        </p>
+                      
+                   </div>
+               </div>
+               <div className={styles["line-mobile"]}></div>
+               <div className={styles["table-item-mobile"]}>
+                   <div className={styles["row-item-data"]}>
+                        <p className={styles["status"]}>
+                            <span>13:47 - 12/04/2023</span>
+                        </p>
+                        <p className={styles["data-code"]}>
+                            <span>Đăng ký làm thẻ mới</span>
+                        </p>
+                   </div>
+                   <div className={styles["row-item-data"]}>
+                        <p className={styles["status"]}>
+                            <span>Số lượng</span>
+                        </p>
+                        <p className={styles["data-code"]}>
+                            <span>2</span>
+                        </p>
+                   </div>
+                   <div className={styles["row-item-data"]}>
+                        <p className={styles["status"]}>
+                            <span>Trạng thái</span>
+                        </p>
+                        <p className={styles["data-status"]}>
+                            <span>Chưa duyệt</span>
+                        </p>
+                   </div>
+                   <div className={styles["row-item-data"]}>
+                        <p className={styles["status"]}>
+                            <span> Tùy chọn</span>
+                        </p>
+                        <p className={styles["mobile-active"]}>
+                            <p className={styles["status"]} onClick={()=>setIsModalOpen(!isModalOpen)}>
+                                <img src="/Icon_eye.png" alt="eye"/>
+                            </p>
+                            <p className={styles["data-download"]}>
+                                <img src="/Icon_delete.png" alt="delete"/>
+                            </p>
+                        </p>
+                      
+                   </div>
+               </div>
+               <div className={styles["line-mobile"]}></div>
+               <div className={styles["table-item-mobile"]}>
+                   <div className={styles["row-item-data"]}>
+                        <p className={styles["status"]}>
+                            <span>13:47 - 12/04/2023</span>
+                        </p>
+                        <p className={styles["data-code"]}>
+                            <span>Đăng ký làm thẻ mới</span>
+                        </p>
+                   </div>
+                   <div className={styles["row-item-data"]}>
+                        <p className={styles["status"]}>
+                            <span>Số lượng</span>
+                        </p>
+                        <p className={styles["data-code"]}>
+                            <span>2</span>
+                        </p>
+                   </div>
+                   <div className={styles["row-item-data"]}>
+                        <p className={styles["status"]}>
+                            <span>Trạng thái</span>
+                        </p>
+                        <p className={styles["data-status"]}>
+                            <span>Chưa duyệt</span>
+                        </p>
+                   </div>
+                   <div className={styles["row-item-data"]}>
+                        <p className={styles["status"]}>
+                            <span> Tùy chọn</span>
+                        </p>
+                        <p className={styles["mobile-active"]}>
+                            <p className={styles["status"]} onClick={()=>setIsModalOpen(!isModalOpen)}>
+                                <img src="/Icon_eye.png" alt="eye"/>
+                            </p>
+                            <p className={styles["data-download"]}>
+                                <img src="/Icon_delete.png" alt="delete"/>
+                            </p>
+                        </p>
+                      
+                   </div>
+               </div>
+               <div className={styles["line-mobile"]}></div>
+               <div className={styles["table-item-mobile"]}>
+                   <div className={styles["row-item-data"]}>
+                        <p className={styles["status"]}>
+                            <span>13:47 - 12/04/2023</span>
+                        </p>
+                        <p className={styles["data-code"]}>
+                            <span>Đăng ký làm thẻ mới</span>
+                        </p>
+                   </div>
+                   <div className={styles["row-item-data"]}>
+                        <p className={styles["status"]}>
+                            <span>Số lượng</span>
+                        </p>
+                        <p className={styles["data-code"]}>
+                            <span>2</span>
+                        </p>
+                   </div>
+                   <div className={styles["row-item-data"]}>
+                        <p className={styles["status"]}>
+                            <span>Trạng thái</span>
+                        </p>
+                        <p className={styles["data-status"]}>
+                            <span>Chưa duyệt</span>
+                        </p>
+                   </div>
+                   <div className={styles["row-item-data"]}>
+                        <p className={styles["status"]}>
+                            <span> Tùy chọn</span>
+                        </p>
+                        <p className={styles["mobile-active"]}>
+                            <p className={styles["status"]} onClick={()=>setIsModalOpen(!isModalOpen)}>
+                                <img src="/Icon_eye.png" alt="eye"/>
+                            </p>
+                            <p className={styles["data-download"]}>
+                                <img src="/Icon_delete.png" alt="delete"/>
+                            </p>
+                        </p>
+                   </div>
+               </div>
+            </div>
+
             <Modal 
                 open={isModalOpen} 
                 width={1100}
-                bodyStyle={{
-                    height:850,
-                }}
-                style={{top: '0px', right:'0px', position: 'absolute'}}
                 footer={null}
                 closable={false}
             >
                 <div className={styles["model-header"]}>
                     <div className={styles["model-header-close"]}>
                         <div className={styles["model-title"]}>
-                            <div className={styles["model-title-text"]}>Đăng ký dịch vụ: </div>
+                            <div className={styles["model-title-text"]}>
+                                <span onClick={()=>setIsModalOpen(!isModalOpen)} >
+                                    <img src="/icon_back.png" alt=""/>
+                                </span>
+                                <span>Đăng ký dịch vụ: </span>
+                            </div>
                             <div className={styles["select"]}>
-                                <div className={styles["select-model"]}>
-                                    <select className={styles["standard-select"]}>
-                                        <option className={styles["select-item"]} value="0">Đăng ký thẻ xe</option>
-                                        <option className={styles["select-item"]} value="1">Đăng ký gửi qua đêm</option>
-                                        <option className={styles["select-item"]} value="2">Đăng ký làm lại thẻ xe</option>
-                                    </select>
+                                <div className={styles["form-select-car"]}>
+                                    <Select
+                                        defaultValue="Loại xe"
+                                        style={{ width: '100%', textAlign: 'left'}}
+                                        onChange={handleChangeCarType}
+                                        bordered={false}
+                                        options={[
+                                            { value: 'jack', label: 'Đăng ký thẻ xe' },
+                                            { value: 'lucy', label: 'Đăng ký gửi qua đêm' },
+                                            { value: 'Yiminghe', label: 'Đăng ký làm lại thẻ xe' },
+                                        ]}
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -292,6 +507,54 @@ const CarService = () => {
                                         </tr>
                                     </tbody>
                                 </table>
+                                <div className={styles["content-table-mobile"]}>
+                                    <div className={styles["table-item-mobile"]}>
+                                        <div className={styles["row-item-data"]}>
+                                            <p className={styles["date-name"]}>
+                                                <span>Xe máy .  Blade . 79V1- 44443</span>
+                                            </p>
+                                        </div>
+                            
+                                        <div className={styles["row-item-data"]}>
+                                            <p className={styles["status"]}>
+                                                <span>Ngày hiệu lực</span>
+                                            </p>
+                                            <p className={styles["data-code"]}>
+                                                <span>10:00 - 12/04/2023</span>
+                                            </p>
+                                        </div>
+                                        <div className={styles["row-item-data"]}>
+                                            <p className={styles["status"]}>
+                                                <span>Tên chủ xe</span>
+                                            </p>
+                                            <p className={styles["data-code"]}>
+                                                <span>79V1- 44443</span>
+                                            </p>
+                                        </div>
+                                        <div className={styles["row-item-data"]}>
+                                            <p className={styles["status"]}>
+                                                <span>Tên tài xế</span>
+                                            </p>
+                                            <p className={styles["data-code"]}>
+                                                <span>79V1- 44443</span>
+                                            </p>
+                                        </div>
+                                        <div className={styles["row-item-data"]}>
+                                            <p className={styles["status"]}>
+                                                <span>Tùy chọn</span>
+                                            </p>
+                                            <p className={styles["mobile-active"]}>
+                                                <p className={styles["status"]} onClick={()=>setIsModalOpen(!isModalOpen)}>
+                                                    <img src="/icon_tb_edit.png" alt="eye"/>
+                                                </p>
+                                                <p className={styles["data-download"]}>
+                                                    <img src="/icon_tb_delete.png" alt="delete"/>
+                                                </p>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div className={styles["line-mobile"]}></div>
+                                </div> 
                             </div>
                         </div>
                         

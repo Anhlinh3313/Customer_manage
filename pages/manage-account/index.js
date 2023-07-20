@@ -10,9 +10,10 @@ import Chart from "../../app/project/ManageAccount/Chart";
 import MeetingManage from "../../app/project/ManageAccount/Meeting/index";
 
 function ManageAccount() {
-    const [slugMenu, setSlugMenu] = useState("request-send");
+    const [slugMenu, setSlugMenu] = useState("info-account");
     const [slugMenuService, setSlugMenuService] = useState("");
     const [isMenuService, setisMenuService] = useState(false);
+    const [isShowMenuMobile, setIsShowMenuMobile] = useState(false);
 
     const onClickMenu =(event)=>{
         setSlugMenu(event);
@@ -37,100 +38,219 @@ function ManageAccount() {
                                     <span>Quản lý</span>   
                                 </p>
                                 <p className={styles["header-img"]}>
-                                    <img src="/icon_manage.png" alt=""/>
+                                    <span>
+                                        <img className={styles["icon-menu-pc"]} src="/icon_manage.png" alt=""/>
+                                    </span>
+                                    <span onClick={()=>setIsShowMenuMobile(true)}>
+                                        <img className={styles["icon-menu-mobile"]} src="/icon_list_menu.png" alt=""/>
+                                    </span>
                                 </p>
                             </div>
-                            <div className={slugMenu == "info-account" ? styles["item-menu-check"] : styles["item-menu-un-check"] } onClick={()=>onClickMenu("info-account")}>
-                                <span>
-                                    {
-                                        slugMenu == "info-account" ?
-                                            <img src="/icon_info_check.png" alt=""/>
-                                        : 
-                                            <img src="/icon_info_uncheck.png" alt=""/>
-                                    }
-                                </span>
-                                 <span className={styles["item-menu-title"]}>Thông tin của tôi</span>
-                            </div>
-                            <div className={styles["manage-info"]}>
-                                <p className={styles["manage-info-title"]}>Quản lý thông tin</p>
-                                <div className={styles["manage-info-item"]}>
-                                    <div className={slugMenu == "bill" ? styles["item-menu-check"] : styles["item-menu-un-check"] } onClick={()=>onClickMenu("bill")}>
-                                        <span>
-                                            {
-                                                slugMenu == "bill" ?
-                                                    <img src="/icon_bill_check.png" alt=""/>
-                                                : 
-                                                    <img src="/icon_bill_un_check.png" alt=""/>
-                                            }
-                                        </span>
-                                        <span className={styles["item-menu-title"]}>Hóa đơn</span>
-                                    </div>
+
+                            <div className={styles["list-menu-pc"]}>
+                                <div className={slugMenu == "info-account" ? styles["item-menu-check"] : styles["item-menu-un-check"] } onClick={()=>onClickMenu("info-account")}>
+                                    <span>
+                                        {
+                                            slugMenu == "info-account" ?
+                                                <img src="/icon_info_check.png" alt=""/>
+
+                                            : 
+                                                <img src="/icon_info_uncheck.png" alt=""/>
+
+                                        }
+                                    </span>
+                                    <span className={styles["item-menu-title"]}>Thông tin của tôi</span>
                                 </div>
-                                <div className={styles["manage-info-item"]}>
-                                    <div className={slugMenu == "register-service" && isMenuService ? styles["item-menu-check-parent"] : styles["item-menu-un-check-parent"] }>
-                                        <div className={styles["register-service-menu"]}  onClick={()=>onClickMenu("register-service")}>
-                                            <div className={styles["icon-menu"]}>
+                                <div className={styles["manage-info"]}>
+                                    <p className={styles["manage-info-title"]}>Quản lý thông tin</p>
+                                    <div className={styles["manage-info-item"]}>
+                                        <div className={slugMenu == "bill" ? styles["item-menu-check"] : styles["item-menu-un-check"] } onClick={()=>onClickMenu("bill")}>
+                                            <span>
                                                 {
-                                                    slugMenu == "register-service" && isMenuService ?
+                                                    slugMenu == "bill" ?
                                                         <img src="/icon_bill_check.png" alt=""/>
                                                     : 
                                                         <img src="/icon_bill_un_check.png" alt=""/>
                                                 }
-                                            </div>
-                                            <div className={styles["item-menu-title"]}>Đăng ký dịch vụ</div>
-                                            <div className={styles["icon-down"]}>
-                                                {
-                                                    slugMenu == "register-service" && isMenuService ?
-                                                        <img src="/arrow_drop_down_check.png" alt=""/>
-                                                    : 
-                                                        <img src="/arrow_drop_down_un_check.png" alt=""/>
-                                                }
-                                            </div>
+                                            </span>
+                                            <span className={styles["item-menu-title"]}>Hóa đơn</span>
                                         </div>
-                                        {
-                                            slugMenu == "register-service" && isMenuService? 
-                                            <p className={styles["servive"]}>
-                                                <ul >
-                                                    <li  className={slugMenuService == "service-car"? styles["check"] : styles["un-check"]} onClick={()=>onClickMenuService("service-car")}>Dịch vụ xe</li>
-                                                    <li className={slugMenuService == "service-delyverr"? styles["check"] : styles["un-check"]} onClick={()=>onClickMenuService("service-delyverr")}>Dịch vụ vận chuyển</li>
-                                                    <li className={slugMenuService == "service-overtime"? styles["check"] : styles["un-check"]} onClick={()=>onClickMenuService("service-overtime")}>Dịch vụ làm thêm giờ</li>
-                                                    <li className={slugMenuService == "service-meeting"? styles["check"] : styles["un-check"]} onClick={()=>onClickMenuService("service-meeting")}>Thuê phòng họp</li>
-                                                </ul>
-                                            </p>
-                                            :
-                                            <></>
-                                        }
                                     </div>
-                                </div>
-
-                                <div className={styles["manage-info-item"]}>
-                                    <div className={slugMenu == "request-send" ? styles["item-menu-check"] : styles["item-menu-un-check"] } onClick={()=>onClickMenu("request-send")}>
-                                        <span>
+                                    <div className={styles["manage-info-item"]}>
+                                        <div className={slugMenu == "register-service" && isMenuService ? styles["item-menu-check-parent"] : styles["item-menu-un-check-parent"] }>
+                                            <div className={styles["register-service-menu"]}  onClick={()=>onClickMenu("register-service")}>
+                                                <div className={styles["icon-menu"]}>
+                                                    {
+                                                        slugMenu == "register-service" && isMenuService ?
+                                                            <img src="/icon_bill_check.png" alt=""/>
+                                                        : 
+                                                            <img src="/icon_bill_un_check.png" alt=""/>
+                                                    }
+                                                </div>
+                                                <div className={styles["item-menu-title"]}>Đăng ký dịch vụ</div>
+                                                <div className={styles["icon-down"]}>
+                                                    {
+                                                        slugMenu == "register-service" && isMenuService ?
+                                                            <img src="/arrow_drop_down_check.png" alt=""/>
+                                                        : 
+                                                            <img src="/arrow_drop_down_un_check.png" alt=""/>
+                                                    }
+                                                </div>
+                                            </div>
                                             {
-                                                slugMenu == "request-send" ?
-                                                    <img src="/icon_request_check.png" alt=""/>
-                                                : 
-                                                    <img src="/icon_request_un_check.png" alt=""/>
+                                                slugMenu == "register-service" && isMenuService? 
+                                                <p className={styles["servive"]}>
+                                                    <ul >
+                                                        <li  className={slugMenuService == "service-car"? styles["check"] : styles["un-check"]} onClick={()=>onClickMenuService("service-car")}>Dịch vụ xe</li>
+                                                        <li className={slugMenuService == "service-delyverr"? styles["check"] : styles["un-check"]} onClick={()=>onClickMenuService("service-delyverr")}>Dịch vụ vận chuyển</li>
+                                                        <li className={slugMenuService == "service-overtime"? styles["check"] : styles["un-check"]} onClick={()=>onClickMenuService("service-overtime")}>Dịch vụ làm thêm giờ</li>
+                                                        <li className={slugMenuService == "service-meeting"? styles["check"] : styles["un-check"]} onClick={()=>onClickMenuService("service-meeting")}>Thuê phòng họp</li>
+                                                    </ul>
+                                                </p>
+                                                :
+                                                <></>
                                             }
-                                        </span>
-                                        <span className={styles["item-menu-title"]}>Gửi yêu cầu</span>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div className={styles["manage-info-item"]}>
-                                    <div className={slugMenu == "chart" ? styles["item-menu-check"] : styles["item-menu-un-check"] } onClick={()=>onClickMenu("chart")}>
-                                        <span>
-                                            {
-                                                slugMenu == "chart" ?
-                                                    <img src="/icon_chart_check.png" alt=""/>
-                                                : 
-                                                    <img src="/icon_chart_un_check.png" alt=""/>
-                                            }
-                                        </span>
-                                        <span className={styles["item-menu-title"]}>Biểu đồ</span>
+                                    <div className={styles["manage-info-item"]}>
+                                        <div className={slugMenu == "request-send" ? styles["item-menu-check"] : styles["item-menu-un-check"] } onClick={()=>onClickMenu("request-send")}>
+                                            <span>
+                                                {
+                                                    slugMenu == "request-send" ?
+                                                        <img src="/icon_request_check.png" alt=""/>
+                                                    : 
+                                                        <img src="/icon_request_un_check.png" alt=""/>
+                                                }
+                                            </span>
+                                            <span className={styles["item-menu-title"]}>Gửi yêu cầu</span>
+                                        </div>
+                                    </div>
+
+                                    <div className={styles["manage-info-item"]}>
+                                        <div className={slugMenu == "chart" ? styles["item-menu-check"] : styles["item-menu-un-check"] } onClick={()=>onClickMenu("chart")}>
+                                            <span>
+                                                {
+                                                    slugMenu == "chart" ?
+                                                        <img src="/icon_chart_check.png" alt=""/>
+                                                    : 
+                                                        <img src="/icon_chart_un_check.png" alt=""/>
+                                                }
+                                            </span>
+                                            <span className={styles["item-menu-title"]}>Biểu đồ</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+
+                            {
+                                isShowMenuMobile ?
+                                <div className={styles["list-menu-mobile"]} >
+                                    <div className={styles["menu-mobile-header"]}>
+                                        <p className={styles["menu-mobile-header-text"]}> Quản lý</p>
+                                        <p className={styles["menu-mobile-header-img"]} onClick={()=>setIsShowMenuMobile(false)}>
+                                            <img src="/icon_close_mobile.png" alt=""/>
+                                        </p>
+                                    </div>
+                                    <div className={styles["line-mobile"]}></div>
+                                    <div className={slugMenu == "info-account" ? styles["item-menu-check"] : styles["item-menu-un-check"] } onClick={()=>onClickMenu("info-account")}>
+                                        <span>
+                                            {
+                                                slugMenu == "info-account" ?
+                                                    <img src="/icon_info_check.png" alt=""/>
+
+                                                : 
+                                                    <img src="/icon_info_uncheck.png" alt=""/>
+
+                                            }
+                                        </span>
+                                        <span className={styles["item-menu-title"]}>Thông tin của tôi</span>
+                                    </div>
+                                    <div className={styles["manage-info"]}>
+                                        <p className={styles["manage-info-title"]}>Quản lý thông tin</p>
+                                        <div className={styles["manage-info-item"]}>
+                                            <div className={slugMenu == "bill" ? styles["item-menu-check"] : styles["item-menu-un-check"] } onClick={()=>onClickMenu("bill")}>
+                                                <span>
+                                                    {
+                                                        slugMenu == "bill" ?
+                                                            <img src="/icon_bill_check.png" alt=""/>
+                                                        : 
+                                                            <img src="/icon_bill_un_check.png" alt=""/>
+                                                    }
+                                                </span>
+                                                <span className={styles["item-menu-title"]}>Hóa đơn</span>
+                                            </div>
+                                        </div>
+                                        <div className={styles["manage-info-item"]}>
+                                            <div className={slugMenu == "register-service" && isMenuService ? styles["item-menu-check-parent"] : styles["item-menu-un-check-parent"] }>
+                                                <div className={styles["register-service-menu"]}  onClick={()=>onClickMenu("register-service")}>
+                                                    <div className={styles["icon-menu"]}>
+                                                        {
+                                                            slugMenu == "register-service" && isMenuService ?
+                                                                <img src="/icon_bill_check.png" alt=""/>
+                                                            : 
+                                                                <img src="/icon_bill_un_check.png" alt=""/>
+                                                        }
+                                                    </div>
+                                                    <div className={styles["item-menu-title"]}>Đăng ký dịch vụ</div>
+                                                    <div className={styles["icon-down"]}>
+                                                        {
+                                                            slugMenu == "register-service" && isMenuService ?
+                                                                <img src="/arrow_drop_down_check.png" alt=""/>
+                                                            : 
+                                                                <img src="/arrow_drop_down_un_check.png" alt=""/>
+                                                        }
+                                                    </div>
+                                                </div>
+                                                {
+                                                    slugMenu == "register-service" && isMenuService? 
+                                                    <p className={styles["servive"]}>
+                                                        <ul >
+                                                            <li  className={slugMenuService == "service-car"? styles["check"] : styles["un-check"]} onClick={()=>onClickMenuService("service-car")}>Dịch vụ xe</li>
+                                                            <li className={slugMenuService == "service-delyverr"? styles["check"] : styles["un-check"]} onClick={()=>onClickMenuService("service-delyverr")}>Dịch vụ vận chuyển</li>
+                                                            <li className={slugMenuService == "service-overtime"? styles["check"] : styles["un-check"]} onClick={()=>onClickMenuService("service-overtime")}>Dịch vụ làm thêm giờ</li>
+                                                            <li className={slugMenuService == "service-meeting"? styles["check"] : styles["un-check"]} onClick={()=>onClickMenuService("service-meeting")}>Thuê phòng họp</li>
+                                                        </ul>
+                                                    </p>
+                                                    :
+                                                    <></>
+                                                }
+                                            </div>
+                                        </div>
+
+                                        <div className={styles["manage-info-item"]}>
+                                            <div className={slugMenu == "request-send" ? styles["item-menu-check"] : styles["item-menu-un-check"] } onClick={()=>onClickMenu("request-send")}>
+                                                <span>
+                                                    {
+                                                        slugMenu == "request-send" ?
+                                                            <img src="/icon_request_check.png" alt=""/>
+                                                        : 
+                                                            <img src="/icon_request_un_check.png" alt=""/>
+                                                    }
+                                                </span>
+                                                <span className={styles["item-menu-title"]}>Gửi yêu cầu</span>
+                                            </div>
+                                        </div>
+
+                                        <div className={styles["manage-info-item"]}>
+                                            <div className={slugMenu == "chart" ? styles["item-menu-check"] : styles["item-menu-un-check"] } onClick={()=>onClickMenu("chart")}>
+                                                <span>
+                                                    {
+                                                        slugMenu == "chart" ?
+                                                            <img src="/icon_chart_check.png" alt=""/>
+                                                        : 
+                                                            <img src="/icon_chart_un_check.png" alt=""/>
+                                                    }
+                                                </span>
+                                                <span className={styles["item-menu-title"]}>Biểu đồ</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                :
+                                <></>
+                            }
+                           
                         </div>
                     </div>
                 </div>

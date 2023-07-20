@@ -69,20 +69,227 @@ const MeetingHistory = ({onchangeBack}) => {
                 </table>
             </div>
 
+            <div className={styles["content-table-mobile"]}>
+                <div className={styles["table-item-mobile"]}>
+                   <div className={styles["row-item-data"]}>
+                        <p className={styles["status"]}>
+                            <span>13:47 12/04/2023</span>
+                        </p>
+                        <p className={styles["data-code"]}>
+                            <span>Chuyển đồ lên phòng</span>
+                        </p>
+                   </div>
+                   <div className={styles["row-item-data"]}>
+                        <p className={styles["status"]}>
+                            <span>Trạng thái</span>
+                        </p>
+                        <p className={styles["data-status"]}>
+                            <span>Chưa duyệt</span>
+                        </p>
+                   </div>
+                   <div className={styles["row-item-data"]}>
+                        <p className={styles["status"]}>
+                            <span>Lý do</span>
+                        </p>
+                        <p className={styles["data-code"]}>
+                            <span>Mới dọn đến nên cần chuyển đồ</span>
+                        </p>
+                   </div>
+                   <div className={styles["row-item-data"]}>
+                        <p className={styles["status"]}>
+                            <span> Tùy chọn</span>
+                        </p>
+                        <p className={styles["mobile-active"]}>
+                            <p className={styles["status"]} onClick={()=>setIsModalOpen(!isModalOpen)}>
+                                <img src="/Icon_eye.png" alt="eye"/>
+                            </p>
+                            <p className={styles["data-download"]}>
+                                <img src="/Icon_delete.png" alt="delete"/>
+                            </p>
+                        </p>
+                   </div>
+                </div>
+
+                <div className={styles["line-mobile"]}></div>
+                <div className={styles["table-item-mobile"]}>
+                    <div className={styles["row-item-data"]}>
+                            <p className={styles["status"]}>
+                                <span>13:47 12/04/2023</span>
+                            </p>
+                            <p className={styles["data-code"]}>
+                                <span>Chuyển đồ lên phòng</span>
+                            </p>
+                    </div>
+                    <div className={styles["row-item-data"]}>
+                            <p className={styles["status"]}>
+                                <span>Trạng thái</span>
+                            </p>
+                            <p className={styles["data-status"]}>
+                                <span>Chưa duyệt</span>
+                            </p>
+                    </div>
+                    <div className={styles["row-item-data"]}>
+                            <p className={styles["status"]}>
+                                <span>Lý do</span>
+                            </p>
+                            <p className={styles["data-code"]}>
+                                <span>Mới dọn đến nên cần chuyển đồ</span>
+                            </p>
+                    </div>
+                    <div className={styles["row-item-data"]}>
+                            <p className={styles["status"]}>
+                                <span> Tùy chọn</span>
+                            </p>
+                            <p className={styles["mobile-active"]}>
+                                <p className={styles["status"]} onClick={()=>setIsModalOpen(!isModalOpen)}>
+                                    <img src="/Icon_eye.png" alt="eye"/>
+                                </p>
+                                <p className={styles["data-download"]}>
+                                    <img src="/Icon_delete.png" alt="delete"/>
+                                </p>
+                            </p>
+                    </div>
+                </div>
+
+                <div className={styles["line-mobile"]}></div>
+                    <div className={styles["table-item-mobile"]}>
+                    <div className={styles["row-item-data"]}>
+                            <p className={styles["status"]}>
+                                <span>13:47 12/04/2023</span>
+                            </p>
+                            <p className={styles["data-code"]}>
+                                <span>Chuyển đồ lên phòng</span>
+                            </p>
+                    </div>
+                    <div className={styles["row-item-data"]}>
+                            <p className={styles["status"]}>
+                                <span>Trạng thái</span>
+                            </p>
+                            <p className={styles["data-status"]}>
+                                <span>Chưa duyệt</span>
+                            </p>
+                    </div>
+                    <div className={styles["row-item-data"]}>
+                            <p className={styles["status"]}>
+                                <span>Lý do</span>
+                            </p>
+                            <p className={styles["data-code"]}>
+                                <span>Mới dọn đến nên cần chuyển đồ</span>
+                            </p>
+                    </div>
+                    <div className={styles["row-item-data"]}>
+                            <p className={styles["status"]}>
+                                <span> Tùy chọn</span>
+                            </p>
+                            <p className={styles["mobile-active"]}>
+                                <p className={styles["status"]} onClick={()=>setIsModalOpen(!isModalOpen)}>
+                                    <img src="/Icon_eye.png" alt="eye"/>
+                                </p>
+                                <p className={styles["data-download"]}>
+                                    <img src="/Icon_delete.png" alt="delete"/>
+                                </p>
+                            </p>
+                    </div>
+                </div>
+
+                <div className={styles["line-mobile"]}></div>
+                  <div className={styles["table-item-mobile"]}>
+                   <div className={styles["row-item-data"]}>
+                        <p className={styles["status"]}>
+                            <span>13:47 12/04/2023</span>
+                        </p>
+                        <p className={styles["data-code"]}>
+                            <span>Chuyển đồ lên phòng</span>
+                        </p>
+                   </div>
+                   <div className={styles["row-item-data"]}>
+                        <p className={styles["status"]}>
+                            <span>Trạng thái</span>
+                        </p>
+                        <p className={styles["data-status"]}>
+                            <span>Chưa duyệt</span>
+                        </p>
+                   </div>
+                   <div className={styles["row-item-data"]}>
+                        <p className={styles["status"]}>
+                            <span>Lý do</span>
+                        </p>
+                        <p className={styles["data-code"]}>
+                            <span>Mới dọn đến nên cần chuyển đồ</span>
+                        </p>
+                   </div>
+                   <div className={styles["row-item-data"]}>
+                        <p className={styles["status"]}>
+                            <span> Tùy chọn</span>
+                        </p>
+                        <p className={styles["mobile-active"]}>
+                            <p className={styles["status"]} onClick={()=>setIsModalOpen(!isModalOpen)}>
+                                <img src="/Icon_eye.png" alt="eye"/>
+                            </p>
+                            <p className={styles["data-download"]}>
+                                <img src="/Icon_delete.png" alt="delete"/>
+                            </p>
+                        </p>
+                   </div>
+                </div>
+
+                <div className={styles["line-mobile"]}></div>
+                    <div className={styles["table-item-mobile"]}>
+                    <div className={styles["row-item-data"]}>
+                            <p className={styles["status"]}>
+                                <span>13:47 12/04/2023</span>
+                            </p>
+                            <p className={styles["data-code"]}>
+                                <span>Chuyển đồ lên phòng</span>
+                            </p>
+                    </div>
+                    <div className={styles["row-item-data"]}>
+                            <p className={styles["status"]}>
+                                <span>Trạng thái</span>
+                            </p>
+                            <p className={styles["data-status"]}>
+                                <span>Chưa duyệt</span>
+                            </p>
+                    </div>
+                    <div className={styles["row-item-data"]}>
+                            <p className={styles["status"]}>
+                                <span>Lý do</span>
+                            </p>
+                            <p className={styles["data-code"]}>
+                                <span>Mới dọn đến nên cần chuyển đồ</span>
+                            </p>
+                    </div>
+                    <div className={styles["row-item-data"]}>
+                            <p className={styles["status"]}>
+                                <span> Tùy chọn</span>
+                            </p>
+                            <p className={styles["mobile-active"]}>
+                                <p className={styles["status"]} onClick={()=>setIsModalOpen(!isModalOpen)}>
+                                    <img src="/Icon_eye.png" alt="eye"/>
+                                </p>
+                                <p className={styles["data-download"]}>
+                                    <img src="/Icon_delete.png" alt="delete"/>
+                                </p>
+                            </p>
+                    </div>
+                </div>
+            </div>
+
             <Modal 
                 open={isModalOpen} 
                 width={1100}
-                bodyStyle={{
-                    height:850,
-                }}
-                style={{top: '0px', right:'0px', position: 'absolute'}}
                 footer={null}
                 closable={false}
             >
                 <div className={styles["model-header"]}>
                     <div className={styles["model-header-close"]}>
                         <div className={styles["model-title"]}>
-                            <div className={styles["model-title-text"]}>Chi tiết phòng</div>
+                            <div className={styles["model-title-text"]}>
+                                <span onClick={()=>setIsModalOpen(!isModalOpen)} >
+                                    <img src="/icon_back.png" alt=""/>
+                                </span>
+                                <span>Chi tiết phòng</span>
+                            </div>
                         </div>
                         <div className={styles["model-close"]} onClick={()=>setIsModalOpen(!isModalOpen)}>
                             <img src="/icon_close.png" alt="icon close"/>
@@ -91,7 +298,7 @@ const MeetingHistory = ({onchangeBack}) => {
                     </div>
                 </div>
 
-                <div className={styles["model-container"]}>
+                <div className={styles["model-container-mobile"]}>
                     <div className={styles["history-container"]}>
                         <div className={styles["room-img"]}>
                             <img src="/img_slide_room.png" alt=""/>

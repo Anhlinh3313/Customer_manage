@@ -69,6 +69,116 @@ const Bill = () => {
                     </tbody>
                 </table>
             </div>
+
+            <div className={styles["content-table-mobile"]}>
+               <div className={styles["table-item-mobile"]}>
+                   <div className={styles["row-item-data"]}>
+                        <p className={styles["date-time"]}>
+                            <span>kỳ 2 tháng  5 năm 2021</span>
+                        </p>
+                        <p className={styles["data-code"]}>
+                            <span>HD 8665</span>
+                        </p>
+                   </div>
+                   <div className={styles["row-item-data"]}>
+                        <p className={styles["status"]}>
+                            <span>Trạng thái</span>
+                        </p>
+                        <p className={styles["data-status"]}>
+                            <span>Chưa thanh toán</span>
+                        </p>
+                   </div>
+                   <div className={styles["row-item-data"]}>
+                        <p className={styles["status"]}>
+                            <span>Tùy chọn</span>
+                        </p>
+                        <p className={styles["data-download"]}>
+                            <span>Tải xuống</span>
+                        </p>
+                   </div>
+               </div>
+               <div className={styles["line-mobile"]}></div>
+               <div className={styles["table-item-mobile"]}>
+                   <div className={styles["row-item-data"]}>
+                        <p className={styles["date-time"]}>
+                            <span>kỳ 2 tháng  5 năm 2021</span>
+                        </p>
+                        <p className={styles["data-code"]}>
+                            <span>HD 8665</span>
+                        </p>
+                   </div>
+                   <div className={styles["row-item-data"]}>
+                        <p className={styles["status"]}>
+                            <span>Trạng thái</span>
+                        </p>
+                        <p className={styles["data-status"]}>
+                            <span>Chưa thanh toán</span>
+                        </p>
+                   </div>
+                   <div className={styles["row-item-data"]}>
+                        <p className={styles["status"]}>
+                            <span>Tùy chọn</span>
+                        </p>
+                        <p className={styles["data-download"]}>
+                            <span>Tải xuống</span>
+                        </p>
+                   </div>
+               </div>
+               <div className={styles["line-mobile"]}></div>
+               <div className={styles["table-item-mobile"]}>
+                   <div className={styles["row-item-data"]}>
+                        <p className={styles["date-time"]}>
+                            <span>kỳ 2 tháng  5 năm 2021</span>
+                        </p>
+                        <p className={styles["data-code"]}>
+                            <span>HD 8665</span>
+                        </p>
+                   </div>
+                   <div className={styles["row-item-data"]}>
+                        <p className={styles["status"]}>
+                            <span>Trạng thái</span>
+                        </p>
+                        <p className={styles["data-status"]}>
+                            <span>Chưa thanh toán</span>
+                        </p>
+                   </div>
+                   <div className={styles["row-item-data"]}>
+                        <p className={styles["status"]}>
+                            <span>Tùy chọn</span>
+                        </p>
+                        <p className={styles["data-download"]}>
+                            <span>Tải xuống</span>
+                        </p>
+                   </div>
+               </div>
+               <div className={styles["line-mobile"]}></div>
+               <div className={styles["table-item-mobile"]}>
+                   <div className={styles["row-item-data"]}>
+                        <p className={styles["date-time"]}>
+                            <span>kỳ 2 tháng  5 năm 2021</span>
+                        </p>
+                        <p className={styles["data-code"]}>
+                            <span>HD 8665</span>
+                        </p>
+                   </div>
+                   <div className={styles["row-item-data"]}>
+                        <p className={styles["status"]}>
+                            <span>Trạng thái</span>
+                        </p>
+                        <p className={styles["data-status"]}>
+                            <span>Chưa thanh toán</span>
+                        </p>
+                   </div>
+                   <div className={styles["row-item-data"]}>
+                        <p className={styles["status"]}>
+                            <span>Tùy chọn</span>
+                        </p>
+                        <p className={styles["data-download"]}>
+                            <span>Tải xuống</span>
+                        </p>
+                   </div>
+               </div>
+            </div>
         </>
     );
 };

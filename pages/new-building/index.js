@@ -27,20 +27,6 @@ function NewBuilding() {
                     <>
                         <div className={styles["new-container"]}>
                             <Link className={styles["new-item"]} href="/new-building/chi-tiet">
-                                <div className={styles["new-right-item-one"]}>
-                                    <div className={styles["new-right-item-one-content"]}>
-                                        <div className={styles["content-right"]}>
-                                            <p className={styles["new-left-title-item"]}>Đông Dương Land nâng  cấp quản lý kinh doanh dự án Golde...</p>
-                                            <p className={styles["new-left-time"]}>
-                                                <img className={styles["new-clock"]} src="./clock.png" alt="Banner" ></img>
-                                                <span>11: 20 - 25/11/2022</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </Link>
-                            
-                            <Link className={styles["new-item"]} href="/new-building/chi-tiet">
                                 <p className={styles["img_new"]}>
                                     <img src="./img_new_1.png" alt="new" />
                                 </p>
@@ -84,6 +70,7 @@ function NewBuilding() {
                                 </p>
                             </Link>
                         </div>
+                        
                         <div className={styles["new-container"]}>
                             <Link className={styles["new-item"]} href="/new-building/chi-tiet">
                                 <p className={styles["img_new"]}>

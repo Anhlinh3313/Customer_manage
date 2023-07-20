@@ -11,7 +11,7 @@ const Meeting = ({onchangeHistory}) => {
                     </div>  
                 </div>
             
-                <div className={styles["content-table"]}>
+                <div className={styles["content-meeting"]}>
                     <div className={styles["list-room"]}>
                         <div className={styles["room"]}>
                             <div className={styles["room-item"]}>
@@ -56,7 +56,7 @@ const Meeting = ({onchangeHistory}) => {
 
                         <div className={styles["room"]}>
                             <div className={styles["room-item"]}>
-                                <img src="/img_room_4.png" alt=""/>
+                                <img src="/img_room_5.png" alt=""/>
                                 <div className={styles["room-container"]}> 
                                     <div className={styles["room-price"]}>
                                         <div className={styles["title-price"]}>Giá tiền</div>
