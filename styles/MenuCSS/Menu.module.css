@@ -343,6 +343,7 @@
 .list-menu-mobile ul li {
     padding: 5px;
     padding-top: 10px;
+    display: flex;
 }
 
 .button-mobile {
