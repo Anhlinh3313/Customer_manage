@@ -1,4 +1,4 @@
-import { DatePicker, Modal, Select } from "antd";
+import { DatePicker, Modal, Select, Upload } from "antd";
 import styles from "../../../styles/ManageAccount.module.css";
 import IconDatepicker from "./Icon/IconDatepicker";
 import { useState } from "react";
@@ -8,6 +8,47 @@ const RequestSend = () => {
     const [isEdit, setIsEdit] = useState(false);
     const deleteIcon = <IconDatepicker />;
     const dateFormatCreate = 'HH:mm - DD/MM/YYYY';
+    const [previewOpen, setPreviewOpen] = useState(false);
+    const [previewImage, setPreviewImage] = useState('');
+    const [previewTitle, setPreviewTitle] = useState('');
+
+    const [fileList, setFileList] = useState([
+        {
+          uid: '-1',
+          name: 'image.png',
+          status: 'done',
+          url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+        },
+        {
+          uid: '-2',
+          name: 'image.png',
+          status: 'done',
+          url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+        },
+    ]);
+
+    const handleCancel = () => setPreviewOpen(false);
+
+    const handlePreview = async (file) => {
+        if (!file.url && !file.preview) {
+            file.preview = await getBase64(file.originFileObj);
+        }
+        setPreviewImage(file.url || file.preview);
+        setPreviewOpen(true);
+        setPreviewTitle(file.name || file.url.substring(file.url.lastIndexOf('/') + 1));
+    };
+
+    const handleChangeImg = ({ fileList: newFileList }) => setFileList(newFileList);
+
+    const uploadButton = (
+        <div className={styles["buttom-upload"]}>
+            <span>
+                <img src="/icon_img.png" alt="icon img"></img>
+            </span>
+            <span className={styles["buttom-upload-text"]}>Thêm ảnh</span>
+        </div>
+    );
+
     const handleChange = (value) => {
         console.log(`selected ${value}`);
     };
@@ -269,7 +310,7 @@ const RequestSend = () => {
                         </div>
                         <div className={styles["model-close"]} onClick={()=>setIsModalOpen(!isModalOpen)}>
                             <img src="/icon_close.png" alt="icon close"/>
-                            <span>Đóng</span>
+                            <span className={styles["model-close-text"]}>Đóng</span>
                         </div>
                     </div>
                 </div>
@@ -300,6 +341,30 @@ const RequestSend = () => {
                                     suffixIcon={deleteIcon} 
                                     showTime
                                 />
+                            </div>
+                        </div>
+
+                        <div className={styles["container-data"]}>
+                            <div className={styles["item-data-full"]}>
+                                <p className={styles["lable-data"]}>Hình ảnh <span className={styles["lable-data-note"]}>(Thêm hình ảnh yêu cầu nếu có)</span></p>
+                                <Upload
+                                    action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+                                    listType="picture-card"
+                                    fileList={fileList}
+                                    onPreview={handlePreview}
+                                    onChange={handleChangeImg}
+                                >
+                                    {fileList.length >= 8 ? null : uploadButton}
+                                </Upload>
+                                <Modal open={previewOpen} title={previewTitle} footer={null} onCancel={handleCancel}>
+                                    <img
+                                    alt="example"
+                                    style={{
+                                        width: '100%',
+                                    }}
+                                    src={previewImage}
+                                    />
+                                </Modal>
                             </div>
                         </div>
 

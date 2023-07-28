@@ -285,7 +285,7 @@ const DeliveryService = () => {
                         </div>
                         <div className={styles["model-close"]} onClick={()=>setIsModalOpen(!isModalOpen)}>
                             <img src="/icon_close.png" alt="icon close"/>
-                            <span>Đóng</span>
+                            <span className={styles["model-close-text"]}>Đóng</span>
                         </div>
                     </div>
                 </div>
@@ -395,7 +395,7 @@ const DeliveryService = () => {
                         </div>
                         <div className={styles["model-close"]} onClick={()=>setIsModalOpenCreate(!isModalOpenCreate)}>
                             <img src="/icon_close.png" alt="icon close"/>
-                            <span>Đóng</span>
+                            <span className={styles["model-close-text"]}>Đóng</span>
                         </div>
                     </div>
                 </div>

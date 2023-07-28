@@ -371,7 +371,7 @@ const CarService = () => {
                         </div>
                         <div className={styles["model-close"]} onClick={()=>setIsModalOpen(!isModalOpen)}>
                             <img src="/icon_close.png" alt="icon close"/>
-                            <span>Đóng</span>
+                            <span className={styles["model-close-text"]}>Đóng</span>
                         </div>
                     </div>
                 </div>

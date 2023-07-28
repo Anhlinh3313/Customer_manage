@@ -113,6 +113,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: 20px;
+    cursor: pointer;
 }
 
 .manage-info {
@@ -160,12 +161,14 @@
 .check {
     padding: 5px 24px;
     list-style-type: disc;
+    cursor: pointer;
 }
 
 .un-check {
     color: #121212;
     padding: 5px 24px;
     list-style-type: disc;
+    cursor: pointer;
 }
 
 .content {
@@ -948,6 +951,10 @@
 
 .model-title-text img {
     display: none;
+}
+
+.model-close-text{
+    cursor: pointer;
 }
 
 @media screen and (max-width: 600px) {
