@@ -6,6 +6,7 @@ import { useState } from "react";
 
 const CarService = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isEdit, setIsEdit] = useState(false);
 
     const deleteIcon = <IconDatepicker />;
     const dateFormat = 'HH:mm - DD/MM/YYYY';
@@ -58,12 +59,22 @@ const CarService = () => {
     const handleChangeSelect = (value) => {
         console.log(`selected ${value}`);
     };
+
+    const handleChangeEdit = (value) => {
+        setIsModalOpen(!isModalOpen);
+        setIsEdit(true);
+    };
+
+    const handleChangeCreate = (value) => {
+        setIsModalOpen(!isModalOpen);
+        setIsEdit(false);
+    };
     return(
         <>
             <div className={styles["content-header"]}>
                 <div className={styles["content-title"]}>Dịch vụ xe</div>
                 <div className={styles["content-button"]}>
-                    <button className={styles["button-create-green"]}>Đăng ký</button>
+                    <button className={styles["button-create-green"]} onClick={()=>handleChangeCreate()}>Đăng ký</button>
                 </div>                       
             </div>
 
@@ -87,7 +98,7 @@ const CarService = () => {
                                 <span className={styles["status-erro"]}>Chưa duyệt</span>
                             </td>
                             <td className={styles["content-item-action-car"]}>
-                                <span className={styles["icon-detail"]} onClick={()=>setIsModalOpen(!isModalOpen)}>
+                                <span className={styles["icon-detail"]} onClick={()=>handleChangeEdit()}>
                                     <img src="/Icon_eye.png" alt="eye"/>
                                 </span>
                                 <span className={styles["icon-delete"]}>
@@ -104,7 +115,7 @@ const CarService = () => {
                                 <span className={styles["status-success"]}>Đã duyệt</span>
                             </td>
                             <td className={styles["content-item-action-car"]}>
-                                <span className={styles["icon-detail"]} onClick={()=>setIsModalOpen(!isModalOpen)}>
+                                <span className={styles["icon-detail"]} onClick={()=>handleChangeEdit()}>
                                     <img src="/Icon_eye.png" alt="eye"/>
                                 </span>
                                 <span className={styles["icon-delete"]}>
@@ -334,7 +345,13 @@ const CarService = () => {
                                 <span onClick={()=>setIsModalOpen(!isModalOpen)} >
                                     <img src="/icon_back.png" alt=""/>
                                 </span>
-                                <span>Đăng ký dịch vụ: </span>
+                                <span>
+                                    {isEdit?
+                                        "Chỉnh sửa dịch vụ:"
+                                        :
+                                        "Đăng ký dịch vụ:"
+                                    }
+                                    </span>
                             </div>
                             <div className={styles["select"]}>
                                 <div className={styles["form-select-car"]}>

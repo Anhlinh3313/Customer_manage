@@ -36,7 +36,7 @@ function Login() {
                             <p className={styles["input"]}>
                                 <input className={styles["input-username"]} placeholder="Nhập tài khoản"></input>
                             </p>
-                            <p className={styles["input"]}>
+                            <p className={styles["input-password"]}>
                                 <input className={styles["input-username"]} placeholder="Mật khẩu"></input>
                                { isShowEye ?
                                     <img  src="./icon_eye_on.png" alt="Banner"  onClick={()=> setIsShowEye(!isShowEye)}/>

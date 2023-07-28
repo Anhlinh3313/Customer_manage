@@ -5,6 +5,7 @@ import { useState } from "react";
 
 const OvertimeService = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isEdit, setIsEdit] = useState(false);
     const deleteIcon = <IconDatepicker />;
     const dateFormatCreate = 'HH:mm - DD/MM/YYYY';
 
@@ -12,12 +13,21 @@ const OvertimeService = () => {
         console.log(`selected ${value}`);
       };
 
+    const handleChangeEdit = (value) => {
+        setIsModalOpen(!isModalOpen);
+        setIsEdit(true);
+    };
+
+    const handleChangeCreate = (value) => {
+        setIsModalOpen(!isModalOpen);
+        setIsEdit(false);
+    };
     return(
         <>
             <div className={styles["content-header"]}>
                 <div className={styles["content-title"]}>Dịch vụ làm thêm giờ</div>
                 <div className={styles["content-button"]}>
-                    <button className={styles["button-create-green"]} onClick={()=>setIsModalOpen(!isModalOpen)}>Đăng ký</button>
+                    <button className={styles["button-create-green"]} onClick={()=>handleChangeCreate()}>Đăng ký</button>
                 </div>                       
             </div>
 
@@ -40,7 +50,7 @@ const OvertimeService = () => {
                                 <span className={styles["status-erro"]}>Chưa duyệt</span>
                             </td>
                             <td className={styles["content-item-action-car"]}>
-                                <span className={styles["icon-detail"]} onClick={()=>setIsModalOpen(!isModalOpen)}>
+                                <span className={styles["icon-detail"]} onClick={()=>handleChangeEdit()}>
                                     <img src="/Icon_eye.png" alt="eye"/>
                                 </span>
                                 <span className={styles["icon-delete"]}>
@@ -57,7 +67,7 @@ const OvertimeService = () => {
                                 <span className={styles["status-success"]}>Đã duyệt</span>
                             </td>
                             <td className={styles["content-item-action-car"]}>
-                                <span className={styles["icon-detail"]} onClick={()=>setIsModalOpen(!isModalOpen)}>
+                                <span className={styles["icon-detail"]} onClick={()=>handleChangeEdit()}>
                                     <img src="/Icon_eye.png" alt="eye"/>
                                 </span>
                                 <span className={styles["icon-delete"]}>
@@ -100,7 +110,7 @@ const OvertimeService = () => {
                             <span> Tùy chọn</span>
                         </p>
                         <p className={styles["mobile-active"]}>
-                            <p className={styles["status"]} onClick={()=>setIsModalOpen(!isModalOpen)}>
+                            <p className={styles["status"]} onClick={()=>handleChangeEdit()}>
                                 <img src="/Icon_eye.png" alt="eye"/>
                             </p>
                             <p className={styles["data-download"]}>
@@ -142,7 +152,7 @@ const OvertimeService = () => {
                             <span> Tùy chọn</span>
                         </p>
                         <p className={styles["mobile-active"]}>
-                            <p className={styles["status"]} onClick={()=>setIsModalOpen(!isModalOpen)}>
+                            <p className={styles["status"]} onClick={()=>handleChangeEdit()}>
                                 <img src="/Icon_eye.png" alt="eye"/>
                             </p>
                             <p className={styles["data-download"]}>
@@ -167,7 +177,14 @@ const OvertimeService = () => {
                                 <span onClick={()=>setIsModalOpen(!isModalOpen)} >
                                     <img src="/icon_back.png" alt=""/>
                                 </span>
-                                <span> Đăng ký dịch vụ làm thêm giờ</span>
+                                <span>
+                                    {
+                                        isEdit ? 
+                                        "Chi tiết dịch vụ làm thêm giờ"
+                                        :
+                                        "Đăng ký dịch vụ làm thêm giờ"
+                                    }
+                                </span>
                             </div>
                         </div>
                         <div className={styles["model-close"]} onClick={()=>setIsModalOpen(!isModalOpen)}>

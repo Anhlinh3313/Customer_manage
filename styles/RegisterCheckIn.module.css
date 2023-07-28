@@ -83,7 +83,6 @@
 }
 .form-select span{
   color: var(--light-invert-color-text-on-top, #121212);
-  font-family: Inter;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -95,7 +94,6 @@
 }
 .title-input{
   color: var(--light-invert-color-text-on-top, #121212);
-  font-family: Inter;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;

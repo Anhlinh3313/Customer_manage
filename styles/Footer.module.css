@@ -22,7 +22,6 @@
 .menu-item {
   padding-right: 40px;
   color: var(--light-invert-color-text-on-top, #121212);
-  font-family: Inter;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -47,7 +46,6 @@
 
 .provice {
   color: var(--light-invert-color-text-on-top, #121212);
-  font-family: Inter;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -71,7 +69,6 @@
 .icon-text {
   padding-left: 10px;
   color: var(--light-invert-color-text-on-top, #121212);
-  font-family: Inter;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;

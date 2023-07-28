@@ -280,6 +280,11 @@ function ManageAccount() {
                         :
                             <></>                        
                     }
+                    {slugMenu == "register-service" &&  slugMenuService == "service-meeting"?
+                            <MeetingManage/>
+                        :
+                            <></>                        
+                    }
                     {slugMenu == "request-send"?
                             <RequestSend/>
                         :
@@ -287,11 +292,6 @@ function ManageAccount() {
                     }
                     {slugMenu == "chart"?
                             <Chart/>
-                        :
-                            <></>                        
-                    }
-                    {slugMenu == "register-service" &&  slugMenuService == "service-meeting"?
-                            <MeetingManage/>
                         :
                             <></>                        
                     }

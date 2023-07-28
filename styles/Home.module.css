@@ -242,7 +242,6 @@
 
 .banner_sider_connent h2 {
   color: var(--light-invert-color-text-on-top, #121212);
-  font-family: Inter;
   font-size: 34px;
   font-style: normal;
   font-weight: 400;
@@ -251,7 +250,6 @@
 
 .banner_sider_connent span {
   color: var(--light-invert-color-body-text, #333);
-  font-family: Inter;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -293,7 +291,6 @@
 }
 
 .header p {
-  font-family: Inter;
   font-size: 34px;
   font-style: normal;
   font-weight: 400;
@@ -387,7 +384,6 @@
 .new-left-title {
   padding: 0px 16px;
   color: var(--dark-invert-color-text-on-top, #fff);
-  font-family: Inter;
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
@@ -401,7 +397,6 @@
 
 .new-left-time span {
   color: var(--dark-invert-color-text-on-top, #fff);
-  font-family: Inter;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -452,7 +447,6 @@
 .new-left-title-item {
   padding: 0px 16px;
   color: var(--dark-invert-color-text-on-top, #FFF);
-  font-family: Inter;
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
@@ -515,7 +509,6 @@
 
 .provice {
   color: var(--dark-invert-color-text-on-top, #FFF);
-  font-family: Inter;
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
@@ -530,7 +523,6 @@
 .icon-text {
   padding-left: 10px;
   color: var(--dark-invert-color-text-on-top, #FFF);
-  font-family: Inter;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -558,7 +550,6 @@
 .header-title {
   padding-top: 100px;
   color: var(--dark-invert-color-text-on-top, #FFF);
-  font-family: Inter;
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
@@ -568,7 +559,6 @@
 
 .header-content {
   color: var(--dark-invert-color-text-on-top, #FFF);
-  font-family: Inter;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -619,7 +609,6 @@
 
 .form-select span {
   color: var(--dark-invert-color-text-on-top, #FFF);
-  font-family: Inter;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -654,7 +643,6 @@
 
 .form-select span {
   color: var(--dark-invert-color-text-on-top, #FFF);
-  font-family: Inter;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -854,7 +842,6 @@
 
 .header {
   color: var(--light-invert-color-text-on-top, #121212);
-  font-family: Inter;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -866,7 +853,6 @@
 
 .content {
   color: var(--light-invert-color-text-on-top, #121212);
-  font-family: Inter;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
@@ -899,7 +885,6 @@
 .select-data-home {
   background: none;
   color: var(--dark-invert-color-text-on-top, #FFF);
-  font-family: Inter;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -924,7 +909,6 @@
 
   .banner_sider_connent h2 {
     color: var(--light-invert-color-text-on-top, #121212);
-    font-family: Inter;
     font-size: 20px;
     font-style: normal;
     font-weight: 600;
@@ -934,7 +918,6 @@
   .banner_sider_connent h4 {
     color: var(--light-invert-color-body-text, #333);
     text-align: justify;
-    font-family: Inter;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -951,7 +934,6 @@
 
   .header p {
     color: var(--light-invert-color-text-on-top, #121212);
-    font-family: Inter;
     font-size: 20px;
     font-style: normal;
     font-weight: 600;

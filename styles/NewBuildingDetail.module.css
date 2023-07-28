@@ -12,7 +12,6 @@
 
 .title {
   color: var(--light-invert-color-text-on-top, #121212);
-  font-family: Inter;
   font-size: 34px;
   font-style: normal;
   font-weight: 600;
@@ -31,7 +30,6 @@
 
 .time span {
   color: var(--light-invert-color-text-on-top, #121212);
-  font-family: Inter;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -41,7 +39,6 @@
 
 .title-right {
   color: #000;
-  font-family: Inter;
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
@@ -51,7 +48,6 @@
 
 .content-right {
   color: var(--light-invert-color-text-on-top, #121212);
-  font-family: Inter;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -81,7 +77,6 @@
 .new-left-title-item {
   padding-left: 16px;
   color: var(--dark-invert-color-text-on-top, #FFF);
-  font-family: Inter;
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
@@ -101,7 +96,6 @@
 
 .new-left-time span {
   color: var(--dark-invert-color-text-on-top, #fff);
-  font-family: Inter;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -124,7 +118,6 @@
 
   .title {
     color: var(--light-invert-color-text-on-top, #121212);
-    font-family: Inter;
     font-size: 20px;
     font-style: normal;
     font-weight: 600;

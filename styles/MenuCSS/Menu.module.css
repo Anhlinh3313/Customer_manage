@@ -80,7 +80,6 @@
     padding: 19px 5px 12px 5px;
     color: #000;
     position: relative;
-    font-family: Inter;
     font-size: 19px;
     font-style: normal;
     font-weight: 400;
@@ -131,7 +130,6 @@
     line-height: 20px;
     letter-spacing: 0.24px;
     text-align: center;
-    font-family: Inter;
     height: 44px;
     width: 171px;
     padding-right: 15px;
@@ -147,7 +145,6 @@
     line-height: 20px;
     letter-spacing: 0.24px;
     text-align: center;
-    font-family: Inter;
     height: 44px;
     width: 171px !important;
     padding-right: 15px;
@@ -163,7 +160,6 @@
     line-height: 20px;
     letter-spacing: 0.24px;
     text-align: center;
-    font-family: Inter;
     height: 44px;
     width: 119px;
 }
@@ -193,7 +189,6 @@
 .list-menu-text-name {
     padding-left: 10px;
     color: #000;
-    font-family: Inter;
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
@@ -318,7 +313,6 @@
 .mobile-header-title span {
     color: var(--light-invert-color-text-on-top, #121212);
     text-align: center;
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
@@ -360,7 +354,6 @@
 .list-menu-mobile-item p {
     color: var(--light-invert-color-text-on-top, #121212);
     text-align: center;
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;

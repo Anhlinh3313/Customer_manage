@@ -25,7 +25,6 @@
 
 .title {
   color: var(--light-invert-color-text-on-top, #121212);
-  font-family: Inter;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -40,7 +39,6 @@
 
 .time span {
   color: var(--light-invert-color-text-on-top, #121212);
-  font-family: Inter;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -124,7 +122,6 @@
 .new-left-title-item {
   padding: 0px 16px;
   color: var(--dark-invert-color-text-on-top, #FFF);
-  font-family: Inter;
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
@@ -144,7 +141,6 @@
 
 .new-left-time span {
   color: var(--dark-invert-color-text-on-top, #fff);
-  font-family: Inter;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;

@@ -1,18 +1,21 @@
 import React from "react";
 import Styles from "../../../styles/Footer.module.css";
+import { useRouter } from "next/router";
 
 const Footer = () => {
+  const router = useRouter();
+  
   return (
     <div className={Styles["footer"]}>
       <div className={Styles["footer-line"]}></div>
       <div className={Styles["footer-menu"]}>
         <img className={Styles["footer-logo"]} src="/logo.png" alt="logo" />
         <div className={Styles["menu"]}>
-          <span className={Styles["menu-item"]}>Trang chủ</span>
-          <span className={Styles["menu-item"]}>Tin tức tòa nhà</span>
-          <span className={Styles["menu-item"]}>Sơ đồ mặt bằng</span>
-          <span className={Styles["menu-item"]}>Đăng ký check in</span>
-          <span className={Styles["menu-item"]}>Liên hệ</span>
+          <span className={Styles["menu-item"]} onClick={() => router.push(`/home`)}>Trang chủ</span>
+          <span className={Styles["menu-item"]} onClick={() => router.push(`/new-building`)}>Tin tức tòa nhà</span>
+          <span className={Styles["menu-item"]} onClick={() => router.push(`/archirectural-drawing`)}>Sơ đồ mặt bằng</span>
+          <span className={Styles["menu-item"]} onClick={() => router.push(`/Register-check-in`)}>Đăng ký check in</span>
+          {/* <span className={Styles["menu-item"]}>Liên hệ</span> */}
         </div>
       </div>
       <div className={Styles["footer-branch"]}>

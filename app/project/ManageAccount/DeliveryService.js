@@ -6,6 +6,7 @@ import { useState } from "react";
 const DeliveryService = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isModalOpenCreate, setIsModalOpenCreate] = useState(false);
+
     const deleteIcon = <IconDatepicker />;
     const dateFormatEdit = 'HH:mm - DD/MM/YYYY';
     const dateFormatCreate = 'HH:mm - DD/MM/YYYY';
@@ -389,7 +390,7 @@ const DeliveryService = () => {
                                  <span onClick={()=>setIsModalOpenCreate(!isModalOpenCreate)} >
                                     <img src="/icon_back.png" alt=""/>
                                 </span>
-                                <span> Chi tiết dịch vụ vận chuyển</span>
+                                <span>Đăng ký dịch vụ vận chuyển</span>
                             </div>
                         </div>
                         <div className={styles["model-close"]} onClick={()=>setIsModalOpenCreate(!isModalOpenCreate)}>

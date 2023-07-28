@@ -62,12 +62,11 @@
   background: var(--light-invert-color-bar, #4671F6);
   color: #fff;
 }
-.input img{
+.input-password img{
   width: 20px;
   height: 20px;
-  position: absolute;
-  top: 198px;
-  right: 45px;
+  margin-top: 10px;
+  margin-left: -35px;
 }
 
 @media screen and (max-width: 600px) {
@@ -88,4 +87,7 @@
     height: 70px;
     display: inline-block;
   }
+}
+.input-password{
+  display: flex;
 }

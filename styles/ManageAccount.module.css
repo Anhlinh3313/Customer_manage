@@ -28,7 +28,6 @@
 
 .header-title span {
     color: var(--light-invert-color-text-on-top, #121212);
-    font-family: Inter;
     font-size: 18px;
     font-style: normal;
     font-weight: 600;
@@ -195,7 +194,6 @@
 
 .content-title {
     color: #000;
-    font-family: Inter;
     font-size: 18px;
     font-style: normal;
     font-weight: 600;
@@ -227,7 +225,6 @@
 .button-create-edit {
     color: var(--light-primary-50, #4671F6);
     text-align: center;
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
@@ -253,7 +250,6 @@
 
 .container-title {
     color: #000;
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
@@ -264,7 +260,6 @@
 
 .container-content {
     color: var(--light-invert-color-text-on-top, #121212);
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -465,7 +460,6 @@
 
 .download {
     color: var(--light-invert-color-bar, #4671F6);
-    font-family: Inter;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -475,7 +469,6 @@
 
 .detail {
     color: var(--light-invert-color-bar, #4671F6);
-    font-family: Inter;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -534,7 +527,6 @@
 
 .model-title-text {
     color: var(--light-invert-color-text-on-top, #121212);
-    font-family: Inter;
     font-size: 18px;
     font-style: normal;
     font-weight: 600;
@@ -550,7 +542,6 @@
 
 .standard-select {
     color: var(--light-invert-color-bar, #4671F6);
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
@@ -584,7 +575,6 @@
 
 .select-item {
     color: var(--light-invert-color-text-on-top, #131313);
-    font-family: Inter;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -621,7 +611,6 @@
 
 .lable-data {
     color: #000;
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
@@ -671,7 +660,6 @@
 
 .buttom-upload-text {
     color: var(--light-invert-color-bar, #4671F6);
-    font-family: Inter;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -721,7 +709,6 @@
     background: var(--light-green-50, #2461D5);
     color: var(--dark-invert-color-text-on-top, #FFF);
     text-align: center;
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
@@ -751,7 +738,6 @@
 
 .lable-info {
     color: var(--light-invert-color-subtitle, #999);
-    font-family: Inter;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -806,7 +792,6 @@
 .title-price {
     width: 65%;
     color: var(--light-invert-color-body-text, #333);
-    font-family: Inter;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -816,7 +801,6 @@
 .price {
     width: 35%;
     color: var(--light-invert-color-primary, #DE2027);
-    font-family: Inter;
     font-size: 18px;
     font-style: normal;
     font-weight: 500;
@@ -825,7 +809,6 @@
 
 .room-content {
     color: var(--light-invert-color-body-text, #333);
-    font-family: Inter;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -868,7 +851,6 @@
 .room-number {
     padding-left: 10px;
     color: var(--light-invert-color-text-on-top, #121212);
-    font-family: Inter;
     font-size: 18px;
     font-style: normal;
     font-weight: 600;
@@ -878,7 +860,6 @@
 .room-data-price {
     padding-left: 10px;
     color: var(--light-invert-color-primary, #DE2027);
-    font-family: Inter;
     font-size: 18px;
     font-style: normal;
     font-weight: 600;
@@ -908,7 +889,6 @@
 .room-data-time-item p {
     width: 33.3%;
     color: var(--light-invert-color-subtitle, #999);
-    font-family: Inter;
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
@@ -927,7 +907,6 @@
 .save-text {
     color: var(--dark-invert-color-text-on-top, #FFF);
     text-align: center;
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
@@ -1066,7 +1045,6 @@
     .menu-mobile-header-text {
         width: 90%;
         color: var(--light-invert-color-text-on-top, #121212);
-        font-family: Inter;
         font-size: 16px;
         font-style: normal;
         font-weight: 600;
@@ -1133,7 +1111,6 @@
     .status {
         width: 80%;
         color: var(--light-invert-color-subtitle, #999);
-        font-family: Inter;
         font-size: 14px;
         font-style: normal;
         font-weight: 400;
@@ -1143,7 +1120,6 @@
 
     .data-status {
         color: var(--dark-invert-color-primary, #DE2027);
-        font-family: Inter;
         font-size: 12px;
         font-style: normal;
         font-weight: 500;
@@ -1159,7 +1135,6 @@
 
     .data-download {
         color: var(--light-invert-color-bar, #4671F6);
-        font-family: Inter;
         font-size: 14px;
         font-style: normal;
         font-weight: 400;
@@ -1206,7 +1181,6 @@
     .model-title-text span {
         text-align: center;
         color: #000;
-        font-family: Inter;
         font-size: 16px;
         font-style: normal;
         font-weight: 600;
@@ -1254,7 +1228,6 @@
 
     .lable-data {
         color: #000;
-        font-family: Inter;
         font-size: 15px;
         font-style: normal;
         font-weight: 600;
@@ -1264,7 +1237,6 @@
     .date-name {
         width: 100%;
         color: var(--light-invert-color-text-on-top, #121212);
-        font-family: Inter;
         font-size: 14px;
         font-style: normal;
         font-weight: 400;
