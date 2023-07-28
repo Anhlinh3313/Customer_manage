@@ -30,7 +30,7 @@ function Login() {
                         <img src="./logo_login.png" alt="Banner" />
                     </div>
                     <div className={styles["form"]}>
-                        <p>Đăng nhập</p>
+                        <p className={styles["title-logo"]}>Đăng nhập</p>
                         <p>Nhập thông tin bên dưới để tiếp tục</p>
                         <div className={styles["form-input"]}>
                             <p className={styles["input"]}>
