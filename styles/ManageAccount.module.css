@@ -535,13 +535,16 @@
     font-weight: 600;
     line-height: 28px;
     text-transform: uppercase;
+    width: 20%;
 }
 
 .model-title-select {
     padding-left: 8px;
 }
 
-.select {}
+.select {
+    width: 35%;
+}
 
 .standard-select {
     color: var(--light-invert-color-bar, #4671F6);

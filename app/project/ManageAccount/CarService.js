@@ -2,7 +2,10 @@ import { Calendar, DatePicker, Modal, Select, Upload } from "antd";
 import styles from "../../../styles/ManageAccount.module.css";
 import IconDatepicker from "./Icon/IconDatepicker";
 import dayjs from 'dayjs';
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import {getSelectedTypeRegisterPaking} from "../../../stores/typeRegisterPaking"
+import {getSelectedTypeCar} from "../../../stores/typeCar"
+
 
 const CarService = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -69,6 +72,26 @@ const CarService = () => {
         setIsModalOpen(!isModalOpen);
         setIsEdit(false);
     };
+
+    const loadTypeRegisterPaking = async ()  => {
+        const resData = await getSelectedTypeRegisterPaking();
+        console.log(resData);
+    }
+
+    const loadTypeCar = async ()  => {
+        const resData = await getSelectedTypeCar();
+        console.log(resData);
+    }
+
+    useEffect(()=>{
+        const fetching = () =>{
+            loadTypeRegisterPaking();
+            loadTypeCar();
+        };
+        fetching();
+    },[])
+
+
     return(
         <>
             <div className={styles["content-header"]}>

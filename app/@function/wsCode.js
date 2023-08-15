@@ -1,4 +1,4 @@
-export const API_URL = "https://api.customer-manager-dip.com";
+export const API_URL = "https://apibd.dip.vn";
 export const BUNNY_URL = "http://dongdoi.b-cdn.net";
 export const API_SPORT = "https://isports.thethao789.com";
 export const API_SABA = "https://www.saba.vn";
