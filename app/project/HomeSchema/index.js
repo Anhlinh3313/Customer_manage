@@ -1,23 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Head from "next/head";
-import axios from "axios";
-import { useDispatch } from "react-redux";
-import { getAllGroup } from "stores/group";
-import { setDataApp } from "redux/AppReducer";
 
 const HomeSchema = (props) => {
-
-  const [schema, setSchema] = useState([]);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    axios
-      .get(`${process.env.NEXT_PUBLIC_API_DOMAIN}/api/schema/getByPage/home`)
-      .then((data) => {
-        setSchema(data.data);
-      });
-  }, []);
-
   return (
     <>
       <div>
@@ -44,7 +28,7 @@ const HomeSchema = (props) => {
           ></meta>
           <meta
             name="COPYRIGHT"
-            content="Copyright (C) 2007 thethao789.com"
+            content="Copyright (C) 2007 customer-manage-dip.com"
           ></meta>
           <meta name="RATING" content="GENERAL"></meta>
           <meta name="geo.placename" content="ho chi minh"></meta>
@@ -69,19 +53,6 @@ const HomeSchema = (props) => {
             name="robots"
             content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"
           ></meta>
-          {schema
-            ? schema.map((item, index) => {
-              return (
-                <script
-                  type="application/ld+json"
-                  dangerouslySetInnerHTML={{
-                    __html: item.script,
-                  }}
-                  key={index}
-                ></script>
-              );
-            })
-            : null}
         </Head>
       </div>
     </>

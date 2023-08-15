@@ -6,11 +6,11 @@ const generateRssFeed = async () => {
   const posts = await getListNewsNew(10, 1);
   const date = new Date();
   const author = {
-    name: "The thao 789",
-    email: "thethao789@gmail.com",
+    name: "customer-manage-dip",
+    email: "customer-manage-dip@gmail.com",
   };
   const feed = new Feed({
-    title: "Thể thao 789",
+    title: "customer-manage-dip",
     description: "",
     id: SITE_URL,
     link: SITE_URL,

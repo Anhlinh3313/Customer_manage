@@ -1,8 +1,4 @@
 import React from "react";
-import Link from "next/link";
-import Image from "next/future/image";
-import { Row, Col } from "antd";
-import Script from "next/script";
 import Head from "next/head";
 import { htmlToText } from "html-to-text";
 
@@ -37,7 +33,7 @@ const PostSchema = (props) => {
           ></meta>
           <meta
             name="COPYRIGHT"
-            content="Copyright (C) 2007 thethao789.com"
+            content="Copyright (C) 2007 customer-manage-dip.com"
           ></meta>
           <meta name="RATING" content="GENERAL"></meta>
           <meta name="geo.placename" content="ho chi minh"></meta>

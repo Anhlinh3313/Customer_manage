@@ -8,7 +8,6 @@ import React, {
 } from "react";
 import IconTop from "./IconMenu/IconTop";
 import stylesCss from "../../../styles/MenuCSS/Menu.module.css";
-import { API_URL } from "@function/wsCode";
 import { useRouter } from 'next/router';
 import { UserContext } from "context/userContext";
 
@@ -60,7 +59,7 @@ const MenuPC = () => {
       return {
         element: (
           <a onClick={() => router.push(`/${item.menuSlug}`)}>
-            <div className={`${stylesCss["menu_bottom_item"]} ${active}`}>{item.menuName}</div>
+            <p className={`${stylesCss["menu_bottom_item"]} ${active}`}>{item.menuName}</p>
           </a >
         ),
         event: () => { },
@@ -74,6 +73,12 @@ const MenuPC = () => {
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
+
+
+  if(isShowMenu){
+    const data = localStorage.getItem("user");
+    user = JSON.parse(data);
+  }
 
   return (
     <>
@@ -110,7 +115,7 @@ const MenuPC = () => {
                             <span>
                               <img src="/avatar.png" alt=""/>
                             </span>
-                            <span className={stylesCss["list-menu-text-name"]}>{user[0]?.fullName}</span>
+                            <span className={stylesCss["list-menu-text-name"]}>{user[0]?.DienThoaiKH}</span>
                           </li>
                           <li onClick={() => onchangeRoute("/manage-account")}>
                             <span>
@@ -176,7 +181,7 @@ const MenuPC = () => {
                           <span>
                             <img className={stylesCss["list-menu-avatar"]} src="/avatar.png" alt=""/>
                           </span>
-                          <span className={stylesCss["list-menu-text-name"]}>Văn Phạm Trung Tuyến</span>
+                          <span className={stylesCss["list-menu-text-name"]}>{user[0]?.DienThoaiKH}</span>
                         </li>
                         <li onClick={() => onchangeRoute("/manage-account")}>
                           <span>
@@ -218,11 +223,11 @@ const MenuPC = () => {
                 </div>
                 <div className={stylesCss["line-mobile"]}></div>
                 <div className={stylesCss["list-menu-mobile-item"]}>
-                  <p>
+                  <div>
                     {menuButtom?.map((val, key) => {
                       return val.element;
                     })}
-                  </p>
+                  </div>
                 </div>
               </div>
             </div>
