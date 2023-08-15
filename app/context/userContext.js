@@ -5,33 +5,24 @@ export const UserContext = createContext();
 export function UserProvider({ children }) {
   const [dataUser, setUser] = useState(null);
   const [isShowMenu, setIsShowMenu] = useState(false);
+
   const router = useRouter();
+  
   useEffect(() => {
-    const parseJwt = (token) => {
-      try {
-        return JSON.parse(atob(token.split(".")[1]));
-      } catch (e) {
-        localStorage.removeItem("user");
-        setUser(null);
-        return null;
-      }
-    };
-    
     const AuthVerify = () => {
         if(localStorage.getItem("user")){
-          const dataUser = JSON.parse(localStorage.getItem("user"));
-          if (dataUser) {
-            // const decodedJwt = parseJwt(dataUser.token);
-            // if(decodedJwt){
-            //   if (decodedJwt.exp * 1000 < Date.now()) {
-            //     setUser(null);
-            //     localStorage.removeItem("userThethao789");
-            //   }else {
-            //     setUser(dataUser);
-            //   }
-            // }
-            setUser(dataUser);
+          const data = localStorage.getItem("user");
+          const token = localStorage.getItem("token");
+          if (token && data) {
+            setUser(JSON.parse(data));
+          } else {
+            setUser(null);
+            setIsShowMenu(false);
+            localStorage.removeItem("user");
+            localStorage.removeItem("token");
+            router.push("/login")
           }
+          setUser(JSON.parse(data));
         }
     };
     AuthVerify()
@@ -41,6 +32,7 @@ export function UserProvider({ children }) {
     setUser(null);
     setIsShowMenu(false);
     localStorage.removeItem("user");
+    localStorage.removeItem("token");
     router.push("/login")
   }
 

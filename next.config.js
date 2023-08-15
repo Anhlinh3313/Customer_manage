@@ -1,10 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: "export",
   reactStrictMode: true,
   // images.unoptimized : true,
   swcMinify: true,
   images: {
-    domains: ["vncdn.sabasports.com", "thethao789.b-cdn.net"],
+    domains: ["vncdn.sabasports.com", "customer-manage-dip.b-cdn.net"],
     unoptimized: true,
   },
   compiler: {
@@ -16,12 +17,12 @@ const nextConfig = {
     },
   },
   env: {
-    NEXT_PUBLIC_API_DOMAIN: "https://api.thethao789.com",
+    NEXT_PUBLIC_API_DOMAIN: "https://api.customer-manage-dip.com",
     // NEXT_PUBLIC_API_DOMAIN: "http://localhost:4444",
     NEXT_PUBLIC_SCHEMA_NAME: "customer-manager-dip",
     NEXT_PUBLIC_SCHEMA_URL: "https://customer-manager-dip.com",
-    NEXT_PUBLIC_SCHEMA_LOGO: "https://thethao789.b-cdn.net/logo-thethao789.png",
-    NEXT_PUBLIC_BUNNY_URL: "https://thethao789.b-cdn.net",
+    NEXT_PUBLIC_SCHEMA_LOGO:
+      "https://customer-manage-dip.b-cdn.net/logo-customer-manage-dip.png",
   },
   eslint: {
     // Warning: This allows production builds to successfully complete even if

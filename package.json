@@ -9,7 +9,8 @@
     "build": "next build",
     "start": "next start -p 7089",
     "lint": "next lint",
-    "debug": "'--inspect' next dev"
+    "debug": "'--inspect' next dev",
+    "prod": "next export"
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",

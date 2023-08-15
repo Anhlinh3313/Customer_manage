@@ -72,7 +72,7 @@ const PageSchema = (props) => {
           ></meta>
           <meta
             name="COPYRIGHT"
-            content="Copyright (C) 2007 thethao789.com "
+            content="Copyright (C) 2007 customer-manage-dip.com "
           ></meta>
           <meta name="RATING" content="GENERAL"></meta>
           <meta name="geo.placename" content="ho chi minh"></meta>
