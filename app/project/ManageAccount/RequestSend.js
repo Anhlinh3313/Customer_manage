@@ -1,9 +1,16 @@
-import { DatePicker, Modal, Select, Upload } from "antd";
+import { DatePicker, Modal, Select, Upload, message } from "antd";
 import styles from "../../../styles/ManageAccount.module.css";
 import IconDatepicker from "./Icon/IconDatepicker";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { getRequests } from "../../../stores/request";
+import moment from "moment";
+import { ConvertDateTime } from "@function/Funcion";
+
+const { RangePicker } = DatePicker;
 
 const RequestSend = () => {
+    const data = JSON.parse(localStorage.getItem("user")) ? JSON.parse(localStorage.getItem("user"))[0] : {};
+    const [messageApi, contextHolder] = message.useMessage();
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isEdit, setIsEdit] = useState(false);
     const deleteIcon = <IconDatepicker />;
@@ -11,19 +18,22 @@ const RequestSend = () => {
     const [previewOpen, setPreviewOpen] = useState(false);
     const [previewImage, setPreviewImage] = useState('');
     const [previewTitle, setPreviewTitle] = useState('');
+    const [requests, setRequest] = useState([]);
+    const [dateFrom, setDateFrom] = useState(moment(new Date(Date.now()).setMonth(new Date().getMonth() - 1)).format("YYYY-MM-DD hh:mm"));
+    const [dateTo, setDateTo] = useState(moment(Date.now()).format("YYYY-MM-DD hh:mm"));
 
     const [fileList, setFileList] = useState([
         {
-          uid: '-1',
-          name: 'image.png',
-          status: 'done',
-          url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+            uid: '-1',
+            name: 'image.png',
+            status: 'done',
+            url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
         },
         {
-          uid: '-2',
-          name: 'image.png',
-          status: 'done',
-          url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+            uid: '-2',
+            name: 'image.png',
+            status: 'done',
+            url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
         },
     ]);
 
@@ -63,14 +73,74 @@ const RequestSend = () => {
         setIsEdit(false);
     };
 
-    return(
+    const handleChangeDateTime = async (value) => {
+        const fom = value[0].format("YYYY-MM-DD hh:mm");
+        const to = value[1].format("YYYY-MM-DD hh:mm");
+        setDateFrom(fom);
+        setDateTo(to);
+
+        const params = {
+            CustomerID: data.CustomerID,
+            DateFrom: dateFrom,
+            DateTo: dateTo,
+            pageNumber: 1,
+            pageSize: 10,
+            searchText: ""
+        }
+        await getRequest(params);
+    }
+
+    const getRequest = async (params) => {
+        const resData = await getRequests(params);
+        if (resData.Status === "OK") {
+            setRequest(resData.Data);
+        } else {
+            messageApi.open({
+                type: 'error',
+                content: resData.Description ? resData.Description : resData?.response?.data?.Message,
+            });
+        }
+    }
+
+    useEffect(() => {
+        async function fetchData() {
+            const params = {
+                CustomerID: data.CustomerID,
+                DateFrom: dateFrom,
+                DateTo: dateTo,
+                pageNumber: 1,
+                pageSize: 10,
+                searchText: ""
+            }
+            getRequest(params);
+        }
+        fetchData();
+    }, []);
+
+    return (
         <>
-           
+            {contextHolder}
             <div className={styles["content-header"]}>
                 <div className={styles["content-title"]}>Danh sách yêu cầu</div>
+
+                <div className={styles["content-button-bill"]}>
+                    <button className={styles["content-button-calendar"]}>
+                        <RangePicker
+                            defaultValue={[moment(dateFrom), moment(dateTo)]}
+                            className={styles["date-picker-data"]}
+                            suffixIcon={deleteIcon}
+                            placeholder="Chọn ngày"
+                            style={{ border: '0px', backgroundColor: '#fff' }}
+                            showTime={{ format: "HH:mm" }}
+                            format="YYYY-MM-DD HH:mm"
+                            onChange={(e) => handleChangeDateTime(e)}
+                        />
+                    </button>
+                </div>
+
                 <div className={styles["content-button"]}>
-                    <button className={styles["button-create-green"]} onClick={()=>handleChangeCreate()}>Thêm yêu cầu</button>
-                </div>                       
+                    <button className={styles["button-create-green"]} onClick={() => handleChangeCreate()}>Thêm yêu cầu</button>
+                </div>
             </div>
 
             <div className={styles["content-table"]}>
@@ -83,211 +153,86 @@ const RequestSend = () => {
                             <th className={styles["header-item"]}>Trạng thái</th>
                             <th className={styles["header-item"]}>Tùy chọn</th>
                         </tr>
-                        
-                        <tr className={styles["table-content"]}>
-                            <td className={styles["content-item-code"]}>10:00 - 10/04/2023</td>
-                            <td className={styles["content-item-code"]}>Yêu cầu hỗ trợ kỹ thuật</td>
-                            <td className={styles["content-item-code"]}>Tôi cần hỗ trợ sữa máy lạnh</td>
-                            <td className={styles["content-item-status"]}>
-                                <span className={styles["status-erro"]}>Chưa duyệt</span>
-                            </td>
-                            <td className={styles["content-item-action-car"]}>
-                                <span className={styles["icon-detail"]} onClick={()=>handleChangeEdit()}>
-                                    <img src="/Icon_eye.png" alt="eye"/>
-                                </span>
-                                <span className={styles["icon-delete"]}>
-                                    <img src="/Icon_delete.png" alt="delete"/>
-                                </span>
-                            </td>
-                        </tr>
-
-                        <tr className={styles["table-content"]}>
-                            <td className={styles["content-item-code"]}>10:00 - 10/04/2023</td>
-                            <td className={styles["content-item-code"]}>Yêu cầu hỗ trợ kỹ thuật</td>
-                            <td className={styles["content-item-code"]}>Tôi cần hỗ trợ sữa máy lạnh</td>
-                            <td className={styles["content-item-status"]}>
-                                <span className={styles["status-success"]}>Đã duyệt</span>
-                            </td>
-                            <td className={styles["content-item-action-car"]}>
-                                <span className={styles["icon-detail"]} onClick={()=>handleChangeEdit()}>
-                                    <img src="/Icon_eye.png" alt="eye"/>
-                                </span>
-                                <span className={styles["icon-delete"]}>
-                                    <img src="/Icon_delete.png" alt="delete"/>
-                                </span>
-                            </td>
-                        </tr>
+                        {
+                            requests?.map((item, index) => {
+                                return (
+                                    <tr key={index} className={styles["table-content"]}>
+                                        <td className={styles["content-item-code"]}>{ConvertDateTime(item.NgayYC)}</td>
+                                        <td className={styles["content-item-code"]}>{item.TieuDe}</td>
+                                        <td className={styles["content-item-code"]}>{item.NoiDung}</td>
+                                        <td className={styles["content-item-status"]}>
+                                            <span className={styles["status-erro"]}>{item.TenTT}</span>
+                                        </td>
+                                        <td className={styles["content-item-action-car"]}>
+                                            <span className={styles["icon-detail"]} onClick={() => handleChangeEdit()}>
+                                                <img src="/Icon_eye.png" alt="eye" />
+                                            </span>
+                                            <span className={styles["icon-delete"]}>
+                                                <img src="/Icon_delete.png" alt="delete" />
+                                            </span>
+                                        </td>
+                                    </tr>
+                                );
+                            })
+                        }
                     </tbody>
                 </table>
             </div>
 
             <div className={styles["content-table-mobile"]}>
-               <div className={styles["table-item-mobile"]}>
-                   <div className={styles["row-item-data"]}>
-                        <p className={styles["status"]}>
-                            <span>13:47 - 12/04/2023</span>
-                        </p>
-                        <p className={styles["data-code"]}>
-                            <span>Yêu cầu hỗ trợ kỹ thuật</span>
-                        </p>
-                   </div>
-                   <div className={styles["row-item-data"]}>
-                        <p className={styles["status"]}>
-                            <span>Trạng thái</span>
-                        </p>
-                        <p className={styles["data-status"]}>
-                            <span>Chưa duyệt</span>
-                        </p>
-                   </div>
-                   <div className={styles["row-item-data"]}>
-                        <p className={styles["status"]}>
-                            <span>Nội dung</span>
-                        </p>
-                        <p className={styles["data-code"]}>
-                            <span>Tôi cần hỗ trợ sữa máy lạnh</span>
-                        </p>
-                   </div>
-                   <div className={styles["row-item-data"]}>
-                        <p className={styles["status"]}>
-                            <span> Tùy chọn</span>
-                        </p>
-                        <p className={styles["mobile-active"]}>
-                            <p className={styles["status"]} onClick={()=>handleChangeEdit()}>
-                                <img src="/Icon_eye.png" alt="eye"/>
-                            </p>
-                            <p className={styles["data-download"]}>
-                                <img src="/Icon_delete.png" alt="delete"/>
-                            </p>
-                        </p>
-                   </div>
-               </div>
+                {
+                    requests?.map((item, index) => {
+                        return (
+                            <>
+                                <div key={index} className={styles["table-item-mobile"]}>
+                                    <div className={styles["row-item-data"]}>
+                                        <p className={styles["status"]}>
+                                            <span>{ConvertDateTime(item.NgayYC)}</span>
+                                        </p>
+                                        <p className={styles["data-code"]}>
+                                            <span>{item.TieuDe}</span>
+                                        </p>
+                                    </div>
+                                    <div className={styles["row-item-data"]}>
+                                        <p className={styles["status"]}>
+                                            <span>Trạng thái</span>
+                                        </p>
+                                        <p className={styles["data-status"]}>
+                                            <span>{item.TenTT}</span>
+                                        </p>
+                                    </div>
+                                    <div className={styles["row-item-data"]}>
+                                        <p className={styles["status"]}>
+                                            <span>Nội dung</span>
+                                        </p>
+                                        <p className={styles["data-code"]}>
+                                            <span>{item.NoiDung}</span>
+                                        </p>
+                                    </div>
+                                    <div className={styles["row-item-data"]}>
+                                        <p className={styles["status"]}>
+                                            <span> Tùy chọn</span>
+                                        </p>
+                                        <p className={styles["mobile-active"]}>
+                                            <p className={styles["status"]} onClick={() => handleChangeEdit()}>
+                                                <img src="/Icon_eye.png" alt="eye" />
+                                            </p>
+                                            <p className={styles["data-download"]}>
+                                                <img src="/Icon_delete.png" alt="delete" />
+                                            </p>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className={styles["line-mobile"]}></div>
+                            </>
+                        );
+                    })
+                }
 
-               <div className={styles["line-mobile"]}></div>
-               <div className={styles["table-item-mobile"]}>
-                   <div className={styles["row-item-data"]}>
-                        <p className={styles["status"]}>
-                            <span>13:47 - 12/04/2023</span>
-                        </p>
-                        <p className={styles["data-code"]}>
-                            <span>Yêu cầu hỗ trợ kỹ thuật</span>
-                        </p>
-                   </div>
-                   <div className={styles["row-item-data"]}>
-                        <p className={styles["status"]}>
-                            <span>Trạng thái</span>
-                        </p>
-                        <p className={styles["data-status"]}>
-                            <span>Chưa duyệt</span>
-                        </p>
-                   </div>
-                   <div className={styles["row-item-data"]}>
-                        <p className={styles["status"]}>
-                            <span>Nội dung</span>
-                        </p>
-                        <p className={styles["data-code"]}>
-                            <span>Tôi cần hỗ trợ sữa máy lạnh</span>
-                        </p>
-                   </div>
-                   <div className={styles["row-item-data"]}>
-                        <p className={styles["status"]}>
-                            <span> Tùy chọn</span>
-                        </p>
-                        <p className={styles["mobile-active"]}>
-                            <p className={styles["status"]} onClick={()=>handleChangeEdit()}>
-                                <img src="/Icon_eye.png" alt="eye"/>
-                            </p>
-                            <p className={styles["data-download"]}>
-                                <img src="/Icon_delete.png" alt="delete"/>
-                            </p>
-                        </p>
-                   </div>
-               </div>
-
-               <div className={styles["line-mobile"]}></div>
-               <div className={styles["table-item-mobile"]}>
-                   <div className={styles["row-item-data"]}>
-                        <p className={styles["status"]}>
-                            <span>13:47 - 12/04/2023</span>
-                        </p>
-                        <p className={styles["data-code"]}>
-                            <span>Yêu cầu hỗ trợ kỹ thuật</span>
-                        </p>
-                   </div>
-                   <div className={styles["row-item-data"]}>
-                        <p className={styles["status"]}>
-                            <span>Trạng thái</span>
-                        </p>
-                        <p className={styles["data-status"]}>
-                            <span>Chưa duyệt</span>
-                        </p>
-                   </div>
-                   <div className={styles["row-item-data"]}>
-                        <p className={styles["status"]}>
-                            <span>Nội dung</span>
-                        </p>
-                        <p className={styles["data-code"]}>
-                            <span>Tôi cần hỗ trợ sữa máy lạnh</span>
-                        </p>
-                   </div>
-                   <div className={styles["row-item-data"]}>
-                        <p className={styles["status"]}>
-                            <span> Tùy chọn</span>
-                        </p>
-                        <p className={styles["mobile-active"]}>
-                            <p className={styles["status"]} onClick={()=>handleChangeEdit()}>
-                                <img src="/Icon_eye.png" alt="eye"/>
-                            </p>
-                            <p className={styles["data-download"]}>
-                                <img src="/Icon_delete.png" alt="delete"/>
-                            </p>
-                        </p>
-                   </div>
-               </div>
-
-               <div className={styles["line-mobile"]}></div>
-               <div className={styles["table-item-mobile"]}>
-                   <div className={styles["row-item-data"]}>
-                        <p className={styles["status"]}>
-                            <span>13:47 - 12/04/2023</span>
-                        </p>
-                        <p className={styles["data-code"]}>
-                            <span>Yêu cầu hỗ trợ kỹ thuật</span>
-                        </p>
-                   </div>
-                   <div className={styles["row-item-data"]}>
-                        <p className={styles["status"]}>
-                            <span>Trạng thái</span>
-                        </p>
-                        <p className={styles["data-status"]}>
-                            <span>Chưa duyệt</span>
-                        </p>
-                   </div>
-                   <div className={styles["row-item-data"]}>
-                        <p className={styles["status"]}>
-                            <span>Nội dung</span>
-                        </p>
-                        <p className={styles["data-code"]}>
-                            <span>Tôi cần hỗ trợ sữa máy lạnh</span>
-                        </p>
-                   </div>
-                   <div className={styles["row-item-data"]}>
-                        <p className={styles["status"]}>
-                            <span> Tùy chọn</span>
-                        </p>
-                        <p className={styles["mobile-active"]}>
-                            <p className={styles["status"]} onClick={()=>handleChangeEdit()}>
-                                <img src="/Icon_eye.png" alt="eye"/>
-                            </p>
-                            <p className={styles["data-download"]}>
-                                <img src="/Icon_delete.png" alt="delete"/>
-                            </p>
-                        </p>
-                   </div>
-               </div>
             </div>
 
-            <Modal 
-                open={isModalOpen} 
+            <Modal
+                open={isModalOpen}
                 width={1100}
                 footer={null}
                 closable={false}
@@ -296,20 +241,20 @@ const RequestSend = () => {
                     <div className={styles["model-header-close"]}>
                         <div className={styles["model-title"]}>
                             <div className={styles["model-title-text"]}>
-                                <span onClick={()=>setIsModalOpen(!isModalOpen)} >
-                                    <img src="/icon_back.png" alt=""/>
+                                <span onClick={() => setIsModalOpen(!isModalOpen)} >
+                                    <img src="/icon_back.png" alt="" />
                                 </span>
                                 <span>
-                                    {isEdit?
+                                    {isEdit ?
                                         "Chỉnh sửa yêu cầu"
-                                    :
+                                        :
                                         "Thêm mới yêu cầu"
                                     }
-                                    </span>
+                                </span>
                             </div>
                         </div>
-                        <div className={styles["model-close"]} onClick={()=>setIsModalOpen(!isModalOpen)}>
-                            <img src="/icon_close.png" alt="icon close"/>
+                        <div className={styles["model-close"]} onClick={() => setIsModalOpen(!isModalOpen)}>
+                            <img src="/icon_close.png" alt="icon close" />
                             <span className={styles["model-close-text"]}>Đóng</span>
                         </div>
                     </div>
@@ -323,22 +268,22 @@ const RequestSend = () => {
                                 <div className={styles["form-select-home"]}>
                                     <Select
                                         defaultValue="Loại yêu cầu"
-                                        style={{ width: '100%', textAlign: 'left'}}
+                                        style={{ width: '100%', textAlign: 'left' }}
                                         onChange={handleChange}
                                         bordered={false}
                                         options={[
                                             { value: 'jack', label: 'Yêu cầu hỗ trợ kỹ thuật' },
                                         ]}
                                     />
-                                </div> 
+                                </div>
                             </div>
 
                             <div className={styles["item-data"]}>
                                 <p className={styles["lable-data"]}>Thời gian yêu cầu <span className={styles["compulsory"]}>*</span></p>
-                                <DatePicker 
+                                <DatePicker
                                     format={dateFormatCreate}
-                                    className={styles["date-picker-data"]} 
-                                    suffixIcon={deleteIcon} 
+                                    className={styles["date-picker-data"]}
+                                    suffixIcon={deleteIcon}
                                     showTime
                                 />
                             </div>
@@ -358,11 +303,11 @@ const RequestSend = () => {
                                 </Upload>
                                 <Modal open={previewOpen} title={previewTitle} footer={null} onCancel={handleCancel}>
                                     <img
-                                    alt="example"
-                                    style={{
-                                        width: '100%',
-                                    }}
-                                    src={previewImage}
+                                        alt="example"
+                                        style={{
+                                            width: '100%',
+                                        }}
+                                        src={previewImage}
                                     />
                                 </Modal>
                             </div>
@@ -371,7 +316,7 @@ const RequestSend = () => {
                         <div className={styles["container-data"]}>
                             <div className={styles["item-data-full"]}>
                                 <p className={styles["lable-data"]}>Ghi chú</p>
-                                <input className={styles["input-data-content"]} placeholder="Vui lòng nhập ghi chú nếu có..."></input> 
+                                <input className={styles["input-data-content"]} placeholder="Vui lòng nhập ghi chú nếu có..."></input>
                             </div>
                         </div>
 

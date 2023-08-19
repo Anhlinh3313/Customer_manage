@@ -6,12 +6,14 @@ import { message } from "antd";
 import InputText from '../../app/components/InputText'
 import InputPassword from '../../app/components/InputPassWord'
 import { UserContext } from "../../app/context/userContext";
-import { CiLock } from 'react-icons/ci'
+import { loginSuccess, passwordError, userNameError } from '../../app/data/message'
 
 function Login() {
     const router = useRouter();
-    const [data, setData] = useState({ userName: '', password: "" });
     const [messageApi, contextHolder] = message.useMessage();
+    const key = 'login';
+
+    const [data, setData] = useState({ userName: '', password: "" });
     const { user, setUser } = useContext(UserContext)
 
     const onChange = (e) => {
@@ -19,14 +21,21 @@ function Login() {
     }
 
     const login = async () => {
+        if (!validateData(data)) {
+            return;
+        }
         const token = await getToken();
         if (token.access_token) {
             const user = await loginUser(data, token.access_token);
             if (user.Status === "OK") {
                 localStorage.setItem('user', user?.Data);
                 localStorage.setItem('token', token.access_token);
-                setUser(user.Data)
-                router.push(`/home`)
+                setUser(user.Data);
+                openMessage();
+                
+                setTimeout(() => {
+                    router.push(`/home`);
+                }, 1000);
             } else {
                 messageApi.open({
                     type: 'error',
@@ -42,6 +51,39 @@ function Login() {
         }
     }
 
+    const validateData = (data) => {
+        if (!data.userName) {
+            messageApi.open({
+                type: 'error',
+                content: userNameError,
+            });
+            return false;
+        }
+        if (!data.password) {
+            messageApi.open({
+                type: 'error',
+                content: passwordError,
+            });
+            return false;
+        }
+        return true;
+    }
+
+    const openMessage = () => {
+        messageApi.open({
+            key,
+            type: 'loading',
+            content: 'Loading...',
+        });
+        setTimeout(() => {
+            messageApi.open({
+                key,
+                type: 'success',
+                content: loginSuccess,
+                duration: 2,
+            });
+        }, 1000);
+    };
     return (
         <>
             {contextHolder}

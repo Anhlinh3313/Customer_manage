@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
-function InputText({ name, value, icon, placeholder, onChange, required = true, type = "text" }) {
+function InputText({ name, value, icon, placeholder, onChange, required = true, type = "text", isDisabled = false }) {
   return (
     <Wrapper className="flex items-center gap-3">
       {icon}
-      <input  value={value} type={type} name={name} onChange={onChange} required={required} placeholder={placeholder} className="c-input" />
-    </Wrapper>
+      <input disabled={isDisabled} value={value} type={type} name={name} onChange={onChange} required={required} placeholder={placeholder} className="c-input" />
+    </Wrapper >
   )
 }
 

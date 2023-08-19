@@ -202,6 +202,16 @@
     font-weight: 600;
     line-height: 28px;
     display: flex;
+    width: 50%;
+}
+
+.content-title-bill{
+    color: #000;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+    display: flex;
 }
 
 .button-create {
@@ -274,7 +284,16 @@
     width: 50%;
 }
 
-.content-button-calendar {}
+.content-button {
+}
+
+.content-button-bill{
+    width: 50%;
+}
+
+.content-button-calendar {
+    width: 100%;
+}
 
 .content-button-calendar p {
     margin-bottom: 0px;
@@ -468,6 +487,7 @@
     font-weight: 400;
     line-height: 20px;
     padding-right: 15px;
+    padding-top: 10px;
 }
 
 .detail {
@@ -476,6 +496,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: 20px;
+    padding-top: 10px;
 }
 
 .icon-detail {
@@ -536,6 +557,16 @@
     line-height: 28px;
     text-transform: uppercase;
     width: 20%;
+}
+
+.model-title-text-bill {
+    color: var(--light-invert-color-text-on-top, #121212);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+    text-transform: uppercase;
+    width: 100%;
 }
 
 .model-title-select {
@@ -936,6 +967,17 @@
     width: 100%;
 }
 
+.form-select {
+    background: rgba(0,0,0,0.05) !important;
+    border-radius: 30px;
+    padding: 3px 16px;
+    width: 100%;
+}
+
+.padding-form{
+    padding: 0px 8px;
+}
+
 .icon-menu-mobile {
     display: none;
 }
@@ -956,8 +998,23 @@
     display: none;
 }
 
+.model-title-text-bill img {
+    display: none;
+}
+
 .model-close-text{
     cursor: pointer;
+}
+
+.download-bill{
+    background-color: #4671f6;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+}
+
+.header-item-bill{
+    width: 33.3%;
 }
 
 @media screen and (max-width: 600px) {

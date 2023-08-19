@@ -1,5 +1,7 @@
 import axios from "axios";
 import { API_URL } from "../app/@function/wsCode";
+import { useRouter } from "next/router";
+
 export const getHeaders = () => {
   const token = window.localStorage.getItem('token');
   if (token) {
@@ -27,6 +29,7 @@ export const getToken = async () => {
         "Content-Type": "application/x-www-form-urlencoded"
       }
     });
+
     return response.data;
   } catch (error) {
     return error;
@@ -35,8 +38,25 @@ export const getToken = async () => {
 
 export const loginUser = async (data, token) => {
   try {
+    let config = {
+      headers: {
+        'Authorization': "Bearer " + token,
+      }
+    }
     const response = await axios.post(
-      `${API_URL}/api/LoginCustomer/LoginCustomer`, data, getHeaders()
+      `${API_URL}/api/LoginCustomer/LoginCustomer`, data, config
+    );
+    return response.data;
+  } catch (error) {
+    return error;
+  }
+};
+
+
+export const UpdateUser = async (data) => {
+  try {
+    const response = await axios.post(
+      `${API_URL}/api/Customer/UpdateCustomer`, data, getHeaders()
     );
     return response.data;
   } catch (error) {
