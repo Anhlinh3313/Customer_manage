@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 export const UserContext = createContext();
 
@@ -13,7 +13,6 @@ export function UserProvider({ children }) {
       if (localStorage.getItem("user")) {
         const data = localStorage.getItem("user");
         const token = localStorage.getItem("token");
-        console.log("token, data", token);
         if (token && data) {
           setUser(JSON.parse(data));
         } else {

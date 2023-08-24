@@ -22,3 +22,21 @@ export const getRequests = async (data) => {
     return error;
   }
 };
+
+export const CreateRequest = async (data) => {
+  try {
+    const response = await axios.post(`${API_URL}/api/Feedback/CreateRequest`, data, getHeaders());
+    return response.data;
+  } catch (error) {
+    return error;
+  }
+};
+
+export const UpdateRequest = async (data) => {
+  try {
+    const response = await axios.post(`${API_URL}/api/Feedback/RequestUpdateStatus`, data, getHeaders());
+    return response.data;
+  } catch (error) {
+    return error;
+  }
+};

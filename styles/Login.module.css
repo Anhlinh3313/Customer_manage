@@ -60,7 +60,7 @@
 .changepassword {
   text-align: right;
   color: #4671F6;
-  cursor: context-menu;
+  cursor: pointer;
 }
 
 .buttom-login {

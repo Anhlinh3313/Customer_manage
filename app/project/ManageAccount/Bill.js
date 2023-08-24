@@ -2,30 +2,42 @@ import { Button, DatePicker, Modal, message } from "antd";
 import styles from "../../../styles/ManageAccount.module.css";
 import IconDatepicker from "./Icon/IconDatepicker";
 import { getReceivables } from "../../../stores/receivables";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import moment from "moment";
 import { ConvertMoney } from "@function/Funcion";
+import { UserContext } from "context/userContext";
 
 const { RangePicker } = DatePicker;
+
 const Bill = () => {
-    const data = JSON.parse(localStorage.getItem("user"))? JSON.parse(localStorage.getItem("user"))[0]: {};
+    const dateFromNow = moment(new Date(Date.now()).setMonth(new Date().getMonth() - 1)).format("YYYY-MM-DD hh:mm");
+    const dateToNow = moment(Date.now()).format("YYYY-MM-DD hh:mm");
+    const data = JSON.parse(localStorage.getItem("user")) ? JSON.parse(localStorage.getItem("user"))[0] : {};
+    const deleteIcon = <IconDatepicker />;
+
     const [messageApi, contextHolder] = message.useMessage();
     const [bill, setBill] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isModalOpenDetail, setIsModalOpenDetail] = useState(false);
     const [listFile, setListFile] = useState([]);
     const [billDetails, setBillDetail] = useState([]);
-    const [dateFrom, setDateFrom] = useState(moment(new Date(Date.now()).setMonth(new Date().getMonth() - 1)).format("YYYY-MM-DD hh:mm"));
-    const [dateTo, setDateTo] = useState(moment(Date.now()).format("YYYY-MM-DD hh:mm"));
-
-    const deleteIcon = <IconDatepicker />;
+    const [dateFrom, setDateFrom] = useState(dateFromNow);
+    const [dateTo, setDateTo] = useState(dateToNow);
+    const { logOut } = useContext(UserContext);
 
     const handleChangeDateTime = async (value) => {
-        const fom = value[0].format("YYYY-MM-DD hh:mm");
-        const to = value[1].format("YYYY-MM-DD hh:mm");
+        const fom = "";
+        const to = "";
+
+        if (value) {
+            fom = value[0].format("YYYY-MM-DD hh:mm");
+            to = value[1].format("YYYY-MM-DD hh:mm");
+        } else {
+            fom = dateFromNow;
+            to = dateToNow;
+        }
         setDateFrom(fom);
         setDateTo(to);
-
         const params = {
             CustomerID: data.CustomerID,
             DateFrom: fom,
@@ -47,13 +59,15 @@ const Bill = () => {
 
     const getBills = async (params) => {
         const resData = await getReceivables(params);
-        console.log(resData.Status)
         if (resData.Status === "OK") {
             setBill(resData.Data);
         } else {
+            if (resData?.response?.status === 401) {
+                return logOut();
+            }
             messageApi.open({
                 type: 'error',
-                content: resData.Description ? resData.Description : resData?.response?.data?.Message,
+                content: resData.Description,
             });
         }
     }
@@ -114,8 +128,7 @@ const Bill = () => {
                                         <td className={styles["content-item-year"]}>{item.Year}</td>
                                         <td className={styles["content-item-debt"]}>{ConvertMoney(item.Debts)}</td>
                                         <td className={styles["content-item-status"]}>
-                                            <span className={styles["status-erro"]}>{item.Status}</span>
-                                            {/* <span className={styles["status-success"]}>Hoàn thành</span> */}
+                                            <span className={item.Status === "Còn nợ" ? styles["status-erro"] : styles["status-success"]}>{item.Status}</span>
                                         </td>
                                         <td className={styles["content-item-action-car"]}>
                                             <span className={styles["download"]} onClick={() => handleShowDownLoad(item.fileurl)}>Tải xuống</span>
@@ -134,41 +147,43 @@ const Bill = () => {
                     bill?.map((item, index) => {
                         return (
                             <>
-                                <div key={index} className={styles["table-item-mobile"]}>
-                                    <div className={styles["row-item-data"]}>
-                                        <p className={styles["date-time"]}>
-                                            <span>{item.Period}</span>
-                                        </p>
-                                        <p className={styles["data-code"]}>
-                                            <span>{item.apartment_id}</span>
-                                        </p>
+                                <div key={index}>
+                                    <div className={styles["table-item-mobile"]}>
+                                        <div className={styles["row-item-data"]}>
+                                            <p className={styles["date-time"]}>
+                                                <span>{item.Period}</span>
+                                            </p>
+                                            <p className={styles["data-code"]}>
+                                                <span>{item.apartment_id}</span>
+                                            </p>
+                                        </div>
+                                        <div className={styles["row-item-data"]}>
+                                            <p className={styles["status"]}>
+                                                <span>Trạng thái</span>
+                                            </p>
+                                            <p className={styles["data-status"]}>
+                                                <span>{item.Status}</span>
+                                            </p>
+                                        </div>
+                                        <div className={styles["row-item-data"]}>
+                                            <p className={styles["status"]}>
+                                                <span>Nợ</span>
+                                            </p>
+                                            <p className={styles["data-code"]}>
+                                                <span>{ConvertMoney(item.Debts)}</span>
+                                            </p>
+                                        </div>
+                                        <div className={styles["row-item-data"]}>
+                                            <p className={styles["status"]}>
+                                                <span>Tùy chọn</span>
+                                            </p>
+                                            <p className={styles["data-download"]}>
+                                                <span onClick={() => handleShowDownLoad(item.fileurl)}>Tải xuống</span>
+                                            </p>
+                                        </div>
                                     </div>
-                                    <div className={styles["row-item-data"]}>
-                                        <p className={styles["status"]}>
-                                            <span>Trạng thái</span>
-                                        </p>
-                                        <p className={styles["data-status"]}>
-                                            <span>{item.Status}</span>
-                                        </p>
-                                    </div>
-                                    <div className={styles["row-item-data"]}>
-                                        <p className={styles["status"]}>
-                                            <span>Nợ</span>
-                                        </p>
-                                        <p className={styles["data-code"]}>
-                                            <span>{ConvertMoney(item.Debts)}</span>
-                                        </p>
-                                    </div>
-                                    <div className={styles["row-item-data"]}>
-                                        <p className={styles["status"]}>
-                                            <span>Tùy chọn</span>
-                                        </p>
-                                        <p className={styles["data-download"]}>
-                                            <span onClick={() => handleShowDownLoad(item.fileurl)}>Tải xuống</span>
-                                        </p>
-                                    </div>
+                                    <div className={styles["line-mobile"]}></div>
                                 </div>
-                                <div className={styles["line-mobile"]}></div>
                             </>
                         )
                     })

@@ -16,7 +16,6 @@ const Wrapper = styled.div`
     position: relative;
     border-radius: 4px;
     width: 100%;
-    padding: 0 8px;
     .c-input {
       padding: 10px 12px 10px 16px;
       justify-content: space-between;

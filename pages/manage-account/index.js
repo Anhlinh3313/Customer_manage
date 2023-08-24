@@ -34,17 +34,17 @@ function ManageAccount() {
                     <div className={styles["container-menu"]}>
                         <div className={styles["container"]}>
                             <div className={styles["header"]}>
-                                <p className={styles["header-title"]}>
+                                <div className={styles["header-title"]}>
                                     <span>Quản lý</span>   
-                                </p>
-                                <p className={styles["header-img"]}>
+                                </div>
+                                <div className={styles["header-img"]}>
                                     <span>
                                         <img className={styles["icon-menu-pc"]} src="/icon_manage.png" alt=""/>
                                     </span>
                                     <span onClick={()=>setIsShowMenuMobile(true)}>
                                         <img className={styles["icon-menu-mobile"]} src="/icon_list_menu.png" alt=""/>
                                     </span>
-                                </p>
+                                </div>
                             </div>
 
                             <div className={styles["list-menu-pc"]}>
@@ -62,7 +62,7 @@ function ManageAccount() {
                                     <span className={styles["item-menu-title"]}>Thông tin của tôi</span>
                                 </div>
                                 <div className={styles["manage-info"]}>
-                                    <p className={styles["manage-info-title"]}>Quản lý thông tin</p>
+                                    <div className={styles["manage-info-title"]}>Quản lý thông tin</div>
                                     <div className={styles["manage-info-item"]}>
                                         <div className={slugMenu == "bill" ? styles["item-menu-check"] : styles["item-menu-un-check"] } onClick={()=>onClickMenu("bill")}>
                                             <span>
@@ -99,14 +99,14 @@ function ManageAccount() {
                                             </div>
                                             {
                                                 slugMenu == "register-service" && isMenuService? 
-                                                <p className={styles["servive"]}>
+                                                <div className={styles["servive"]}>
                                                     <ul >
                                                         <li  className={slugMenuService == "service-car"? styles["check"] : styles["un-check"]} onClick={()=>onClickMenuService("service-car")}>Dịch vụ xe</li>
                                                         <li className={slugMenuService == "service-delyverr"? styles["check"] : styles["un-check"]} onClick={()=>onClickMenuService("service-delyverr")}>Dịch vụ vận chuyển</li>
                                                         <li className={slugMenuService == "service-overtime"? styles["check"] : styles["un-check"]} onClick={()=>onClickMenuService("service-overtime")}>Dịch vụ làm thêm giờ</li>
                                                         <li className={slugMenuService == "service-meeting"? styles["check"] : styles["un-check"]} onClick={()=>onClickMenuService("service-meeting")}>Thuê phòng họp</li>
                                                     </ul>
-                                                </p>
+                                                </div>
                                                 :
                                                 <></>
                                             }
@@ -147,10 +147,10 @@ function ManageAccount() {
                                 isShowMenuMobile ?
                                 <div className={styles["list-menu-mobile"]} >
                                     <div className={styles["menu-mobile-header"]}>
-                                        <p className={styles["menu-mobile-header-text"]}> Quản lý</p>
-                                        <p className={styles["menu-mobile-header-img"]} onClick={()=>setIsShowMenuMobile(false)}>
+                                        <div className={styles["menu-mobile-header-text"]}> Quản lý</div>
+                                        <div className={styles["menu-mobile-header-img"]} onClick={()=>setIsShowMenuMobile(false)}>
                                             <img src="/icon_close_mobile.png" alt=""/>
-                                        </p>
+                                        </div>
                                     </div>
                                     <div className={styles["line-mobile"]}></div>
                                     <div className={slugMenu == "info-account" ? styles["item-menu-check"] : styles["item-menu-un-check"] } onClick={()=>onClickMenu("info-account")}>
@@ -167,7 +167,7 @@ function ManageAccount() {
                                         <span className={styles["item-menu-title"]}>Thông tin của tôi</span>
                                     </div>
                                     <div className={styles["manage-info"]}>
-                                        <p className={styles["manage-info-title"]}>Quản lý thông tin</p>
+                                        <div className={styles["manage-info-title"]}>Quản lý thông tin</div>
                                         <div className={styles["manage-info-item"]}>
                                             <div className={slugMenu == "bill" ? styles["item-menu-check"] : styles["item-menu-un-check"] } onClick={()=>onClickMenu("bill")}>
                                                 <span>
@@ -204,14 +204,14 @@ function ManageAccount() {
                                                 </div>
                                                 {
                                                     slugMenu == "register-service" && isMenuService? 
-                                                    <p className={styles["servive"]}>
+                                                    <div className={styles["servive"]}>
                                                         <ul >
                                                             <li  className={slugMenuService == "service-car"? styles["check"] : styles["un-check"]} onClick={()=>onClickMenuService("service-car")}>Dịch vụ xe</li>
                                                             <li className={slugMenuService == "service-delyverr"? styles["check"] : styles["un-check"]} onClick={()=>onClickMenuService("service-delyverr")}>Dịch vụ vận chuyển</li>
                                                             <li className={slugMenuService == "service-overtime"? styles["check"] : styles["un-check"]} onClick={()=>onClickMenuService("service-overtime")}>Dịch vụ làm thêm giờ</li>
                                                             <li className={slugMenuService == "service-meeting"? styles["check"] : styles["un-check"]} onClick={()=>onClickMenuService("service-meeting")}>Thuê phòng họp</li>
                                                         </ul>
-                                                    </p>
+                                                    </div>
                                                     :
                                                     <></>
                                                 }

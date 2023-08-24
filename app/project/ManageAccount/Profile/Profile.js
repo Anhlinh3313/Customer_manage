@@ -1,9 +1,10 @@
 import { Checkbox, Select, message } from "antd";
 import styles from "../../../../styles/ManageAccount.module.css";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import InputText from "components/InputText";
 import { getBuildingByPhone } from "../../../../stores/building";
 import { UpdateUser } from "../../../../stores/authentication";
+import { UserContext } from "context/userContext";
 
 const { Option } = Select;
 
@@ -11,6 +12,7 @@ const Profile = () => {
     const [messageApi, contextHolder] = message.useMessage();
     const [user, setUser] = useState({});
     const [buildings, setBuildings] = useState([]);
+    const { logOut } = useContext(UserContext);
 
     const handleChangeValue = (e) => {
         setUser({ ...user, [e.target.name]: e.target.value });
@@ -96,6 +98,9 @@ const Profile = () => {
         if (resData.Status === "OK") {
             setBuildings(resData.Data);
         } else {
+            if (resData?.response?.status === 401) {
+                return logOut();
+            }
             messageApi.open({
                 type: 'error',
                 content: resData.Description ? resData.Description : resData?.response?.data?.Message,
