@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { SlEye } from 'react-icons/sl'
 import { RxEyeClosed } from 'react-icons/rx'
 function InputPassword({name, icon, placeholder, onChange, required = true, ...other}) {
-  const [showEye, setShowEye] = useState(true);
+  const [showEye, setShowEye] = useState(false);
 
   const toggleShow = () => {
     setShowEye(!showEye);
@@ -27,7 +27,6 @@ const Wrapper = styled.div`
   position: relative;
   border-radius: 4px;
   width: 100%;
-  padding: 0 8px;
   padding-top: 20px;
   .c-input {
     padding: 10px 12px 10px 16px;

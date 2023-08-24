@@ -2,11 +2,11 @@ import axios from "axios";
 import { API_URL } from "../app/@function/wsCode";
 
 export const getHeaders = () => {
-  const data = window.localStorage.getItem('token');
-  if (data) {
+  const token = window.localStorage.getItem('token');
+  if (token) {
     return {
       headers: {
-        'Authorization': JSON.parse(data)?.token
+        'Authorization': "Bearer " + token
       }
     }
   } else {
@@ -14,7 +14,7 @@ export const getHeaders = () => {
   }
 }
 
-export const getSelectedTypeCar = async (data, id) => {
+export const getSelectedTypeCar = async (data) => {
     try {
       const response = await axios.post(
         `${API_URL}/api/ServiceRegistry/TypeCar_GetList`, data, getHeaders()

@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 export const UserContext = createContext();
 
@@ -7,26 +7,32 @@ export function UserProvider({ children }) {
   const [isShowMenu, setIsShowMenu] = useState(false);
 
   const router = useRouter();
-  
+
   useEffect(() => {
     const AuthVerify = () => {
-        if(localStorage.getItem("user")){
-          const data = localStorage.getItem("user");
-          const token = localStorage.getItem("token");
-          if (token && data) {
-            setUser(JSON.parse(data));
-          } else {
-            setUser(null);
-            setIsShowMenu(false);
-            localStorage.removeItem("user");
-            localStorage.removeItem("token");
-            router.push("/login")
-          }
+      if (localStorage.getItem("user")) {
+        const data = localStorage.getItem("user");
+        const token = localStorage.getItem("token");
+        if (token && data) {
           setUser(JSON.parse(data));
+        } else {
+          setUser(null);
+          setIsShowMenu(false);
+          localStorage.removeItem("user");
+          localStorage.removeItem("token");
+          router.push("/login")
         }
+        setUser(JSON.parse(data));
+      } else {
+        setUser(null);
+        setIsShowMenu(false);
+        localStorage.removeItem("user");
+        localStorage.removeItem("token");
+        router.push("/")
+      }
     };
     AuthVerify()
-  },[])
+  }, [])
 
   const logOut = () => {
     setUser(null);
@@ -42,7 +48,7 @@ export function UserProvider({ children }) {
 
   return (
     // <UserContext.Provider value={{user: dataUser?.user, setUser, logOut}}>
-    <UserContext.Provider value={{user: dataUser, setUser, logOut, isShowMenu: isShowMenu, onchangeShowMenu}}>
+    <UserContext.Provider value={{ user: dataUser, setUser, logOut, isShowMenu: isShowMenu, onchangeShowMenu }}>
       {children}
     </UserContext.Provider>
   );

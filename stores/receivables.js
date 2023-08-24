@@ -14,13 +14,11 @@ export const getHeaders = () => {
   }
 }
 
-export const getSelectedTypeRegisterPaking = async () => {
-    try {
-      const response = await axios.post(
-        `${API_URL}/api/ServiceRegistry/TypeRegisterPaking_GetList`, null, getHeaders()
-      );
-      return response.data;
-    } catch (error) {
-      return error;
-    }
-  };
+export const getReceivables = async (data) => {
+  try {
+    const response = await axios.post(`${API_URL}/api/Receivables/GetReceivables`, data, getHeaders());
+    return response.data;
+  } catch (error) {
+    return error;
+  }
+};
