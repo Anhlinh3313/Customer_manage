@@ -37,6 +37,7 @@ const CarService = () => {
     const [fileList, setFileList] = useState(fileImg);
     const [fileCardList, setFileCardList] = useState(fileImg);
     const [isEditCarServiceItem, seIsEditCarServiceItem] = useState(false);
+    const [imgLogEdits, setImgLogEdits] = useState([]);
 
     const uploadButton = (
         <div className={styles["buttom-upload"]}>
@@ -172,6 +173,7 @@ const CarService = () => {
     };
 
     const handleChangeImgCavet = ({ fileList: newFileList }) => {
+        console.log(newFileList);
         if (newFileList.length > 1) {
             const imgUpload = [newFileList[1]];
             setFileList(imgUpload);
@@ -182,6 +184,8 @@ const CarService = () => {
     };
 
     const handleChangeImgIdentityCard = ({ fileList: newFileCardList }) => {
+        console.log(newFileCardList);
+
         if (newFileCardList.length > 1) {
             const imgUploadCard = [newFileCardList[1]];
             setFileCardList(imgUploadCard);
@@ -192,7 +196,7 @@ const CarService = () => {
     };
 
     const handleAddData = () => {
-        if (!validateCarServiceItem()) return;
+        // if (!validateCarServiceItem()) return;
         if (isEditCarServiceItem) {
             carServiceItem.ActiveDate = carServiceItem.ActiveDate ?? dateCarService;
             carServiceItem.fromDate = carServiceItem.fromDate ?? dateNow;
@@ -218,7 +222,6 @@ const CarService = () => {
                     }
                 })
             }
-            console.log(listCarServicesDetail);
         } else {
             carServiceItem.citizen_identification = new String(fileList[0].thumbUrl).toString().replace(/^data:image\/[a-z]+;base64,/, "");
             carServiceItem.vehicle_registration = new String(fileCardList[0].thumbUrl).toString().replace(/^data:image\/[a-z]+;base64,/, "");
@@ -230,10 +233,58 @@ const CarService = () => {
             carServiceItem.DetailID = Math.floor(Math.random() * 100000);
             listCarServicesDetail.push(carServiceItem);
         }
+
+        if (fileList[0].thumbUrl) {
+            if (imgLogEdits.find(x => x.detailID === carServiceItem.DetailID && x.isIdentification === true)) {
+                imgLogEdits.map(item => {
+                    if (item.detailID === carServiceItem.DetailID && item.isIdentification === true) {
+                        return (
+                            item.name = fileList[0].name,
+                            item.thumbUrl = fileList[0].thumbUrl,
+                            item.uid = fileList[0].uid
+                        )
+                    }
+                })
+            } else {
+                imgLogEdits.push(
+                    {
+                        isIdentification: true,
+                        detailID: carServiceItem.DetailID,
+                        name: fileList[0].name,
+                        thumbUrl: fileList[0].thumbUrl,
+                        uid: fileList[0].uid,
+                    },
+                )
+            }
+        }
+
+        if (fileCardList[0].thumbUrl) {
+            if (imgLogEdits.find(x => x.detailID === carServiceItem.DetailID && x.isRegistration === true)) {
+                imgLogEdits.map(item => {
+                    if (item.detailID === carServiceItem.DetailID && item.isRegistration === true) {
+                        return (
+                            item.name = fileCardList[0].name,
+                            item.thumbUrl = fileCardList[0].thumbUrl,
+                            item.uid = fileCardList[0].uid
+                        )
+                    }
+                })
+            } else {
+                imgLogEdits.push(
+                    {
+                        isRegistration: true,
+                        detailID: carServiceItem.DetailID,
+                        name: fileCardList[0].name,
+                        thumbUrl: fileCardList[0].thumbUrl,
+                        uid: fileCardList[0].uid,
+                    }
+                )
+            }
+        }
         setListCarServicesDetail(listCarServicesDetail);
         seIsEditCarServiceItem(false);
         refreshData();
-        
+
     }
 
     const handeleDeleteCarService = async (event) => {
@@ -257,16 +308,32 @@ const CarService = () => {
     }
 
     const handeleDeleteCarServiceItem = async (event) => {
-        const paramDelete = {
-            Service_RegisterPaking_Detail_ID: event
-        }
-        const resData = await deleteCarServicesItem(paramDelete);
-        if (resData.Status === "OK") {
-            messageApi.open({
-                type: 'success',
-                content: "Xoá đăng kí xe thành công",
-            });
+        if (isEdit) {
+            const paramDelete = {
+                Service_RegisterPaking_Detail_ID: event
+            }
+            const resData = await deleteCarServicesItem(paramDelete);
+            if (resData.Status === "OK") {
+                messageApi.open({
+                    type: 'success',
+                    content: "Xoá đăng kí xe thành công",
+                });
 
+                const listCarServices = [];
+                listCarServicesDetail.forEach(item => {
+                    if (item.DetailID !== event) {
+                        listCarServices.push(item);
+                    }
+                });
+                setListCarServicesDetail(listCarServices);
+                reloadData();
+            } else {
+                messageApi.open({
+                    type: 'error',
+                    content: resData.Description ? resData.Description : resData?.response?.data?.Message,
+                });
+            }
+        } else {
             const listCarServices = [];
             listCarServicesDetail.forEach(item => {
                 if (item.DetailID !== event) {
@@ -274,12 +341,6 @@ const CarService = () => {
                 }
             });
             setListCarServicesDetail(listCarServices);
-            reloadData();
-        } else {
-            messageApi.open({
-                type: 'error',
-                content: resData.Description ? resData.Description : resData?.response?.data?.Message,
-            });
         }
     }
 
@@ -301,21 +362,26 @@ const CarService = () => {
             )
         });
 
-        const imgCavet = fileImg.map(item => {
-            return {
-                ...item,
-                url: data.citizen_identification
-            };
-        });
+        const imgCavet = isEdit
+            ? fileImg.map(item => {
+                return {
+                    ...item,
+                    url: data.citizen_identification
+                };
+
+            })
+            : [imgLogEdits.find(x => x.detailID === event && x.isIdentification === true)];
         setFileList(imgCavet);
 
-        const imgRegistration = fileImg.map(item => {
-            return {
-                ...item,
-                url: data.vehicle_registration
-            };
+        const imgRegistration = isEdit
+            ? fileImg.map(item => {
+                return {
+                    ...item,
+                    url: data.vehicle_registration
+                };
 
-        });
+            })
+            : [imgLogEdits.find(x => x.detailID === event && x.isRegistration === true)];
         setFileCardList(imgRegistration);
 
         setCarServiceItem(data);
@@ -359,6 +425,7 @@ const CarService = () => {
                 setIsModalOpen(!isModalOpen);
                 reloadData();
                 setListCarServicesDetail([]);
+                setImgLogEdits([]);
             } else {
                 messageApi.open({
                     type: 'error',
@@ -440,7 +507,7 @@ const CarService = () => {
 
             return false;
         }
-        
+
         if (!fileCardList[0].thumbUrl && !isEdit) {
             messageApi.open({
                 type: 'error',
@@ -580,7 +647,7 @@ const CarService = () => {
                                                 <img src="/Icon_eye.png" alt="eye" />
                                             </div>
                                             <div className={styles["data-download"]}>
-                                                <img src="/Icon_delete.png" alt="delete" onClick={() => handeleDeleteCarService(item.ID)}/>
+                                                <img src="/Icon_delete.png" alt="delete" onClick={() => handeleDeleteCarService(item.ID)} />
                                             </div>
                                         </div>
                                     </div>
@@ -865,7 +932,7 @@ const CarService = () => {
                                                                     <img src="/icon_tb_edit.png" alt="eye" />
                                                                 </div>
                                                                 <div className={styles["data-download"]}>
-                                                                    <img src="/icon_tb_delete.png" alt="delete" onClick={() => handeleDeleteCarServiceItem(item?.DetailID)}/>
+                                                                    <img src="/icon_tb_delete.png" alt="delete" onClick={() => handeleDeleteCarServiceItem(item?.DetailID)} />
                                                                 </div>
                                                             </div>
                                                         </div>
