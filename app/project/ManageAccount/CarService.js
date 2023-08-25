@@ -104,6 +104,7 @@ const CarService = () => {
         setIsEdit(false);
         refreshData();
         setListCarServicesDetail([]);
+        seIsEditCarServiceItem(false);
     };
 
     const loadTypeRegisterPaking = async () => {
@@ -430,18 +431,24 @@ const CarService = () => {
             });
             return false;
         }
-        // if (!fileList[0].thumbUrl) {
-        //     messageApi.open({
-        //         type: 'error',
-        //     return false;
-        // }
-        // if (!fileCardList[0].thumbUrl) {
-        //     messageApi.open({
-        //         type: 'error',
-        //         content: "Vui lòng chọn hình căn cước công dân",
-        //     });
-        //     return false;
-        // }
+
+        if (!fileList[0].thumbUrl && !isEdit) {
+            messageApi.open({
+                type: 'error',
+                content: "Vui lòng chọn hình căn cước công dân",
+            });
+
+            return false;
+        }
+        
+        if (!fileCardList[0].thumbUrl && !isEdit) {
+            messageApi.open({
+                type: 'error',
+                content: "Vui lòng chọn hình căn cước công dân",
+            });
+
+            return false;
+        }
         return true;
     }
 
@@ -690,7 +697,7 @@ const CarService = () => {
 
                         <div className={styles["container-data"]}>
                             <div className={styles["item-data"]}>
-                                <div className={styles["lable-data"]}>Biển xố xe <span className={styles["compulsory"]}>*</span></div>
+                                <div className={styles["lable-data"]}>Biển số xe <span className={styles["compulsory"]}>*</span></div>
                                 <InputText
                                     value={carServiceItem?.LicensePlate}
                                     onChange={(e) => handleChangeValue(e)}
