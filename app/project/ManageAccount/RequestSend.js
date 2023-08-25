@@ -72,10 +72,11 @@ const RequestSend = () => {
     }
 
     const handleChangeEdit = (value) => {
+        console.log(value);
         setIsModalOpen(!isModalOpen);
         setIsEdit(true);
         
-        value.NgayYC = moment(new Date(value.NgayYC)).format("YYYY-MM-DD hh:mm");
+        value.NgayYC = moment(new Date(value?.NgayYC)).format("YYYY-MM-DD hh:mm");
         value.TieuDe = value.TieuDe ?? "";
         value.NoiDung = value.NoiDung ?? "";
 
@@ -300,9 +301,9 @@ const RequestSend = () => {
                                             <span className={styles["icon-detail"]} onClick={() => handleChangeEdit(item)}>
                                                 <img src="/Icon_eye.png" alt="eye" />
                                             </span>
-                                            <span className={styles["icon-delete"]}>
+                                            {/* <span className={styles["icon-delete"]}>
                                                 <img src="/Icon_delete.png" alt="delete" />
-                                            </span>
+                                            </span> */}
                                         </td>
                                     </tr>
                                 );
@@ -351,12 +352,12 @@ const RequestSend = () => {
                                                 <span> Tùy chọn</span>
                                             </p>
                                             <p className={styles["mobile-active"]}>
-                                                <p className={styles["status"]} onClick={() => handleChangeEdit()}>
+                                                <p className={styles["status"]} onClick={() => handleChangeEdit(item)}>
                                                     <img src="/Icon_eye.png" alt="eye" />
                                                 </p>
-                                                <p className={styles["data-download"]}>
+                                                {/* <p className={styles["data-download"]}>
                                                     <img src="/Icon_delete.png" alt="delete" />
-                                                </p>
+                                                </p> */}
                                             </p>
                                         </div>
                                     </div>

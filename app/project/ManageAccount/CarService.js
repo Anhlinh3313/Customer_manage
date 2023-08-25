@@ -4,7 +4,7 @@ import IconDatepicker from "./Icon/IconDatepicker";
 import { useContext, useEffect, useState } from "react";
 import { getSelectedTypeRegisterPaking } from "../../../stores/typeRegisterPaking"
 import { getSelectedTypeCar } from "../../../stores/typeCar"
-import { createCarServices, getCarServices, updateCarServices } from "../../../stores/serviceRegistry"
+import { createCarServices, deleteCarServices, deleteCarServicesItem, getCarServices, updateCarServices } from "../../../stores/serviceRegistry"
 import { UserContext } from "context/userContext";
 import moment from "moment";
 import InputText from "components/InputText";
@@ -90,6 +90,9 @@ const CarService = () => {
                 TypeCarName: item.TypeNameCar,
                 TypeRegister: item.TypeRegisterPaking,
                 DetailID: item.DetailID,
+                ID: item.DetailID,
+                isCitizen: false,
+                isVehicle: false
             }
         })
         setListCarServicesDetail(dataEdit);
@@ -196,7 +199,7 @@ const CarService = () => {
                 listCarServicesDetail.map((item) => {
                     if (item.DetailID === carServiceItem.DetailID) {
                         return (
-                            item.citizen_identification = fileList[0].thumbUrl ? new String(fileList[0].thumbUrl).toString().replace(/^data:image\/[a-z]+;base64,/, "") : carServiceItem.citizen_identification ,
+                            item.citizen_identification = fileList[0].thumbUrl ? new String(fileList[0].thumbUrl).toString().replace(/^data:image\/[a-z]+;base64,/, "") : carServiceItem.citizen_identification,
                             item.vehicle_registration = fileCardList[0].thumbUrl ? new String(fileCardList[0].thumbUrl).toString().replace(/^data:image\/[a-z]+;base64,/, "") : carServiceItem.vehicle_registration,
                             item.BrandCar = carServiceItem.BrandCar,
                             item.ActiveDate = carServiceItem.ActiveDate ?? dateCarService,
@@ -229,15 +232,54 @@ const CarService = () => {
         setListCarServicesDetail(listCarServicesDetail);
         seIsEditCarServiceItem(false);
         refreshData();
+        
     }
-    const handeleDeleteCarServiceItem = (event) => {
-        const listCarServices = [];
-        listCarServicesDetail.forEach(item => {
-            if (item.DetailID !== event) {
-                listCarServices.push(item);
-            }
-        });
-        setListCarServicesDetail(listCarServices);
+
+    const handeleDeleteCarService = async (event) => {
+        const paramDelete = {
+            Service_RegisterPakingID: event
+        }
+        const resData = await deleteCarServices(paramDelete);
+        if (resData.Status === "OK") {
+            messageApi.open({
+                type: 'success',
+                content: "Xoá dịch vụ xe thành công",
+            });
+
+            reloadData();
+        } else {
+            messageApi.open({
+                type: 'error',
+                content: resData.Description ? resData.Description : resData?.response?.data?.Message,
+            });
+        }
+    }
+
+    const handeleDeleteCarServiceItem = async (event) => {
+        const paramDelete = {
+            Service_RegisterPaking_Detail_ID: event
+        }
+        const resData = await deleteCarServicesItem(paramDelete);
+        if (resData.Status === "OK") {
+            messageApi.open({
+                type: 'success',
+                content: "Xoá đăng kí xe thành công",
+            });
+
+            const listCarServices = [];
+            listCarServicesDetail.forEach(item => {
+                if (item.DetailID !== event) {
+                    listCarServices.push(item);
+                }
+            });
+            setListCarServicesDetail(listCarServices);
+            reloadData();
+        } else {
+            messageApi.open({
+                type: 'error',
+                content: resData.Description ? resData.Description : resData?.response?.data?.Message,
+            });
+        }
     }
 
     const handeleUpdateCarServiceItem = (event) => {
@@ -462,7 +504,7 @@ const CarService = () => {
                                             <span className={styles["icon-detail"]} onClick={() => handleChangeEdit(item)}>
                                                 <img src="/Icon_eye.png" alt="eye" />
                                             </span>
-                                            <span className={styles["icon-delete"]}>
+                                            <span className={styles["icon-delete"]} onClick={() => handeleDeleteCarService(item.ID)}>
                                                 <img src="/Icon_delete.png" alt="delete" />
                                             </span>
                                         </td>
@@ -527,11 +569,11 @@ const CarService = () => {
                                             <span> Tùy chọn</span>
                                         </div>
                                         <div className={styles["mobile-active"]}>
-                                            <div className={styles["status"]} onClick={() => setIsModalOpen(!isModalOpen)}>
+                                            <div className={styles["status"]} onClick={() => handleChangeEdit(item)}>
                                                 <img src="/Icon_eye.png" alt="eye" />
                                             </div>
                                             <div className={styles["data-download"]}>
-                                                <img src="/Icon_delete.png" alt="delete" />
+                                                <img src="/Icon_delete.png" alt="delete" onClick={() => handeleDeleteCarService(item.ID)}/>
                                             </div>
                                         </div>
                                     </div>
@@ -595,7 +637,7 @@ const CarService = () => {
                     </div>
                 </div>
 
-                <div className={styles["model-container"]}>
+                <div className={styles["model-container-car-service"]}>
                     <div className={styles["item-container"]}>
                         <div className={styles["container-data"]}>
                             <div className={styles["item-data"]}>
@@ -812,11 +854,11 @@ const CarService = () => {
                                                                 <span>Tùy chọn</span>
                                                             </div>
                                                             <div className={styles["mobile-active"]}>
-                                                                <div className={styles["status"]} onClick={() => setIsModalOpen(!isModalOpen)}>
+                                                                <div className={styles["status"]} onClick={() => handeleUpdateCarServiceItem(item?.DetailID)}>
                                                                     <img src="/icon_tb_edit.png" alt="eye" />
                                                                 </div>
                                                                 <div className={styles["data-download"]}>
-                                                                    <img src="/icon_tb_delete.png" alt="delete" />
+                                                                    <img src="/icon_tb_delete.png" alt="delete" onClick={() => handeleDeleteCarServiceItem(item?.DetailID)}/>
                                                                 </div>
                                                             </div>
                                                         </div>

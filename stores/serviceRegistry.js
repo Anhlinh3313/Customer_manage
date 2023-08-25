@@ -40,3 +40,21 @@ export const updateCarServices = async (data) => {
     return error;
   }
 };
+
+export const deleteCarServicesItem = async (data) => {
+  try {
+    const response = await axios.post(`${API_URL}/api/ServiceRegistry/ServiceRegisterPakingDetail_Delete`, data, getHeaders());
+    return response.data;
+  } catch (error) {
+    return error;
+  }
+};
+
+export const deleteCarServices = async (data) => {
+  try {
+    const response = await axios.post(`${API_URL}/api/ServiceRegistry/ServiceRegisterPaking_Delete`, data, getHeaders());
+    return response.data;
+  } catch (error) {
+    return error;
+  }
+};

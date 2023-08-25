@@ -205,7 +205,7 @@
     width: 50%;
 }
 
-.content-title-bill{
+.content-title-bill {
     color: #000;
     font-size: 18px;
     font-style: normal;
@@ -285,10 +285,9 @@
     width: 50%;
 }
 
-.content-button {
-}
+.content-button {}
 
-.content-button-bill{
+.content-button-bill {
     width: 50%;
 }
 
@@ -972,7 +971,7 @@
     text-transform: capitalize;
 }
 
-.input-title{
+.input-title {
     padding: 0px !important;
 }
 
@@ -1008,13 +1007,13 @@
 }
 
 .form-select {
-    background: rgba(0,0,0,0.05) !important;
+    background: rgba(0, 0, 0, 0.05) !important;
     border-radius: 30px;
     padding: 0px 0px;
     width: 100%;
 }
 
-.padding-form{
+.padding-form {
     padding: 0px 0px;
 }
 
@@ -1042,22 +1041,28 @@
     display: none;
 }
 
-.model-close-text{
+.model-close-text {
     cursor: pointer;
 }
 
-.download-bill{
+.download-bill {
     background-color: #4671f6;
     border-radius: 5px;
     width: 100%;
     text-align: center;
 }
 
-.header-item-bill{
+.header-item-bill {
     width: 33.3%;
 }
 
 @media screen and (max-width: 600px) {
+    .form-select-car-service {
+        background: var(--light-invert-color-devider, #F4F4F4);
+        border-radius: 30px;
+        width: 100%;
+    }
+
     .manage-account {
         padding: 0px;
         padding-top: 61px;
@@ -1216,7 +1221,7 @@
     }
 
     .status {
-        width: 80%;
+        width: 100%;
         color: var(--light-invert-color-subtitle, #999);
         font-size: 14px;
         font-style: normal;
@@ -1236,7 +1241,7 @@
         text-align: right;
     }
 
-    .data-status-load{
+    .data-status-load {
         color: var(--dark-invert-color-primary, yellow);
         font-size: 12px;
         font-style: normal;
@@ -1247,7 +1252,7 @@
         text-align: right;
     }
 
-    .data-status-succes{
+    .data-status-succes {
         color: var(--dark-invert-color-primary, #23EF5C);
         font-size: 12px;
         font-style: normal;
@@ -1283,8 +1288,6 @@
     }
 
     .mobile-active {
-        display: flex;
-        width: 20%;
     }
 
     .model-close {
@@ -1325,9 +1328,11 @@
     .form-select-home {
         width: 100%;
     }
-
-    .model-container {
+    .model-container-car-service {
         padding: 20px 30px 0px 30px;
+    }
+    .model-container {
+        padding: 0px 30px 0px 30px;
     }
 
     .model-container-mobile {
@@ -1378,6 +1383,8 @@
 
     .select {
         padding-top: 10px;
+        padding: 0px 22px 0px 11px;
+        width: 100%;
     }
 
     .room {
@@ -1409,5 +1416,8 @@
         line-height: 28px;
         text-transform: uppercase;
         width: 100%;
+    }
+    .model-header {
+        padding: 0px 15px 0px 15px;
     }
 }
