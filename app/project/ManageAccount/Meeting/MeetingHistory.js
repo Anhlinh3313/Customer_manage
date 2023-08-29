@@ -332,14 +332,14 @@ const MeetingHistory = ({onchangeBack}) => {
                             <div className={styles["room-data-item"]}>
                                 <div className={styles["room-data-date"]}>
                                     <p className={styles["container-title"]}>Các khung giờ đã đặt</p>
-                                    <p>
+                                    <div>
                                         <DatePicker 
                                         format={dateFormatCreate}
                                         className={styles["date-picker-data"]} 
                                         suffixIcon={deleteIcon} 
                                         showTime
                                         />
-                                    </p>
+                                    </div>
                                 </div>
                             </div>
 

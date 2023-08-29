@@ -196,7 +196,8 @@ const CarService = () => {
     };
 
     const handleAddData = () => {
-        // if (!validateCarServiceItem()) return;
+        if (!validateCarServiceItem()) return;
+        
         if (isEditCarServiceItem) {
             carServiceItem.ActiveDate = carServiceItem.ActiveDate ?? dateCarService;
             carServiceItem.fromDate = carServiceItem.fromDate ?? dateNow;
@@ -284,7 +285,6 @@ const CarService = () => {
         setListCarServicesDetail(listCarServicesDetail);
         seIsEditCarServiceItem(false);
         refreshData();
-
     }
 
     const handeleDeleteCarService = async (event) => {
@@ -420,7 +420,7 @@ const CarService = () => {
             if (resData.Status === "OK") {
                 messageApi.open({
                     type: 'success',
-                    content: "Đăng kí dịch vụ xe thành công",
+                    content: "Cập nhật dịch vụ xe thành công",
                 });
                 setIsModalOpen(!isModalOpen);
                 reloadData();
@@ -542,6 +542,7 @@ const CarService = () => {
     useEffect(() => {
         reloadData();
     }, []);
+
     return (
         <>
             {contextHolder}
@@ -876,7 +877,7 @@ const CarService = () => {
                                                         <td className={styles["content-item-debt"]}>{item?.ActiveDate}</td>
                                                         <td className={styles["content-item-action-car"]}>
                                                             <span className={styles["icon-detail"]}>
-                                                                <img src="/icon_tb_edit.png" alt="eye" onClick={() => handeleUpdateCarServiceItem(item?.DetailID)} />
+                                                                <img src="/icon_tb_edit.png" alt="eye" onClick={() => handeleUpdateCarServiceItem(item?.DetailID)}/>
                                                             </span>
                                                             <span className={styles["icon-delete"]} onClick={() => handeleDeleteCarServiceItem(item?.DetailID)}>
                                                                 <img src="/icon_tb_delete.png" alt="delete" />
