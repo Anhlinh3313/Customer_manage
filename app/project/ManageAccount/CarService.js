@@ -8,6 +8,7 @@ import { createCarServices, deleteCarServices, deleteCarServicesItem, getCarServ
 import { UserContext } from "context/userContext";
 import moment from "moment";
 import InputText from "components/InputText";
+import { ConvertDateTime } from "@function/Funcion";
 
 const { Option } = Select;
 
@@ -569,7 +570,7 @@ const CarService = () => {
                                 return (
                                     <tr key={index} className={styles["table-content"]}>
                                         <td className={styles["content-item-code"]}>{item.Num}</td>
-                                        <td className={styles["content-item-code"]}>{moment(new Date(item.CreateWhen)).format("DD-MM-YYYY mm:HH")}</td>
+                                        <td className={styles["content-item-code"]}>{ConvertDateTime(item.CreateWhen)}</td>
                                         <td className={styles["content-item-period-car"]}>{item?.NameContact}</td>
                                         <td className={styles["content-item-month"]}>{item?.PhoneContact}</td>
                                         <td className={styles["content-item-status"]}>
@@ -610,7 +611,7 @@ const CarService = () => {
                                             <span>Ngày đăng ký</span>
                                         </div>
                                         <div className={styles["data-code"]}>
-                                            <span>{moment(new Date(item.CreateWhen)).format("DD-MM-YYYY mm:HH")}</span>
+                                            <span>{ConvertDateTime(item.CreateWhen)}</span>
                                         </div>
                                     </div>
                                     <div className={styles["row-item-data"]}>

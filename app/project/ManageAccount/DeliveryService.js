@@ -12,6 +12,7 @@ import {
 import moment from "moment";
 import InputText from "components/InputText";
 import { UserContext } from "context/userContext";
+import { ConvertDateTime } from "@function/Funcion";
 
 const { Option } = Select;
 
@@ -104,7 +105,6 @@ const DeliveryService = () => {
             deliveryServiceItem.Quantity = parseInt(deliveryServiceItem.Quantity);
             deliveryServiceItem.DetailID = Math.floor(Math.random() * 100000);
             deliveryServiceItem.Date_of_delivery = dateDeliveryService;
-            console.log(deliveryServiceItem);
             listDeliveryServicesDetail.push(deliveryServiceItem);
         }
 
@@ -398,7 +398,7 @@ const DeliveryService = () => {
                         {deliverys?.map((item, index) => {
                             return (
                                 <tr key={index} className={styles["table-content"]}>
-                                    <td className={styles["content-item-code"]}>{item.Date_of_delivery}</td>
+                                    <td className={styles["content-item-code"]}>{ConvertDateTime(item.Date_of_delivery)}</td>
                                     <td className={styles["content-item-code"]}>{item.Delivery_IsIn ? "Vào" : "Ra"}</td>
                                     <td className={styles["content-item-status"]}>
                                         <span className={item.Servicer_RegisterDeliveryStatus === 0 ? styles["status-erro"] : (item.Servicer_RegisterDeliveryStatus === 1 ? styles["status-success"] : styles["status-load"])}>{item.NameServicer_RegisterDeliveryStatus}</span>
@@ -429,7 +429,7 @@ const DeliveryService = () => {
                                             <span>Thời gian vận chuyển</span>
                                         </div>
                                         <div className={styles["data-code"]}>
-                                            <span>{item.Date_of_delivery}</span>
+                                            <span>{ConvertDateTime(item.Date_of_delivery)}</span>
                                         </div>
                                     </div>
                                     <div className={styles["row-item-data"]}>
